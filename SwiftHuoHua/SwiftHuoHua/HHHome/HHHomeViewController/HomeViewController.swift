@@ -13,7 +13,7 @@ class HomeViewController: HHBaseViewController {
     let cellid = "cellid"
     //懒加载tableview
     fileprivate lazy var tableview : UITableView = { [unowned self] in
-        let table = UITableView(frame: CGRect(x: 0, y: 0, width: HHScreenWidth, height: HHScreenHeight), style: .grouped)
+        let table = UITableView(frame: CGRect(x: 0, y: NAVIGATION_BAR_HEIGHT, width: HHScreenWidth, height: HHScreenHeight), style: .grouped)
         table.dataSource=self
         table.delegate=self
         table.estimatedRowHeight=44
@@ -28,7 +28,15 @@ class HomeViewController: HHBaseViewController {
         // 添加列表
         self.view.addSubview(tableview)
     }
+    override func configNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_nav_signin"), style: .plain, target: self, action: #selector(rightClick))
+    }
+    @objc func rightClick(){
+        self.navigationController?.pushViewController(HomeDetailViewController(), animated: true)
+    }
 }
+
+
 
 extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {

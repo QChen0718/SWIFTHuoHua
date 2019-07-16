@@ -22,7 +22,7 @@ class HHNavigationController: UINavigationController {
         guard let internalTarget = internalTargets.first?.value(forKey: "target") else { return }
         // 系统返回方法
         let action = Selector(("handleNavigationTransition:"))
-        let fullScreenGesture = UITapGestureRecognizer(target: internalTarget, action: action)
+        let fullScreenGesture = UIPanGestureRecognizer(target: internalTarget, action: action)
         fullScreenGesture.delegate=self
         //给当前的view添加滑动手势
         targetView.addGestureRecognizer(fullScreenGesture)
@@ -47,15 +47,19 @@ extension HHNavigationController : UIGestureRecognizerDelegate{
             return true
         }
         //如果不是从左到右滑动就返回false
-        if ges.translation(in: gestureRecognizer.view).x * (lefttoRight ? 1 : -1) <= 0 {
+        if ges.translation(in: gestureRecognizer.view).x * (lefttoRight ? 1 : -1) <= 0 || disablePopGesture{
             return false
         }
         //控制器个数为1时是跟控制器
         return viewControllers.count != 1
     }
 }
-
-extension HHNavigationController{
+enum UNavigationBarStyle {
+    case theme ///有图片背景的
+    case clear ///透明的
+    case white ///白色的
+}
+extension UINavigationController{
     private struct AssociatedKeys {
         static var disablePopGesture: Void?
     }
@@ -66,6 +70,22 @@ extension HHNavigationController{
         }
         set {
             objc_setAssociatedObject(self, &AssociatedKeys.disablePopGesture, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    func navigationbarStyle(_ style:UNavigationBarStyle) {
+        switch style {
+        case .theme:
+            navigationBar.barStyle = .black
+            navigationBar.setBackgroundImage(UIImage(named: ""), for: .default)
+            navigationBar.shadowImage=UIImage()
+        case .clear:
+            navigationBar.barStyle = .black
+            navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navigationBar.shadowImage = UIImage()
+        case .white:
+            navigationBar.barStyle = .default
+            navigationBar.setBackgroundImage(UIColor.white.image(), for:.default)
+            navigationBar.shadowImage = UIImage()
         }
     }
 }

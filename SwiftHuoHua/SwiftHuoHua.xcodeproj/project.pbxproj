@@ -18,6 +18,8 @@
 		A1A14CEC22DDA569006C3680 /* HHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CEB22DDA569006C3680 /* HHBaseViewController.swift */; };
 		A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CED22DDA5A4006C3680 /* HomeDetailViewController.swift */; };
 		A1A14CF122DDAA52006C3680 /* HHDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CF022DDAA52006C3680 /* HHDevice.swift */; };
+		A1A14CF522DDED74006C3680 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CF422DDED74006C3680 /* UIColorExtension.swift */; };
+		A6DFAAA10B354DC14A9FB832 /* Pods_SwiftHuoHua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F5D2FF005F116DF532ACA5 /* Pods_SwiftHuoHua.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82C78198A9BEFDFF5721A3A5 /* Pods-SwiftHuoHua.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHuoHua.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua.debug.xcconfig"; sourceTree = "<group>"; };
 		A1A14CAF22DCB5AC006C3680 /* SwiftHuoHua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftHuoHua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A14CB922DCB5AF006C3680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +58,9 @@
 		A1A14CEB22DDA569006C3680 /* HHBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHBaseViewController.swift; sourceTree = "<group>"; };
 		A1A14CED22DDA5A4006C3680 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		A1A14CF022DDAA52006C3680 /* HHDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHDevice.swift; sourceTree = "<group>"; };
+		A1A14CF422DDED74006C3680 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		A28C697FE1C075CEB8231B76 /* Pods-SwiftHuoHua.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHuoHua.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua.release.xcconfig"; sourceTree = "<group>"; };
+		A2F5D2FF005F116DF532ACA5 /* Pods_SwiftHuoHua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftHuoHua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6DFAAA10B354DC14A9FB832 /* Pods_SwiftHuoHua.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14B03237E57C944D2FB03047 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82C78198A9BEFDFF5721A3A5 /* Pods-SwiftHuoHua.debug.xcconfig */,
+				A28C697FE1C075CEB8231B76 /* Pods-SwiftHuoHua.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A1A14CA622DCB5AC006C3680 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +105,8 @@
 				A1A14CC622DCB5AF006C3680 /* SwiftHuoHuaTests */,
 				A1A14CD122DCB5AF006C3680 /* SwiftHuoHuaUITests */,
 				A1A14CB022DCB5AC006C3680 /* Products */,
+				14B03237E57C944D2FB03047 /* Pods */,
+				EBD745E2265D49BFCE98691D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +123,7 @@
 		A1A14CB122DCB5AC006C3680 /* SwiftHuoHua */ = {
 			isa = PBXGroup;
 			children = (
+				A1A14CF322DDED31006C3680 /* Extension */,
 				A1A14CEF22DDAA34006C3680 /* HHDevice */,
 				A1A14CE922DDA533006C3680 /* HHBase */,
 				A1A14CE222DD7D55006C3680 /* HHHome */,
@@ -185,6 +204,22 @@
 			path = HHDevice;
 			sourceTree = "<group>";
 		};
+		A1A14CF322DDED31006C3680 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A1A14CF422DDED74006C3680 /* UIColorExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EBD745E2265D49BFCE98691D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2F5D2FF005F116DF532ACA5 /* Pods_SwiftHuoHua.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1A14CD722DCB5AF006C3680 /* Build configuration list for PBXNativeTarget "SwiftHuoHua" */;
 			buildPhases = (
+				9401EEECA5A747B3BA1442B5 /* [CP] Check Pods Manifest.lock */,
 				A1A14CAB22DCB5AC006C3680 /* Sources */,
 				A1A14CAC22DCB5AC006C3680 /* Frameworks */,
 				A1A14CAD22DCB5AC006C3680 /* Resources */,
+				47840B5CEAE6A7300FCD4B61 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,6 +347,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		47840B5CEAE6A7300FCD4B61 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9401EEECA5A747B3BA1442B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftHuoHua-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A1A14CAB22DCB5AC006C3680 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -318,6 +398,7 @@
 				A1A14CF122DDAA52006C3680 /* HHDevice.swift in Sources */,
 				A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */,
 				A1A14CB322DCB5AC006C3680 /* AppDelegate.swift in Sources */,
+				A1A14CF522DDED74006C3680 /* UIColorExtension.swift in Sources */,
 				A1A14CE122DD7530006C3680 /* HHTabBarController.swift in Sources */,
 				A1A14CE622DD7E55006C3680 /* HomeViewController.swift in Sources */,
 				A1A14CE822DDA25D006C3680 /* HHNavigationController.swift in Sources */,
@@ -486,6 +567,7 @@
 		};
 		A1A14CD822DCB5AF006C3680 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82C78198A9BEFDFF5721A3A5 /* Pods-SwiftHuoHua.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +587,7 @@
 		};
 		A1A14CD922DCB5AF006C3680 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A28C697FE1C075CEB8231B76 /* Pods-SwiftHuoHua.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
