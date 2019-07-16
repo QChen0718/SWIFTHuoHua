@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		A1A14CB322DCB5AC006C3680 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */; };
-		A1A14CB522DCB5AC006C3680 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CB422DCB5AC006C3680 /* ViewController.swift */; };
-		A1A14CB822DCB5AC006C3680 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CB622DCB5AC006C3680 /* Main.storyboard */; };
 		A1A14CBA22DCB5AF006C3680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CB922DCB5AF006C3680 /* Assets.xcassets */; };
 		A1A14CBD22DCB5AF006C3680 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CBB22DCB5AF006C3680 /* LaunchScreen.storyboard */; };
 		A1A14CC822DCB5AF006C3680 /* SwiftHuoHuaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CC722DCB5AF006C3680 /* SwiftHuoHuaTests.swift */; };
 		A1A14CD322DCB5AF006C3680 /* SwiftHuoHuaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CD222DCB5AF006C3680 /* SwiftHuoHuaUITests.swift */; };
+		A1A14CE122DD7530006C3680 /* HHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CE022DD7530006C3680 /* HHTabBarController.swift */; };
+		A1A14CE622DD7E55006C3680 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CE522DD7E55006C3680 /* HomeViewController.swift */; };
+		A1A14CE822DDA25D006C3680 /* HHNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CE722DDA25D006C3680 /* HHNavigationController.swift */; };
+		A1A14CEC22DDA569006C3680 /* HHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CEB22DDA569006C3680 /* HHBaseViewController.swift */; };
+		A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CED22DDA5A4006C3680 /* HomeDetailViewController.swift */; };
+		A1A14CF122DDAA52006C3680 /* HHDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CF022DDAA52006C3680 /* HHDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +40,6 @@
 /* Begin PBXFileReference section */
 		A1A14CAF22DCB5AC006C3680 /* SwiftHuoHua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftHuoHua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A1A14CB422DCB5AC006C3680 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A1A14CB722DCB5AC006C3680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1A14CB922DCB5AF006C3680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1A14CBC22DCB5AF006C3680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1A14CBE22DCB5AF006C3680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +49,12 @@
 		A1A14CCE22DCB5AF006C3680 /* SwiftHuoHuaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftHuoHuaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A14CD222DCB5AF006C3680 /* SwiftHuoHuaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHuoHuaUITests.swift; sourceTree = "<group>"; };
 		A1A14CD422DCB5AF006C3680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1A14CE022DD7530006C3680 /* HHTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHTabBarController.swift; sourceTree = "<group>"; };
+		A1A14CE522DD7E55006C3680 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A1A14CE722DDA25D006C3680 /* HHNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHNavigationController.swift; sourceTree = "<group>"; };
+		A1A14CEB22DDA569006C3680 /* HHBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHBaseViewController.swift; sourceTree = "<group>"; };
+		A1A14CED22DDA5A4006C3680 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
+		A1A14CF022DDAA52006C3680 /* HHDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +105,12 @@
 		A1A14CB122DCB5AC006C3680 /* SwiftHuoHua */ = {
 			isa = PBXGroup;
 			children = (
+				A1A14CEF22DDAA34006C3680 /* HHDevice */,
+				A1A14CE922DDA533006C3680 /* HHBase */,
+				A1A14CE222DD7D55006C3680 /* HHHome */,
 				A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */,
-				A1A14CB422DCB5AC006C3680 /* ViewController.swift */,
-				A1A14CB622DCB5AC006C3680 /* Main.storyboard */,
+				A1A14CE022DD7530006C3680 /* HHTabBarController.swift */,
+				A1A14CE722DDA25D006C3680 /* HHNavigationController.swift */,
 				A1A14CB922DCB5AF006C3680 /* Assets.xcassets */,
 				A1A14CBB22DCB5AF006C3680 /* LaunchScreen.storyboard */,
 				A1A14CBE22DCB5AF006C3680 /* Info.plist */,
@@ -123,6 +134,55 @@
 				A1A14CD422DCB5AF006C3680 /* Info.plist */,
 			);
 			path = SwiftHuoHuaUITests;
+			sourceTree = "<group>";
+		};
+		A1A14CE222DD7D55006C3680 /* HHHome */ = {
+			isa = PBXGroup;
+			children = (
+				A1A14CE422DD7D80006C3680 /* HHHomeView */,
+				A1A14CE322DD7D6B006C3680 /* HHHomeViewController */,
+			);
+			path = HHHome;
+			sourceTree = "<group>";
+		};
+		A1A14CE322DD7D6B006C3680 /* HHHomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A1A14CE522DD7E55006C3680 /* HomeViewController.swift */,
+				A1A14CED22DDA5A4006C3680 /* HomeDetailViewController.swift */,
+			);
+			path = HHHomeViewController;
+			sourceTree = "<group>";
+		};
+		A1A14CE422DD7D80006C3680 /* HHHomeView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HHHomeView;
+			sourceTree = "<group>";
+		};
+		A1A14CE922DDA533006C3680 /* HHBase */ = {
+			isa = PBXGroup;
+			children = (
+				A1A14CEA22DDA53D006C3680 /* HHBaseViewController */,
+			);
+			path = HHBase;
+			sourceTree = "<group>";
+		};
+		A1A14CEA22DDA53D006C3680 /* HHBaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A1A14CEB22DDA569006C3680 /* HHBaseViewController.swift */,
+			);
+			path = HHBaseViewController;
+			sourceTree = "<group>";
+		};
+		A1A14CEF22DDAA34006C3680 /* HHDevice */ = {
+			isa = PBXGroup;
+			children = (
+				A1A14CF022DDAA52006C3680 /* HHDevice.swift */,
+			);
+			path = HHDevice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +291,6 @@
 			files = (
 				A1A14CBD22DCB5AF006C3680 /* LaunchScreen.storyboard in Resources */,
 				A1A14CBA22DCB5AF006C3680 /* Assets.xcassets in Resources */,
-				A1A14CB822DCB5AC006C3680 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +315,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1A14CB522DCB5AC006C3680 /* ViewController.swift in Sources */,
+				A1A14CF122DDAA52006C3680 /* HHDevice.swift in Sources */,
+				A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */,
 				A1A14CB322DCB5AC006C3680 /* AppDelegate.swift in Sources */,
+				A1A14CE122DD7530006C3680 /* HHTabBarController.swift in Sources */,
+				A1A14CE622DD7E55006C3680 /* HomeViewController.swift in Sources */,
+				A1A14CE822DDA25D006C3680 /* HHNavigationController.swift in Sources */,
+				A1A14CEC22DDA569006C3680 /* HHBaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +357,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A1A14CB622DCB5AC006C3680 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A1A14CB722DCB5AC006C3680 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A1A14CBB22DCB5AF006C3680 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -435,6 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D2ESPK67ZT;
 				INFOPLIST_FILE = SwiftHuoHua/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +510,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D2ESPK67ZT;
 				INFOPLIST_FILE = SwiftHuoHua/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
