@@ -28,6 +28,11 @@ class HomeViewController: HHBaseViewController {
         // 添加列表
         self.view.addSubview(tableview)
     }
+    override func configUI() {
+        super.configUI()
+        //重写父类方法
+        requestData()
+    }
     override func configNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_nav_signin"), style: .plain, target: self, action: #selector(rightClick))
     }
@@ -36,6 +41,29 @@ class HomeViewController: HHBaseViewController {
     }
 }
 
+extension HomeViewController{
+    //请求网络数据
+    func requestData() {
+        //线程组
+        let group = DispatchGroup()
+        //线程队列，全局的
+        let queue = DispatchQueue.global()
+        group.enter()
+        //加载轮播图数据
+        ApiLoadingProvider.request(.loadHomeBanner) { result in
+            switch result {
+            case let .success(response):
+                print(response.data)
+                //解析数据
+            case let .failure(error):
+                //失败
+                print(error)
+            }
+            group.leave()
+        }
+        
+    }
+}
 
 
 extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
