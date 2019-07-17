@@ -8,6 +8,8 @@
 
 import Moya
 import MBProgressHUD
+import HandyJSON
+import SwiftyJSON
 
 //网络活动插件
 let LoadingPlugin = NetworkActivityPlugin { (type, target) in
@@ -92,6 +94,62 @@ extension HHApi: TargetType {
     }
     ///请求头
     var headers: [String : String]? {
-        return ["version":Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String,"encrypttype":"1"]
+        return ["version":Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String,"encrypttype":"1","token":"TXpBMk56QT0rTmpKc1ltdG1ZbXAzWmpBMU1EWmxZV3MxYzJ4d2NIWjJkbUZxYUhkd01XZz0="]
+    }
+}
+
+//解析响应的数据转换成模型
+extension Response {
+    //throws 方法抛出异常
+    func mapModel<T:HandyJSON>(_ type: T.Type) throws -> T {
+        //响应返回的二进制数据转换成字符串
+        let jsonString = String(data:data, encoding: .utf8)
+        //转换成模型
+        guard let model = JSONDeserializer<T>.deserializeFrom(json: jsonString) else {
+            //抛出解析异常
+            throw MoyaError.jsonMapping(self)
+        }
+        return model
+    }
+}
+
+extension MoyaProvider {
+    //当有返回值的方法未得到接收和使用会有警告 ， @discardableResult 消除警告
+    @discardableResult
+    //扩展添加请求方法
+    
+    /// 网络加载方法
+    ///
+    /// - Parameters:
+    ///   - target:
+    ///   - model: 模型
+    ///   - completion: 请求到的数据 闭包接收
+    /// - Returns: 返回请求数据
+    open func request<T:HandyJSON>(_ target:Target , model: T.Type, completion:((_ returnData: T?) -> Void)?) -> Cancellable? {
+        //网络请求
+        return request(target, completion: { (result) in
+            //解析请求的数据
+            switch result {
+            case let .success(response):
+                let data = try? response.mapJSON()
+                let json = JSON(data!)
+                if json["errno"].intValue==0{
+                    //成功
+                    guard let completion = completion else { return }
+                    let returnData = try? result.value?.mapModel(ResponseData<T>.self)
+                    //最终请求到的数据闭包的形式回调出去
+                    completion(returnData?.data?.returnData)
+                }
+                else{
+                    //失败
+                    print(json)
+                }
+                
+            case let .failure(error):
+                print("请求失败=\(error.errorCode)")
+                return
+            }
+            
+        })
     }
 }

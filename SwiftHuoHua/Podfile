@@ -9,6 +9,6 @@ target 'SwiftHuoHua' do
   # 加载指示器库
   pod 'MBProgressHUD'
   # json解析库
-  pod 'HandyJSON','~> 4.2.0'
   pod 'SwiftyJSON'
+  pod 'HandyJSON'
 end

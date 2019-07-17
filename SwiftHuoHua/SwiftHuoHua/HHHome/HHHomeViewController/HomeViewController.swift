@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class HomeViewController: HHBaseViewController {
     let cellid = "cellid"
     //懒加载tableview
@@ -50,18 +49,10 @@ extension HomeViewController{
         let queue = DispatchQueue.global()
         group.enter()
         //加载轮播图数据
-        ApiLoadingProvider.request(.loadHomeBanner) { result in
-            switch result {
-            case let .success(response):
-                print(response.data)
-                //解析数据
-            case let .failure(error):
-                //失败
-                print(error)
-            }
+        ApiLoadingProvider.request(.loadHomeBanner, model: HomeBannerModel.self) {[weak self] (returnData) in
+//            print(returnData?.poster as! String)
             group.leave()
         }
-        
     }
 }
 

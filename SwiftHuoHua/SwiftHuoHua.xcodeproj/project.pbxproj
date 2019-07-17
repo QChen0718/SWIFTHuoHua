@@ -21,6 +21,7 @@
 		A1A14CF522DDED74006C3680 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CF422DDED74006C3680 /* UIColorExtension.swift */; };
 		A1A14CF822DEBDD8006C3680 /* HHHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CF722DEBDD8006C3680 /* HHHTTPService.swift */; };
 		A1A14CFA22DECB2E006C3680 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CF922DECB2E006C3680 /* UIViewControllerExtension.swift */; };
+		A1A14CFD22DF17F2006C3680 /* HHModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CFC22DF17F2006C3680 /* HHModel.swift */; };
 		A6DFAAA10B354DC14A9FB832 /* Pods_SwiftHuoHua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F5D2FF005F116DF532ACA5 /* Pods_SwiftHuoHua.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		A1A14CF422DDED74006C3680 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A1A14CF722DEBDD8006C3680 /* HHHTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHHTTPService.swift; sourceTree = "<group>"; };
 		A1A14CF922DECB2E006C3680 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		A1A14CFC22DF17F2006C3680 /* HHModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHModel.swift; sourceTree = "<group>"; };
 		A28C697FE1C075CEB8231B76 /* Pods-SwiftHuoHua.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHuoHua.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua.release.xcconfig"; sourceTree = "<group>"; };
 		A2F5D2FF005F116DF532ACA5 /* Pods_SwiftHuoHua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftHuoHua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -127,6 +129,7 @@
 		A1A14CB122DCB5AC006C3680 /* SwiftHuoHua */ = {
 			isa = PBXGroup;
 			children = (
+				A1A14CFB22DF17D5006C3680 /* HHModel */,
 				A1A14CF622DEBD97006C3680 /* HHHttpservice */,
 				A1A14CF322DDED31006C3680 /* Extension */,
 				A1A14CEF22DDAA34006C3680 /* HHDevice */,
@@ -224,6 +227,14 @@
 				A1A14CF722DEBDD8006C3680 /* HHHTTPService.swift */,
 			);
 			path = HHHttpservice;
+			sourceTree = "<group>";
+		};
+		A1A14CFB22DF17D5006C3680 /* HHModel */ = {
+			isa = PBXGroup;
+			children = (
+				A1A14CFC22DF17F2006C3680 /* HHModel.swift */,
+			);
+			path = HHModel;
 			sourceTree = "<group>";
 		};
 		EBD745E2265D49BFCE98691D /* Frameworks */ = {
@@ -417,6 +428,7 @@
 			files = (
 				A1A14CF122DDAA52006C3680 /* HHDevice.swift in Sources */,
 				A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */,
+				A1A14CFD22DF17F2006C3680 /* HHModel.swift in Sources */,
 				A1A14CFA22DECB2E006C3680 /* UIViewControllerExtension.swift in Sources */,
 				A1A14CB322DCB5AC006C3680 /* AppDelegate.swift in Sources */,
 				A1A14CF822DEBDD8006C3680 /* HHHTTPService.swift in Sources */,
@@ -596,7 +608,10 @@
 				DEVELOPMENT_TEAM = D2ESPK67ZT;
 				INFOPLIST_FILE = SwiftHuoHua/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mxz.SwiftHuoHua;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -613,7 +628,10 @@
 				DEVELOPMENT_TEAM = D2ESPK67ZT;
 				INFOPLIST_FILE = SwiftHuoHua/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mxz.SwiftHuoHua;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -628,7 +646,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftHuoHuaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mxz.SwiftHuoHuaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -644,7 +666,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftHuoHuaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mxz.SwiftHuoHuaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -659,7 +685,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftHuoHuaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mxz.SwiftHuoHuaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -674,7 +704,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftHuoHuaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mxz.SwiftHuoHuaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
