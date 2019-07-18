@@ -8,12 +8,16 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
   - Result (4.1.0)
+  - SnapKit (4.2.0)
+  - SnapKitExtend (1.0.7):
+    - SnapKit
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - HandyJSON
   - MBProgressHUD
   - Moya
+  - SnapKitExtend
   - SwiftyJSON
 
 SPEC REPOS:
@@ -23,6 +27,8 @@ SPEC REPOS:
     - MBProgressHUD
     - Moya
     - Result
+    - SnapKit
+    - SnapKitExtend
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -31,8 +37,10 @@ SPEC CHECKSUMS:
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SnapKitExtend: 00ee4db6d1f80bee01a1e75745f2a6ae695ba662
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 6b9426918ccbd5869a3e21c79a0e8dffa429e28e
+PODFILE CHECKSUM: 41b1fe4794a0db770977809f7cb764bcaa3476b8
 
 COCOAPODS: 1.5.0

@@ -47,6 +47,7 @@ enum HHApi {
     case loadHomeBanner //首页banner
     case loadHomeCircleList(page:Int) //首页帖子列表
     case loadHomeAudio// 首页推荐音频
+    case passwordLogin(phone:String?,password:String?) //密码登录
 }
 
 extension HHApi: TargetType {
@@ -67,6 +68,8 @@ extension HHApi: TargetType {
             return "audio/list.do"
         case .loadHomeCircleList:
             return "circle/bar/postrecommend"
+        case .passwordLogin:
+            return "account/baseuser/login"
         }
     }
     //请求类型
@@ -88,6 +91,9 @@ extension HHApi: TargetType {
         case .loadHomeCircleList(let page):
             parmeters["page"] = max(1, page)
             parmeters["pagesize"] = 25
+        case .passwordLogin(let phone, let password):
+            parmeters["phonenumber"] = phone
+            parmeters["password"] = password
         default: break
         }
         return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)

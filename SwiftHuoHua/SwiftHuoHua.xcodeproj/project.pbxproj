@@ -22,6 +22,7 @@
 		A1A14CF822DEBDD8006C3680 /* HHHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CF722DEBDD8006C3680 /* HHHTTPService.swift */; };
 		A1A14CFA22DECB2E006C3680 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CF922DECB2E006C3680 /* UIViewControllerExtension.swift */; };
 		A1A14CFD22DF17F2006C3680 /* HHModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CFC22DF17F2006C3680 /* HHModel.swift */; };
+		A1E0810E22DF4CE600C6E4E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E0810D22DF4CE600C6E4E5 /* LoginViewController.swift */; };
 		A6DFAAA10B354DC14A9FB832 /* Pods_SwiftHuoHua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F5D2FF005F116DF532ACA5 /* Pods_SwiftHuoHua.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		A1A14CF722DEBDD8006C3680 /* HHHTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHHTTPService.swift; sourceTree = "<group>"; };
 		A1A14CF922DECB2E006C3680 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		A1A14CFC22DF17F2006C3680 /* HHModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHModel.swift; sourceTree = "<group>"; };
+		A1E0810D22DF4CE600C6E4E5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A28C697FE1C075CEB8231B76 /* Pods-SwiftHuoHua.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHuoHua.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua.release.xcconfig"; sourceTree = "<group>"; };
 		A2F5D2FF005F116DF532ACA5 /* Pods_SwiftHuoHua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftHuoHua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -129,6 +131,7 @@
 		A1A14CB122DCB5AC006C3680 /* SwiftHuoHua */ = {
 			isa = PBXGroup;
 			children = (
+				A1E0810B22DF4C9F00C6E4E5 /* HHLogin */,
 				A1A14CFB22DF17D5006C3680 /* HHModel */,
 				A1A14CF622DEBD97006C3680 /* HHHttpservice */,
 				A1A14CF322DDED31006C3680 /* Extension */,
@@ -235,6 +238,22 @@
 				A1A14CFC22DF17F2006C3680 /* HHModel.swift */,
 			);
 			path = HHModel;
+			sourceTree = "<group>";
+		};
+		A1E0810B22DF4C9F00C6E4E5 /* HHLogin */ = {
+			isa = PBXGroup;
+			children = (
+				A1E0810C22DF4CAE00C6E4E5 /* LoginViewController */,
+			);
+			path = HHLogin;
+			sourceTree = "<group>";
+		};
+		A1E0810C22DF4CAE00C6E4E5 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A1E0810D22DF4CE600C6E4E5 /* LoginViewController.swift */,
+			);
+			path = LoginViewController;
 			sourceTree = "<group>";
 		};
 		EBD745E2265D49BFCE98691D /* Frameworks */ = {
@@ -385,6 +404,8 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKitExtend/SnapKitExtend.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -394,6 +415,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKitExtend.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E0810E22DF4CE600C6E4E5 /* LoginViewController.swift in Sources */,
 				A1A14CF122DDAA52006C3680 /* HHDevice.swift in Sources */,
 				A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */,
 				A1A14CFD22DF17F2006C3680 /* HHModel.swift in Sources */,

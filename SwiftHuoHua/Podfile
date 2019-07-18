@@ -11,4 +11,6 @@ target 'SwiftHuoHua' do
   # json解析库
   pod 'SwiftyJSON'
   pod 'HandyJSON'
+  # ui 约束
+  pod 'SnapKitExtend'
 end
