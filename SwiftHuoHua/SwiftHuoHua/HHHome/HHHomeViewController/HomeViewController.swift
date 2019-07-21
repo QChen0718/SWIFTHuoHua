@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewController: HHBaseViewController {
     let cellid = "cellid"
+    private var homecircleModel: [homeCircleModel]?
     //懒加载tableview
     fileprivate lazy var tableview : UITableView = { [unowned self] in
         let table = UITableView(frame: CGRect(x: 0, y: NAVIGATION_BAR_HEIGHT, width: HHScreenWidth, height: HHScreenHeight), style: .grouped)
@@ -18,6 +19,10 @@ class HomeViewController: HHBaseViewController {
         table.estimatedRowHeight=44
         table.rowHeight=UITableView.automaticDimension
         table.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
+        //刷新加载数据
+        table.HHHead = HHRefreshHeader(refreshingBlock: {[weak self] in
+            self?.requestData()
+        })
         return table
     }()
     override func viewDidLoad() {
@@ -61,7 +66,21 @@ extension HomeViewController{
             group.leave()
         }
         //圈子列表
-//        ApiLoadingProvider.request(.loadHomeCircleList(page: 0), model: <#T##HandyJSON.Protocol#>, completion: <#T##((HandyJSON?, Int) -> Void)?##((HandyJSON?, Int) -> Void)?##(HandyJSON?, Int) -> Void#>)
+        group.enter()
+        ApiLoadingProvider.request(.loadHomeCircleList(page: 0), model: homeCircleListModel.self) { (returnData, errnocode) in
+            if errnocode == 0{
+                self.homecircleModel=returnData?.list
+                self.tableview.reloadData()
+            }
+            else{
+                
+            }
+            group.leave()
+        }
+        group.notify(queue: DispatchQueue.main) {
+            //统一处理请求数据
+            self.tableview.HHHead.endRefreshing()
+        }
     }
 }
 
@@ -71,10 +90,12 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 10
+        return self.homecircleModel?.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath)
+        let model = self.homecircleModel?[indexPath.row]
+        cell.textLabel?.text=model?.title
         return cell
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

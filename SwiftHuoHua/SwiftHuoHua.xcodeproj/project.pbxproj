@@ -25,6 +25,8 @@
 		A1E0810E22DF4CE600C6E4E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E0810D22DF4CE600C6E4E5 /* LoginViewController.swift */; };
 		A1E0811322E161E800C6E4E5 /* NSStringEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E0811222E161E800C6E4E5 /* NSStringEncryption.swift */; };
 		A1E0811622E1C43300C6E4E5 /* HHUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E0811522E1C43300C6E4E5 /* HHUser.swift */; };
+		A1E0811822E42F1000C6E4E5 /* HHComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E0811722E42F1000C6E4E5 /* HHComment.swift */; };
+		A1E0811C22E433AF00C6E4E5 /* HHRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E0811B22E433AF00C6E4E5 /* HHRefresh.swift */; };
 		A6DFAAA10B354DC14A9FB832 /* Pods_SwiftHuoHua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F5D2FF005F116DF532ACA5 /* Pods_SwiftHuoHua.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		A1E0810D22DF4CE600C6E4E5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A1E0811222E161E800C6E4E5 /* NSStringEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStringEncryption.swift; sourceTree = "<group>"; };
 		A1E0811522E1C43300C6E4E5 /* HHUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHUser.swift; sourceTree = "<group>"; };
+		A1E0811722E42F1000C6E4E5 /* HHComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHComment.swift; sourceTree = "<group>"; };
+		A1E0811B22E433AF00C6E4E5 /* HHRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHRefresh.swift; sourceTree = "<group>"; };
 		A28C697FE1C075CEB8231B76 /* Pods-SwiftHuoHua.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHuoHua.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua.release.xcconfig"; sourceTree = "<group>"; };
 		A2F5D2FF005F116DF532ACA5 /* Pods_SwiftHuoHua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftHuoHua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,18 +139,12 @@
 		A1A14CB122DCB5AC006C3680 /* SwiftHuoHua */ = {
 			isa = PBXGroup;
 			children = (
-				A1E0811422E1C42000C6E4E5 /* HHUser */,
-				A1E0811122E1618F00C6E4E5 /* HHEncryption */,
+				A1E0811922E4331700C6E4E5 /* HHComponent */,
 				A1E0810B22DF4C9F00C6E4E5 /* HHLogin */,
-				A1A14CFB22DF17D5006C3680 /* HHModel */,
 				A1A14CF622DEBD97006C3680 /* HHHttpservice */,
-				A1A14CF322DDED31006C3680 /* Extension */,
-				A1A14CEF22DDAA34006C3680 /* HHDevice */,
 				A1A14CE922DDA533006C3680 /* HHBase */,
 				A1A14CE222DD7D55006C3680 /* HHHome */,
 				A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */,
-				A1A14CE022DD7530006C3680 /* HHTabBarController.swift */,
-				A1A14CE722DDA25D006C3680 /* HHNavigationController.swift */,
 				A1A14CB922DCB5AF006C3680 /* Assets.xcassets */,
 				A1A14CBB22DCB5AF006C3680 /* LaunchScreen.storyboard */,
 				A1A14CBE22DCB5AF006C3680 /* Info.plist */,
@@ -200,6 +198,8 @@
 		A1A14CE922DDA533006C3680 /* HHBase */ = {
 			isa = PBXGroup;
 			children = (
+				A1A14CE022DD7530006C3680 /* HHTabBarController.swift */,
+				A1A14CE722DDA25D006C3680 /* HHNavigationController.swift */,
 				A1A14CEA22DDA53D006C3680 /* HHBaseViewController */,
 			);
 			path = HHBase;
@@ -217,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A14CF022DDAA52006C3680 /* HHDevice.swift */,
+				A1E0811722E42F1000C6E4E5 /* HHComment.swift */,
 			);
 			path = HHDevice;
 			sourceTree = "<group>";
@@ -276,6 +277,27 @@
 				A1E0811522E1C43300C6E4E5 /* HHUser.swift */,
 			);
 			path = HHUser;
+			sourceTree = "<group>";
+		};
+		A1E0811922E4331700C6E4E5 /* HHComponent */ = {
+			isa = PBXGroup;
+			children = (
+				A1E0811A22E4339400C6E4E5 /* Refresh */,
+				A1A14CF322DDED31006C3680 /* Extension */,
+				A1E0811422E1C42000C6E4E5 /* HHUser */,
+				A1E0811122E1618F00C6E4E5 /* HHEncryption */,
+				A1A14CFB22DF17D5006C3680 /* HHModel */,
+				A1A14CEF22DDAA34006C3680 /* HHDevice */,
+			);
+			path = HHComponent;
+			sourceTree = "<group>";
+		};
+		A1E0811A22E4339400C6E4E5 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				A1E0811B22E433AF00C6E4E5 /* HHRefresh.swift */,
+			);
+			path = Refresh;
 			sourceTree = "<group>";
 		};
 		EBD745E2265D49BFCE98691D /* Frameworks */ = {
@@ -424,6 +446,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -435,6 +458,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -477,8 +501,10 @@
 				A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */,
 				A1A14CFD22DF17F2006C3680 /* HHModel.swift in Sources */,
 				A1A14CFA22DECB2E006C3680 /* UIViewControllerExtension.swift in Sources */,
+				A1E0811822E42F1000C6E4E5 /* HHComment.swift in Sources */,
 				A1A14CB322DCB5AC006C3680 /* AppDelegate.swift in Sources */,
 				A1A14CF822DEBDD8006C3680 /* HHHTTPService.swift in Sources */,
+				A1E0811C22E433AF00C6E4E5 /* HHRefresh.swift in Sources */,
 				A1A14CF522DDED74006C3680 /* UIColorExtension.swift in Sources */,
 				A1A14CE122DD7530006C3680 /* HHTabBarController.swift in Sources */,
 				A1E0811322E161E800C6E4E5 /* NSStringEncryption.swift in Sources */,

@@ -13,4 +13,6 @@ target 'SwiftHuoHua' do
   pod 'HandyJSON'
   # ui 约束
   pod 'SnapKitExtend'
+  # 刷新库
+  pod 'MJRefresh'
 end
