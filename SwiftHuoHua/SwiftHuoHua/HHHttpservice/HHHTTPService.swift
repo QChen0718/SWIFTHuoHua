@@ -100,7 +100,7 @@ extension HHApi: TargetType {
     }
     ///请求头
     var headers: [String : String]? {
-        return ["version":Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String,"encrypttype":"1","token":"TXpBMk56QT0rTmpKc1ltdG1ZbXAzWmpBMU1EWmxZV3MxYzJ4d2NIWjJkbUZxYUhkd01XZz0="]
+        return ["version":Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String,"encrypttype":"1","token":HHUser.user()!.token!]
     }
 }
 
@@ -131,31 +131,16 @@ extension MoyaProvider {
     ///   - model: 模型
     ///   - completion: 请求到的数据 闭包接收
     /// - Returns: 返回请求数据
-    open func request<T:HandyJSON>(_ target:Target , model: T.Type, completion:((_ returnData: T?) -> Void)?) -> Cancellable? {
+    open func request<T:HandyJSON>(_ target:Target , model: T.Type, completion:((_ returnData: T?,_ errnoCode: Int) -> Void)?) -> Cancellable? {
         //网络请求
         return request(target, completion: { (result) in
             //解析请求的数据
-            switch result {
-            case let .success(response):
-                let data = try? response.mapJSON()
-                let json = JSON(data!)
-                if json["errno"].intValue==0{
-                    //成功
-                    guard let completion = completion else { return }
-                    let returnData = try? result.value?.mapModel(ResponseData<T>.self)
-                    //最终请求到的数据闭包的形式回调出去
-                    completion(returnData?.data?.returnData)
-                }
-                else{
-                    //失败
-                    print(json)
-                }
-                
-            case let .failure(error):
-                print("请求失败=\(error.errorCode)")
+            guard let completion = completion else { return }
+            guard let returnData = try? result.value?.mapModel(ResponseData<T>.self) else {
+                completion(nil, 0)
                 return
             }
-            
+            completion(returnData.msg,returnData.errno)
         })
     }
 }

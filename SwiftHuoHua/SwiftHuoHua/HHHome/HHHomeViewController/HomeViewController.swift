@@ -46,13 +46,22 @@ extension HomeViewController{
         //线程组
         let group = DispatchGroup()
         //线程队列，全局的
-        let queue = DispatchQueue.global()
         group.enter()
         //加载轮播图数据
-        ApiLoadingProvider.request(.loadHomeBanner, model: HomeBannerModel.self) {[weak self] (returnData) in
-//            print(returnData?.poster as! String)
+        ApiLoadingProvider.request(.loadHomeBanner, model: HomeBannerModel.self) {[weak self] (returnData,errnocode) in
+            if errnocode == 0{
+                //服务器返回成功
+            }
+            else{
+                //服务器返回失败
+            }
+            print(returnData,errnocode)
+            //            print(returnData?.poster as! String)
+//            self?.view.backgroundColor=UIColor.red
             group.leave()
         }
+        //圈子列表
+//        ApiLoadingProvider.request(.loadHomeCircleList(page: 0), model: <#T##HandyJSON.Protocol#>, completion: <#T##((HandyJSON?, Int) -> Void)?##((HandyJSON?, Int) -> Void)?##(HandyJSON?, Int) -> Void#>)
     }
 }
 

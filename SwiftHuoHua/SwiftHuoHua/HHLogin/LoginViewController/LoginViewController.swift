@@ -64,8 +64,21 @@ class LoginViewController: HHBaseViewController {
         }
     }
     @objc func btnClick(_ btn:UIButton) {
-        ApiLoadingProvider.request(.passwordLogin(phone: phoneTextfield.text, password: passwordTextfield.text), model: <#T##HandyJSON.Protocol#>) {[weak self] (returnData) in
-            
+        
+        ApiLoadingProvider.request(.passwordLogin(phone: phoneTextfield.text, password: passwordTextfield.text?.sha256String), model: HHUser.self) {[weak self] (returnData,errnocode) in
+            if errnocode==0
+            {
+                //服务器返回成功
+                //归档保存
+                print(returnData?.token)
+                HHUser.save(user: returnData!)
+                
+            }
+            else
+            {
+                
+            }
+            self?.view.window?.rootViewController=HHTabBarController()
         }
     }
 }
