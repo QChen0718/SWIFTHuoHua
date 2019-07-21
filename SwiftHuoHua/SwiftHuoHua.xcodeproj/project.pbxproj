@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A154090D22E44CC200664422 /* HHHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154090B22E44CC200664422 /* HHHomeTableViewCell.swift */; };
+		A154090E22E44CC200664422 /* HHHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154090C22E44CC200664422 /* HHHomeTableViewCell.xib */; };
+		A154091122E45C2600664422 /* HomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154090F22E45C2600664422 /* HomeBannerCell.swift */; };
+		A154091222E45C2600664422 /* HomeBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154091022E45C2600664422 /* HomeBannerCell.xib */; };
+		A154091522E4B3D100664422 /* HomeAudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154091322E4B3D100664422 /* HomeAudioCell.swift */; };
+		A154091622E4B3D100664422 /* HomeAudioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154091422E4B3D100664422 /* HomeAudioCell.xib */; };
+		A154091922E4B8EC00664422 /* HomeAudioCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154091722E4B8EC00664422 /* HomeAudioCollectionCell.swift */; };
+		A154091A22E4B8EC00664422 /* HomeAudioCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154091822E4B8EC00664422 /* HomeAudioCollectionCell.xib */; };
 		A1A14CB322DCB5AC006C3680 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */; };
 		A1A14CBA22DCB5AF006C3680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CB922DCB5AF006C3680 /* Assets.xcassets */; };
 		A1A14CBD22DCB5AF006C3680 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CBB22DCB5AF006C3680 /* LaunchScreen.storyboard */; };
@@ -49,6 +57,14 @@
 
 /* Begin PBXFileReference section */
 		82C78198A9BEFDFF5721A3A5 /* Pods-SwiftHuoHua.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHuoHua.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua.debug.xcconfig"; sourceTree = "<group>"; };
+		A154090B22E44CC200664422 /* HHHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHHomeTableViewCell.swift; sourceTree = "<group>"; };
+		A154090C22E44CC200664422 /* HHHomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HHHomeTableViewCell.xib; sourceTree = "<group>"; };
+		A154090F22E45C2600664422 /* HomeBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerCell.swift; sourceTree = "<group>"; };
+		A154091022E45C2600664422 /* HomeBannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBannerCell.xib; sourceTree = "<group>"; };
+		A154091322E4B3D100664422 /* HomeAudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAudioCell.swift; sourceTree = "<group>"; };
+		A154091422E4B3D100664422 /* HomeAudioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAudioCell.xib; sourceTree = "<group>"; };
+		A154091722E4B8EC00664422 /* HomeAudioCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAudioCollectionCell.swift; sourceTree = "<group>"; };
+		A154091822E4B8EC00664422 /* HomeAudioCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAudioCollectionCell.xib; sourceTree = "<group>"; };
 		A1A14CAF22DCB5AC006C3680 /* SwiftHuoHua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftHuoHua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A14CB922DCB5AF006C3680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,6 +207,14 @@
 		A1A14CE422DD7D80006C3680 /* HHHomeView */ = {
 			isa = PBXGroup;
 			children = (
+				A154090B22E44CC200664422 /* HHHomeTableViewCell.swift */,
+				A154090C22E44CC200664422 /* HHHomeTableViewCell.xib */,
+				A154090F22E45C2600664422 /* HomeBannerCell.swift */,
+				A154091022E45C2600664422 /* HomeBannerCell.xib */,
+				A154091322E4B3D100664422 /* HomeAudioCell.swift */,
+				A154091422E4B3D100664422 /* HomeAudioCell.xib */,
+				A154091722E4B8EC00664422 /* HomeAudioCollectionCell.swift */,
+				A154091822E4B8EC00664422 /* HomeAudioCollectionCell.xib */,
 			);
 			path = HHHomeView;
 			sourceTree = "<group>";
@@ -414,8 +438,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A154090E22E44CC200664422 /* HHHomeTableViewCell.xib in Resources */,
+				A154091A22E4B8EC00664422 /* HomeAudioCollectionCell.xib in Resources */,
 				A1A14CBD22DCB5AF006C3680 /* LaunchScreen.storyboard in Resources */,
+				A154091222E45C2600664422 /* HomeBannerCell.xib in Resources */,
 				A1A14CBA22DCB5AF006C3680 /* Assets.xcassets in Resources */,
+				A154091622E4B3D100664422 /* HomeAudioCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +473,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LLCycleScrollView/LLCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
@@ -457,6 +487,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -498,6 +530,7 @@
 				A1E0811622E1C43300C6E4E5 /* HHUser.swift in Sources */,
 				A1E0810E22DF4CE600C6E4E5 /* LoginViewController.swift in Sources */,
 				A1A14CF122DDAA52006C3680 /* HHDevice.swift in Sources */,
+				A154090D22E44CC200664422 /* HHHomeTableViewCell.swift in Sources */,
 				A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */,
 				A1A14CFD22DF17F2006C3680 /* HHModel.swift in Sources */,
 				A1A14CFA22DECB2E006C3680 /* UIViewControllerExtension.swift in Sources */,
@@ -507,7 +540,10 @@
 				A1E0811C22E433AF00C6E4E5 /* HHRefresh.swift in Sources */,
 				A1A14CF522DDED74006C3680 /* UIColorExtension.swift in Sources */,
 				A1A14CE122DD7530006C3680 /* HHTabBarController.swift in Sources */,
+				A154091522E4B3D100664422 /* HomeAudioCell.swift in Sources */,
 				A1E0811322E161E800C6E4E5 /* NSStringEncryption.swift in Sources */,
+				A154091922E4B8EC00664422 /* HomeAudioCollectionCell.swift in Sources */,
+				A154091122E45C2600664422 /* HomeBannerCell.swift in Sources */,
 				A1A14CE622DD7E55006C3680 /* HomeViewController.swift in Sources */,
 				A1A14CE822DDA25D006C3680 /* HHNavigationController.swift in Sources */,
 				A1A14CEC22DDA569006C3680 /* HHBaseViewController.swift in Sources */,

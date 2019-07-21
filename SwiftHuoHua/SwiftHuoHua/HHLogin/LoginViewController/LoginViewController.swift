@@ -72,7 +72,6 @@ class LoginViewController: HHBaseViewController {
                 //归档保存
                 print(returnData?.token)
                 HHUser.save(user: returnData!)
-                
             }
             else
             {

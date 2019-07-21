@@ -54,7 +54,7 @@ extension HHApi: TargetType {
     var baseURL: URL {
         switch self {
         case .loadHomeAudio:
-            return URL(string: "http://apiaudiotest.huohuacity.com/")!
+            return URL(string: "http://apiaudio.huohuacity.com/")!
         default:
             return URL(string: "http://api.huohuacity.com/")!
         }
@@ -83,7 +83,6 @@ extension HHApi: TargetType {
     //请求参数
     var task: Task {
         var parmeters:[String:Any] = [:]
-        
         switch self {
         case .loadHomeAudio:
             parmeters["pageNum"]=0
@@ -95,6 +94,7 @@ extension HHApi: TargetType {
             parmeters["phonenumber"] = phone
             parmeters["password"] = password
         default: break
+            
         }
         return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
     }

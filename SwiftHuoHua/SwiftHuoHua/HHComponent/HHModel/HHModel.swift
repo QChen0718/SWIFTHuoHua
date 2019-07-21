@@ -122,6 +122,46 @@ struct homeCircleModel: HandyJSON {
 //    var approval_list:[Any]？//点赞人数数组
 }
 
+struct homeAudioListModel: HandyJSON {
+    var list: [homeAudioModel]?
+    
+}
+
+struct homeAudioModel: HandyJSON {
+    var applePayPriceId: Int = 0
+    var count: String?
+    var createAt: String?
+    var createBy: String?
+    var descriptions: String?
+    var audiodetail_id: Int=0//音频专辑ID
+    var isPermission: Bool=false // 是否已购买
+    var isPublish: Int=0
+    var isValid: Int=0
+    var poster: String?
+    var price: String?//价格
+    var coinAmount: String?//钬柴币
+    var priceId: String?//价格ID
+    var publishAt: String?
+    var sharecount: String?
+    var title: String?
+    var updateAt: String?
+    var updateBy: String?
+    var userId: Int = 0
+    var tipTypeCode: Int = 0//0.免费的专辑，1.已购买的专辑，2.未购买的
+    /** 更新数量 */
+    var updCount: Int = 0
+    /** 更新状态 */
+    var updStatus: Int = 0
+    /** 是否可赠送 */
+    var canGift: Bool = false
+    /** tag内容 */
+    var tagContent: String?
+    //是否显示排行按钮和广告弹框
+    var isList: Bool = false
+    var talkerDesc: String?//职位描述
+    var talkerName: String?//昵称
+}
+
 struct ReturnData<T: HandyJSON>: HandyJSON {
     var message:String? //状态消息
     var returnData: T?  //返回内容

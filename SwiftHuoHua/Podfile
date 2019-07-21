@@ -15,4 +15,8 @@ target 'SwiftHuoHua' do
   pod 'SnapKitExtend'
   # 刷新库
   pod 'MJRefresh'
+  # 网络图片加载库
+  pod 'Kingfisher'
+  # 轮播图库
+  pod 'LLCycleScrollView'
 end

@@ -14,7 +14,7 @@ class HHBaseViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor=UIColor.white
         if #available(iOS 11.0, *) {
-            UIScrollView.appearance().contentInsetAdjustmentBehavior = .never
+            UIScrollView.appearance().contentInsetAdjustmentBehavior = .always
         } else {
             automaticallyAdjustsScrollViewInsets = false
         }
