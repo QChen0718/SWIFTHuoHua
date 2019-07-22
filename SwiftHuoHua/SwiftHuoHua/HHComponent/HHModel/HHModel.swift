@@ -11,11 +11,18 @@ import HandyJSON
 
 
 //类方法
+enum HHHomeType: Int, HandyJSONEnum {
+    case banner = 0
+    case audio
+    case circle
+}
 
 //首页banner模型
 struct HomeBannerModel: HandyJSON {
+    
     /** id */
     // 可变类型要给初始值
+    var hometype: HHHomeType = .banner
     var szId: Int = 0
     /** content_id */
     var content_id: Int=0
@@ -47,6 +54,7 @@ struct homeCircleListModel: HandyJSON {
     var list: [homeCircleModel]?
 }
 struct homeCircleModel: HandyJSON {
+    var hometype: HHHomeType = .circle
     var cellHeight: Float = 0.0
     var sz_id: String? //动态Id,帖子Id
     var avatar: String? //头像
@@ -128,6 +136,7 @@ struct homeAudioListModel: HandyJSON {
 }
 
 struct homeAudioModel: HandyJSON {
+    var hometype: HHHomeType = .audio
     var applePayPriceId: Int = 0
     var count: String?
     var createAt: String?

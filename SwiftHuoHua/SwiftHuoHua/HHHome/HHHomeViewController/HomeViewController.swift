@@ -8,15 +8,18 @@
 
 import UIKit
 
-
 class HomeViewController: HHBaseViewController {
     let cellid = "cellid"
     let bannerCellid = "bannerCellid"
-    
+    let audioid = "audiocellid"
     //推荐帖子列表model数组
-    private var homecircleModel: [homeCircleModel]?
+    private var homecircleModel = [homeCircleModel]()
     //推荐音频列表model数组
-    private var homeaudioModel: [homeAudioModel]?
+    private var homeaudioModel = [homeAudioModel]()
+    //首页banner 数组
+    private var homebannerModel = [HomeBannerModel]()
+    //所有请求数组集合
+    private var sumModelArray = [Any]()
     //懒加载tableview
     fileprivate lazy var tableview : UITableView = { [unowned self] in
         let table = UITableView(frame: CGRect.zero, style: .grouped)
@@ -25,8 +28,9 @@ class HomeViewController: HHBaseViewController {
         table.estimatedRowHeight=44
         table.rowHeight=UITableView.automaticDimension
         table.register(UINib(nibName: "HHHomeTableViewCell", bundle: nil), forCellReuseIdentifier: cellid)
-        table.register(UINib(nibName: "HomeBannerCell", bundle: nil), forCellReuseIdentifier: bannerCellid)
-        
+//        table.register(UINib(nibName: "HomeBannerCell", bundle: nil), forCellReuseIdentifier: bannerCellid)
+        table.register(UINib(nibName: "HomeAudioCell", bundle: nil), forCellReuseIdentifier: audioid)
+        table.separatorStyle = .none
         //刷新加载数据
         table.HHHead = HHRefreshHeader(refreshingBlock: {[weak self] in
             self?.requestData()
@@ -36,8 +40,6 @@ class HomeViewController: HHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title="首页"
-
-        
     }
     override func configUI() {
         //重写父类方法
@@ -78,9 +80,9 @@ extension HomeViewController{
         }
         //圈子列表
         group.enter()
-        ApiLoadingProvider.request(.loadHomeCircleList(page: 0), model: homeCircleListModel.self) { (returnData, errnocode) in
+        ApiLoadingProvider.request(.loadHomeCircleList(page: 0), model: homeCircleListModel.self) {[weak self] (returnData, errnocode) in
             if errnocode == 0{
-                self.homecircleModel=returnData?.list
+                self?.homecircleModel=returnData?.list ?? []
             }
             else{
                 
@@ -89,9 +91,9 @@ extension HomeViewController{
         }
         // 推荐音频
         group.enter()
-        ApiLoadingProvider.request(.loadHomeAudio, model: homeAudioListModel.self) { (returnData, errnocode) in
+        ApiLoadingProvider.request(.loadHomeAudio, model: homeAudioListModel.self) {[weak self] (returnData, errnocode) in
             if errnocode == 0 {
-                self.homeaudioModel=returnData?.list
+                self?.homeaudioModel=returnData?.list ?? []
             }
             group.leave()
         }
@@ -99,6 +101,14 @@ extension HomeViewController{
         group.notify(queue: DispatchQueue.main) {
             //统一处理请求数据
             self.tableview.HHHead.endRefreshing()
+            if self.homeaudioModel.count>0
+            {
+                self.sumModelArray.append(self.homeaudioModel)
+            }
+            if self.homecircleModel.count > 0
+            {
+                self.sumModelArray.append(contentsOf: self.homecircleModel)
+            }
             self.tableview.reloadData()
         }
     }
@@ -110,15 +120,29 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return self.homecircleModel?.count ?? 0
+        
+        return self.homecircleModel.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! HHHomeTableViewCell
-        let model = self.homecircleModel?[indexPath.row]
-        cell.titlelabel.text=model?.title
-        cell.corverImage.kf.setImage(urlString: model?.avatar)
-        cell.dsclabel.text=model?.nickname
-        return cell
+    
+        let anymodel = self.sumModelArray[indexPath.row]
+        if ((anymodel as? [homeAudioModel]) != nil)
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: audioid, for: indexPath) as! HomeAudioCell
+            cell.setModel(modelArray: anymodel as! [homeAudioModel])
+            cell.selectionStyle = .none
+            return cell
+        }
+        else{
+            let model = self.homecircleModel[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! HHHomeTableViewCell
+            cell.titlelabel.text=model.title ?? ""
+            cell.corverImage.kf.setImage(urlString: model.avatar ?? "")
+            cell.dsclabel.text=model.nickname ?? ""
+            cell.selectionStyle = .none
+            return cell
+        }
+        
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01

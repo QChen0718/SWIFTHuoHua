@@ -72,6 +72,7 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Sdm-XR-LJt" firstAttribute="top" secondItem="Qym-ub-XZA" secondAttribute="bottom" constant="0.5" id="4Og-97-BVC"/>
                     <constraint firstItem="Qym-ub-XZA" firstAttribute="top" secondItem="vTC-qy-yje" secondAttribute="bottom" constant="8" id="4ht-du-uMb"/>
                     <constraint firstItem="Sdm-XR-LJt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4xD-6a-Gz2"/>
                     <constraint firstAttribute="trailing" secondItem="Sdm-XR-LJt" secondAttribute="trailing" id="Azf-zz-wlB"/>

@@ -15,6 +15,7 @@
 		A154091622E4B3D100664422 /* HomeAudioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154091422E4B3D100664422 /* HomeAudioCell.xib */; };
 		A154091922E4B8EC00664422 /* HomeAudioCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154091722E4B8EC00664422 /* HomeAudioCollectionCell.swift */; };
 		A154091A22E4B8EC00664422 /* HomeAudioCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154091822E4B8EC00664422 /* HomeAudioCollectionCell.xib */; };
+		A154092222E594F200664422 /* HHAudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154092122E594F200664422 /* HHAudioController.swift */; };
 		A1A14CB322DCB5AC006C3680 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */; };
 		A1A14CBA22DCB5AF006C3680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CB922DCB5AF006C3680 /* Assets.xcassets */; };
 		A1A14CBD22DCB5AF006C3680 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CBB22DCB5AF006C3680 /* LaunchScreen.storyboard */; };
@@ -65,6 +66,7 @@
 		A154091422E4B3D100664422 /* HomeAudioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAudioCell.xib; sourceTree = "<group>"; };
 		A154091722E4B8EC00664422 /* HomeAudioCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAudioCollectionCell.swift; sourceTree = "<group>"; };
 		A154091822E4B8EC00664422 /* HomeAudioCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAudioCollectionCell.xib; sourceTree = "<group>"; };
+		A154092122E594F200664422 /* HHAudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAudioController.swift; sourceTree = "<group>"; };
 		A1A14CAF22DCB5AC006C3680 /* SwiftHuoHua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftHuoHua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A14CB922DCB5AF006C3680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +132,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A154091C22E5946000664422 /* HHAudio */ = {
+			isa = PBXGroup;
+			children = (
+				A154092022E594CD00664422 /* HHAudioController */,
+				A154091F22E594CD00664422 /* HHAudioModel */,
+				A154091E22E594CD00664422 /* HHAudioView */,
+			);
+			path = HHAudio;
+			sourceTree = "<group>";
+		};
+		A154091E22E594CD00664422 /* HHAudioView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HHAudioView;
+			sourceTree = "<group>";
+		};
+		A154091F22E594CD00664422 /* HHAudioModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HHAudioModel;
+			sourceTree = "<group>";
+		};
+		A154092022E594CD00664422 /* HHAudioController */ = {
+			isa = PBXGroup;
+			children = (
+				A154092122E594F200664422 /* HHAudioController.swift */,
+			);
+			path = HHAudioController;
+			sourceTree = "<group>";
+		};
 		A1A14CA622DCB5AC006C3680 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +189,7 @@
 		A1A14CB122DCB5AC006C3680 /* SwiftHuoHua */ = {
 			isa = PBXGroup;
 			children = (
+				A154091C22E5946000664422 /* HHAudio */,
 				A1E0811922E4331700C6E4E5 /* HHComponent */,
 				A1E0810B22DF4C9F00C6E4E5 /* HHLogin */,
 				A1A14CF622DEBD97006C3680 /* HHHttpservice */,
@@ -541,6 +576,7 @@
 				A1A14CF522DDED74006C3680 /* UIColorExtension.swift in Sources */,
 				A1A14CE122DD7530006C3680 /* HHTabBarController.swift in Sources */,
 				A154091522E4B3D100664422 /* HomeAudioCell.swift in Sources */,
+				A154092222E594F200664422 /* HHAudioController.swift in Sources */,
 				A1E0811322E161E800C6E4E5 /* NSStringEncryption.swift in Sources */,
 				A154091922E4B8EC00664422 /* HomeAudioCollectionCell.swift in Sources */,
 				A154091122E45C2600664422 /* HomeBannerCell.swift in Sources */,

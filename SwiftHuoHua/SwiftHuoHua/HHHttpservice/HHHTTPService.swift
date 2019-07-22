@@ -100,7 +100,7 @@ extension HHApi: TargetType {
     }
     ///请求头
     var headers: [String : String]? {
-        return ["version":Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String,"encrypttype":"1","token":HHUser.user()!.token!]
+        return ["version":Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String,"encrypttype":"1","token":HHUser.user()?.token ?? ""]
     }
 }
 
