@@ -16,6 +16,9 @@
 		A154091922E4B8EC00664422 /* HomeAudioCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154091722E4B8EC00664422 /* HomeAudioCollectionCell.swift */; };
 		A154091A22E4B8EC00664422 /* HomeAudioCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154091822E4B8EC00664422 /* HomeAudioCollectionCell.xib */; };
 		A154092222E594F200664422 /* HHAudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154092122E594F200664422 /* HHAudioController.swift */; };
+		A154092422E5ABF800664422 /* HHPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154092322E5ABF800664422 /* HHPageViewController.swift */; };
+		A154092622E6ABD800664422 /* HHAudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154092522E6ABD800664422 /* HHAudioListViewController.swift */; };
+		A154092822E6AC2300664422 /* HHAudioIntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154092722E6AC2300664422 /* HHAudioIntroduceViewController.swift */; };
 		A1A14CB322DCB5AC006C3680 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */; };
 		A1A14CBA22DCB5AF006C3680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CB922DCB5AF006C3680 /* Assets.xcassets */; };
 		A1A14CBD22DCB5AF006C3680 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CBB22DCB5AF006C3680 /* LaunchScreen.storyboard */; };
@@ -67,6 +70,9 @@
 		A154091722E4B8EC00664422 /* HomeAudioCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAudioCollectionCell.swift; sourceTree = "<group>"; };
 		A154091822E4B8EC00664422 /* HomeAudioCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAudioCollectionCell.xib; sourceTree = "<group>"; };
 		A154092122E594F200664422 /* HHAudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAudioController.swift; sourceTree = "<group>"; };
+		A154092322E5ABF800664422 /* HHPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHPageViewController.swift; sourceTree = "<group>"; };
+		A154092522E6ABD800664422 /* HHAudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAudioListViewController.swift; sourceTree = "<group>"; };
+		A154092722E6AC2300664422 /* HHAudioIntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAudioIntroduceViewController.swift; sourceTree = "<group>"; };
 		A1A14CAF22DCB5AC006C3680 /* SwiftHuoHua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftHuoHua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A14CB922DCB5AF006C3680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -160,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				A154092122E594F200664422 /* HHAudioController.swift */,
+				A154092522E6ABD800664422 /* HHAudioListViewController.swift */,
+				A154092722E6AC2300664422 /* HHAudioIntroduceViewController.swift */,
 			);
 			path = HHAudioController;
 			sourceTree = "<group>";
@@ -268,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A14CEB22DDA569006C3680 /* HHBaseViewController.swift */,
+				A154092322E5ABF800664422 /* HHPageViewController.swift */,
 			);
 			path = HHBaseViewController;
 			sourceTree = "<group>";
@@ -507,6 +516,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LLCycleScrollView/LLCycleScrollView.framework",
@@ -517,10 +527,12 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKitExtend/SnapKitExtend.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLCycleScrollView.framework",
@@ -531,6 +543,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKitExtend.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -567,6 +580,7 @@
 				A1A14CF122DDAA52006C3680 /* HHDevice.swift in Sources */,
 				A154090D22E44CC200664422 /* HHHomeTableViewCell.swift in Sources */,
 				A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */,
+				A154092422E5ABF800664422 /* HHPageViewController.swift in Sources */,
 				A1A14CFD22DF17F2006C3680 /* HHModel.swift in Sources */,
 				A1A14CFA22DECB2E006C3680 /* UIViewControllerExtension.swift in Sources */,
 				A1E0811822E42F1000C6E4E5 /* HHComment.swift in Sources */,
@@ -579,8 +593,10 @@
 				A154092222E594F200664422 /* HHAudioController.swift in Sources */,
 				A1E0811322E161E800C6E4E5 /* NSStringEncryption.swift in Sources */,
 				A154091922E4B8EC00664422 /* HomeAudioCollectionCell.swift in Sources */,
+				A154092622E6ABD800664422 /* HHAudioListViewController.swift in Sources */,
 				A154091122E45C2600664422 /* HomeBannerCell.swift in Sources */,
 				A1A14CE622DD7E55006C3680 /* HomeViewController.swift in Sources */,
+				A154092822E6AC2300664422 /* HHAudioIntroduceViewController.swift in Sources */,
 				A1A14CE822DDA25D006C3680 /* HHNavigationController.swift in Sources */,
 				A1A14CEC22DDA569006C3680 /* HHBaseViewController.swift in Sources */,
 			);

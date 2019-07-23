@@ -33,11 +33,14 @@ class HomeBannerCell: UITableViewCell {
         self.contentView.addSubview(bannerView)
         //设置banner的大小
         bannerView.snp.makeConstraints {
-            $0.top.left.right.equalToSuperview()
+            $0.top.left.right.bottom.equalToSuperview()
             $0.height.equalTo(KSuitFloat(float: 120))
         }
     }
-
+    public func setDataClick(urlstr:String)
+    {
+        bannerView.imagePaths=[urlstr,"http://omxx7cyms.bkt.clouddn.com/o_1detrosj41bo2p58jmkb33m707.jpeg"]
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

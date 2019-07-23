@@ -25,6 +25,10 @@ class HHTabBarController: UITabBarController {
     }
 
     func addChildViewController(_ childController:UIViewController,title:String?,image:String?,selectImage:String?) {
+        //  UIImage渲染模式 withRenderingMode
+        //  Automatic 根据图片的使用环境和所处的绘图上下文自动调整渲染模式。
+        //  AlwaysOriginal 始终绘制图片原始状态，不使用Tint Color
+        //  AlwaysTemplate 始终根据Tint Color绘制图片，忽略图片的颜色信息。
         childController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: image ?? ""), selectedImage: UIImage(named: selectImage ?? ""))
         childController.tabBarItem.imageInsets=UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         self.addChild(HHNavigationController(rootViewController: childController))

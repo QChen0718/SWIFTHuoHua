@@ -28,11 +28,12 @@ class HomeViewController: HHBaseViewController {
         table.estimatedRowHeight=44
         table.rowHeight=UITableView.automaticDimension
         table.register(UINib(nibName: "HHHomeTableViewCell", bundle: nil), forCellReuseIdentifier: cellid)
-//        table.register(UINib(nibName: "HomeBannerCell", bundle: nil), forCellReuseIdentifier: bannerCellid)
+        table.register(UINib(nibName: "HomeBannerCell", bundle: nil), forCellReuseIdentifier: bannerCellid)
         table.register(UINib(nibName: "HomeAudioCell", bundle: nil), forCellReuseIdentifier: audioid)
         table.separatorStyle = .none
         //刷新加载数据
         table.HHHead = HHRefreshHeader(refreshingBlock: {[weak self] in
+            self?.sumModelArray.removeAll()
             self?.requestData()
         })
         return table
@@ -54,7 +55,11 @@ class HomeViewController: HHBaseViewController {
         
     }
     override func configNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_nav_signin"), style: .plain, target: self, action: #selector(rightClick))
+        //  UIImage渲染模式 withRenderingMode
+        //  Automatic 根据图片的使用环境和所处的绘图上下文自动调整渲染模式。
+        //  AlwaysOriginal 始终绘制图片原始状态，不使用Tint Color
+        //  AlwaysTemplate 始终根据Tint Color绘制图片，忽略图片的颜色信息。
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_nav_signin")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(rightClick))
     }
     @objc func rightClick(){
         self.navigationController?.pushViewController(HomeDetailViewController(), animated: true)
@@ -101,6 +106,7 @@ extension HomeViewController{
         group.notify(queue: DispatchQueue.main) {
             //统一处理请求数据
             self.tableview.HHHead.endRefreshing()
+            self.sumModelArray.append("http://omxx7cyms.bkt.clouddn.com/o_1detrosj41bo2p58jmkb33m707.jpeg")
             if self.homeaudioModel.count>0
             {
                 self.sumModelArray.append(self.homeaudioModel)
@@ -126,11 +132,19 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let anymodel = self.sumModelArray[indexPath.row]
+        //音频
         if ((anymodel as? [homeAudioModel]) != nil)
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: audioid, for: indexPath) as! HomeAudioCell
             cell.setModel(modelArray: anymodel as! [homeAudioModel])
             cell.selectionStyle = .none
+            return cell
+        }
+        //banner
+        else if (anymodel as? String) != nil
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: bannerCellid, for: indexPath) as! HomeBannerCell
+            cell.setDataClick(urlstr: anymodel as! String)
             return cell
         }
         else{

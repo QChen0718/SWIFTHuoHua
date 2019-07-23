@@ -19,4 +19,9 @@ target 'SwiftHuoHua' do
   pod 'Kingfisher'
   # 轮播图库
   pod 'LLCycleScrollView'
+  # 分段控制器三方库
+  pod 'HMSegmentedControl'
+  # swift初始化库 Then
+  pod 'Then'
+  
 end

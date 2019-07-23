@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 
 class HHBaseViewController: UIViewController {
 
@@ -31,7 +33,11 @@ class HHBaseViewController: UIViewController {
             navi.navigationbarStyle(.white)
             navi.setNavigationBarHidden(false, animated: true)
             if navi.viewControllers.count > 1 {
-                navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "nav_back_white"), style: .plain, target: self, action: #selector(pressBack));
+                //  UIImage渲染模式 withRenderingMode
+                //  Automatic 根据图片的使用环境和所处的绘图上下文自动调整渲染模式。
+                //  AlwaysOriginal 始终绘制图片原始状态，不使用Tint Color
+                //  AlwaysTemplate 始终根据Tint Color绘制图片，忽略图片的颜色信息。
+                navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "nav_back_white")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(pressBack));
             }
         }
     }
