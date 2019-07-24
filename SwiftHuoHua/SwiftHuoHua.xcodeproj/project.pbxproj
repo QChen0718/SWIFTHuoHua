@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1455CF322E82801005F7CB3 /* HomeAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CF222E82801005F7CB3 /* HomeAudioViewController.swift */; };
+		A1455CF522E82818005F7CB3 /* HomeLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CF422E82818005F7CB3 /* HomeLiveViewController.swift */; };
+		A1455CF722E82878005F7CB3 /* HomeRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CF622E82878005F7CB3 /* HomeRecommendVC.swift */; };
+		A1455CF922E8291C005F7CB3 /* HomeSolutionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CF822E8291C005F7CB3 /* HomeSolutionListVC.swift */; };
+		A1455CFB22E82933005F7CB3 /* HomeProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CFA22E82933005F7CB3 /* HomeProjectVC.swift */; };
+		A1455CFD22E82969005F7CB3 /* HomeSocietyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CFC22E82969005F7CB3 /* HomeSocietyVC.swift */; };
+		A1455CFF22E82988005F7CB3 /* HomeVideoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CFE22E82988005F7CB3 /* HomeVideoListVC.swift */; };
 		A154090D22E44CC200664422 /* HHHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154090B22E44CC200664422 /* HHHomeTableViewCell.swift */; };
 		A154090E22E44CC200664422 /* HHHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154090C22E44CC200664422 /* HHHomeTableViewCell.xib */; };
 		A154091122E45C2600664422 /* HomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154090F22E45C2600664422 /* HomeBannerCell.swift */; };
@@ -61,6 +68,13 @@
 
 /* Begin PBXFileReference section */
 		82C78198A9BEFDFF5721A3A5 /* Pods-SwiftHuoHua.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHuoHua.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua.debug.xcconfig"; sourceTree = "<group>"; };
+		A1455CF222E82801005F7CB3 /* HomeAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAudioViewController.swift; sourceTree = "<group>"; };
+		A1455CF422E82818005F7CB3 /* HomeLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLiveViewController.swift; sourceTree = "<group>"; };
+		A1455CF622E82878005F7CB3 /* HomeRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendVC.swift; sourceTree = "<group>"; };
+		A1455CF822E8291C005F7CB3 /* HomeSolutionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSolutionListVC.swift; sourceTree = "<group>"; };
+		A1455CFA22E82933005F7CB3 /* HomeProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProjectVC.swift; sourceTree = "<group>"; };
+		A1455CFC22E82969005F7CB3 /* HomeSocietyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSocietyVC.swift; sourceTree = "<group>"; };
+		A1455CFE22E82988005F7CB3 /* HomeVideoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoListVC.swift; sourceTree = "<group>"; };
 		A154090B22E44CC200664422 /* HHHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHHomeTableViewCell.swift; sourceTree = "<group>"; };
 		A154090C22E44CC200664422 /* HHHomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HHHomeTableViewCell.xib; sourceTree = "<group>"; };
 		A154090F22E45C2600664422 /* HomeBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerCell.swift; sourceTree = "<group>"; };
@@ -242,6 +256,13 @@
 			isa = PBXGroup;
 			children = (
 				A1A14CE522DD7E55006C3680 /* HomeViewController.swift */,
+				A1455CF622E82878005F7CB3 /* HomeRecommendVC.swift */,
+				A1455CF222E82801005F7CB3 /* HomeAudioViewController.swift */,
+				A1455CF422E82818005F7CB3 /* HomeLiveViewController.swift */,
+				A1455CF822E8291C005F7CB3 /* HomeSolutionListVC.swift */,
+				A1455CFA22E82933005F7CB3 /* HomeProjectVC.swift */,
+				A1455CFC22E82969005F7CB3 /* HomeSocietyVC.swift */,
+				A1455CFE22E82988005F7CB3 /* HomeVideoListVC.swift */,
 				A1A14CED22DDA5A4006C3680 /* HomeDetailViewController.swift */,
 			);
 			path = HHHomeViewController;
@@ -579,6 +600,7 @@
 				A1E0810E22DF4CE600C6E4E5 /* LoginViewController.swift in Sources */,
 				A1A14CF122DDAA52006C3680 /* HHDevice.swift in Sources */,
 				A154090D22E44CC200664422 /* HHHomeTableViewCell.swift in Sources */,
+				A1455CF722E82878005F7CB3 /* HomeRecommendVC.swift in Sources */,
 				A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */,
 				A154092422E5ABF800664422 /* HHPageViewController.swift in Sources */,
 				A1A14CFD22DF17F2006C3680 /* HHModel.swift in Sources */,
@@ -588,17 +610,23 @@
 				A1A14CF822DEBDD8006C3680 /* HHHTTPService.swift in Sources */,
 				A1E0811C22E433AF00C6E4E5 /* HHRefresh.swift in Sources */,
 				A1A14CF522DDED74006C3680 /* UIColorExtension.swift in Sources */,
+				A1455CF522E82818005F7CB3 /* HomeLiveViewController.swift in Sources */,
 				A1A14CE122DD7530006C3680 /* HHTabBarController.swift in Sources */,
 				A154091522E4B3D100664422 /* HomeAudioCell.swift in Sources */,
 				A154092222E594F200664422 /* HHAudioController.swift in Sources */,
 				A1E0811322E161E800C6E4E5 /* NSStringEncryption.swift in Sources */,
 				A154091922E4B8EC00664422 /* HomeAudioCollectionCell.swift in Sources */,
+				A1455CFB22E82933005F7CB3 /* HomeProjectVC.swift in Sources */,
 				A154092622E6ABD800664422 /* HHAudioListViewController.swift in Sources */,
+				A1455CFF22E82988005F7CB3 /* HomeVideoListVC.swift in Sources */,
 				A154091122E45C2600664422 /* HomeBannerCell.swift in Sources */,
 				A1A14CE622DD7E55006C3680 /* HomeViewController.swift in Sources */,
 				A154092822E6AC2300664422 /* HHAudioIntroduceViewController.swift in Sources */,
 				A1A14CE822DDA25D006C3680 /* HHNavigationController.swift in Sources */,
+				A1455CFD22E82969005F7CB3 /* HomeSocietyVC.swift in Sources */,
 				A1A14CEC22DDA569006C3680 /* HHBaseViewController.swift in Sources */,
+				A1455CF922E8291C005F7CB3 /* HomeSolutionListVC.swift in Sources */,
+				A1455CF322E82801005F7CB3 /* HomeAudioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

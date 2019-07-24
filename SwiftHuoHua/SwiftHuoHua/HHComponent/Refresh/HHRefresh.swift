@@ -62,7 +62,7 @@ class HHRefreshDiscoverFooter: MJRefreshBackGifFooter {
     override func prepare() {
         super.prepare()
         backgroundColor = UIColor.white
-        setImages([UIImage(named: "no_more_data")!], for: .noMoreData)
+        setImages([UIImage(named: "no_more_data") ?? UIImage()], for: .idle)
         stateLabel.isHidden = true
         refreshingBlock = { self.endRefreshing() }
     }
