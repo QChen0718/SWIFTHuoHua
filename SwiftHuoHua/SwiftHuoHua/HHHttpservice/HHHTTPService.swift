@@ -11,6 +11,11 @@ import MBProgressHUD
 import HandyJSON
 import SwiftyJSON
 
+let kH5CommentUrl = "https://www.huohuacity.com"
+let kAudioBannerListUrl = "audio/audioBannerList"    //音频首页Banner
+let kExcerptList = "audio/excerptList"       //音频节选区域
+let kAudioBoutiqueList = "audio/audioBoutiqueList" //钬花精品课列表
+let kAudioWWECList = "audio/audioWWECList"     //WWEC精选演讲
 //网络活动插件
 let LoadingPlugin = NetworkActivityPlugin { (type, target) in
     guard let vc = topVC else {return}
@@ -48,12 +53,19 @@ enum HHApi {
     case loadHomeCircleList(page:Int) //首页帖子列表
     case loadHomeAudio// 首页推荐音频
     case passwordLogin(phone:String?,password:String?) //密码登录
+    case loadHomeAudioList(pageNum:Int, pageSize:Int) //音频列表
+    case loadAudiodirectory(id: Int) //音频目录
+    case loadHomeLive(pageNum: Int) //首页直播
+    case loadAudioBannerList //音频首页banner
+    case loadAudioExcerptList(id: Int) //音频首页每日精选
+    case loadAudioSelectAudioList //音频首页精品课程
+    case loadWWECDataList //音频首页WWEC大会精选
 }
 
 extension HHApi: TargetType {
     var baseURL: URL {
         switch self {
-        case .loadHomeAudio:
+        case .loadHomeAudio , .loadHomeAudioList, .loadAudiodirectory, .loadHomeLive, .loadAudioBannerList, .loadAudioExcerptList, .loadAudioSelectAudioList, .loadWWECDataList:
             return URL(string: "http://apiaudio.huohuacity.com/")!
         default:
             return URL(string: "http://api.huohuacity.com/")!
@@ -70,6 +82,20 @@ extension HHApi: TargetType {
             return "circle/bar/postrecommend"
         case .passwordLogin:
             return "account/baseuser/login"
+        case .loadHomeAudioList:
+            return "audio/list.do"
+        case .loadAudiodirectory:
+            return "audio/item.do"
+        case .loadHomeLive:
+            return "huohuacity/live/getLives"
+        case .loadAudioBannerList:
+            return kAudioBannerListUrl
+        case .loadAudioExcerptList:
+            return kExcerptList
+        case .loadAudioSelectAudioList:
+            return kAudioBoutiqueList
+        case .loadWWECDataList:
+            return kAudioWWECList
         }
     }
     //请求类型
@@ -93,6 +119,18 @@ extension HHApi: TargetType {
         case .passwordLogin(let phone, let password):
             parmeters["phonenumber"] = phone
             parmeters["password"] = password
+        case .loadHomeAudioList(let pageNum, let pageSize):
+            parmeters["pageNum"] = pageNum
+            parmeters["pageSize"] = pageSize
+        case .loadAudiodirectory(let id):
+            parmeters["id"] = id
+            parmeters["pageNum"]=0
+            parmeters["pageSize"]=50
+        case .loadHomeLive(let pageNum):
+            parmeters["pageNum"] = pageNum
+            parmeters["pageSize"] = 10
+        case .loadAudioExcerptList(let id):
+            parmeters["id"] = id
         default: break
             
         }

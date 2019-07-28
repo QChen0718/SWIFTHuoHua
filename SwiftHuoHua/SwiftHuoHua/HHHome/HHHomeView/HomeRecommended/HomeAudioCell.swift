@@ -12,6 +12,7 @@ let reuseID_SingleAudioCell = "SingleAudioCell"
 class HomeAudioCell: UITableViewCell {
 
     @IBOutlet weak var audioview: UICollectionView!
+    @IBOutlet weak var idtypetitle: UILabel!
     private var dataArray = [homeAudioModel]()
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,6 +53,12 @@ class HomeAudioCell: UITableViewCell {
         self.dataArray=modelArray
         self.audioview.reloadData()
     }
+    public func setselectAudioModel(model:audioSelectModel)
+    {
+        self.dataArray = model.items ?? []
+        self.idtypetitle.text = model.name
+        self.audioview.reloadData()
+    }
 }
 
 extension HomeAudioCell:UICollectionViewDataSource,UICollectionViewDelegate
@@ -71,6 +78,9 @@ extension HomeAudioCell:UICollectionViewDataSource,UICollectionViewDelegate
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        topVC?.navigationController?.pushViewController(HHAudioController(), animated: true)
+        let model = self.dataArray[indexPath.row]
+        let vc = HHAudioController()
+        vc.audioDetailid = model.id
+        topVC?.navigationController?.pushViewController(vc, animated: true)
     }
 }

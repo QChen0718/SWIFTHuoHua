@@ -70,8 +70,15 @@ class LoginViewController: HHBaseViewController {
             {
                 //服务器返回成功
                 //归档保存
-                print(returnData?.token)
-                HHUser.save(user: returnData!)
+              let is_savesucceck = HHUser.save(user: returnData ?? HHUser())
+                if is_savesucceck
+                {
+                    print("保存成功")
+                }
+                else
+                {
+                    print("保存失败")
+                }
             }
             else
             {

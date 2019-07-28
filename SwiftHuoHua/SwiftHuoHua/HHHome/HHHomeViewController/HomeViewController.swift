@@ -9,7 +9,6 @@
 import UIKit
 
 class HomeViewController: HHBaseViewController {
-    
     //推荐
     lazy var recommendvc: HomeRecommendVC = {
        let vc = HomeRecommendVC()
@@ -46,7 +45,7 @@ class HomeViewController: HHBaseViewController {
         return vc
     }()
     fileprivate lazy var homepagevc: HHPageViewController = {
-       let pagevc = HHPageViewController(titles: ["推荐","音频课","直播课","方案包","专题","问答","视频"], vcs: [recommendvc,audiovc,livevc,solutionvc,projectvc,societyvc,videovc], pageStyle: .topTabBar)
+       let pagevc = HHPageViewController(titles: ["推荐","音频课","直播课","方案包","专题","问答","视频"], vcs: [recommendvc,audiovc,livevc,solutionvc,projectvc,societyvc,videovc], pageStyle: .navigationBarSegment)
         return pagevc
     }()
     
@@ -60,15 +59,17 @@ class HomeViewController: HHBaseViewController {
         self.addChild(homepagevc)
         self.view.addSubview(homepagevc.view)
         homepagevc.view.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.left.right.bottom.equalToSuperview()
+            $0.top.equalTo(0)
+//            $0.edges.equalToSuperview()
         }
-        
     }
     override func configNavigationBar() {
         //  UIImage渲染模式 withRenderingMode
         //  Automatic 根据图片的使用环境和所处的绘图上下文自动调整渲染模式。
         //  AlwaysOriginal 始终绘制图片原始状态，不使用Tint Color
         //  AlwaysTemplate 始终根据Tint Color绘制图片，忽略图片的颜色信息。
+        super.configNavigationBar()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_nav_signin")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(rightClick))
     }
     @objc func rightClick(){

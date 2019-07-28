@@ -18,6 +18,11 @@ enum HHHomeType: Int, HandyJSONEnum {
 }
 
 //首页banner模型
+
+struct audiobannerListModel: HandyJSON {
+    var list: [HomeBannerModel]?
+}
+
 struct HomeBannerModel: HandyJSON {
     
     /** id */
@@ -56,7 +61,7 @@ struct homeCircleListModel: HandyJSON {
 struct homeCircleModel: HandyJSON {
     var hometype: HHHomeType = .circle
     var cellHeight: Float = 0.0
-    var sz_id: String? //动态Id,帖子Id
+    var id: String? //动态Id,帖子Id
     var avatar: String? //头像
     
     var nickname: String? //昵称
@@ -130,19 +135,27 @@ struct homeCircleModel: HandyJSON {
 //    var approval_list:[Any]？//点赞人数数组
 }
 
+//首页音频
 struct homeAudioListModel: HandyJSON {
     var list: [homeAudioModel]?
     
 }
 
+//音频每日精选
+struct excerptListModel: HandyJSON {
+    var list: homeAudioModel?
+    
+}
+//音频详情模型
 struct homeAudioModel: HandyJSON {
     var hometype: HHHomeType = .audio
+    var items: [audiodirectoryModel]?
     var applePayPriceId: Int = 0
     var count: String?
     var createAt: String?
     var createBy: String?
-    var descriptions: String?
-    var audiodetail_id: Int=0//音频专辑ID
+    var description: String?
+    var id: Int=0//音频专辑ID
     var isPermission: Bool=false // 是否已购买
     var isPublish: Int=0
     var isValid: Int=0
@@ -169,6 +182,97 @@ struct homeAudioModel: HandyJSON {
     var isList: Bool = false
     var talkerDesc: String?//职位描述
     var talkerName: String?//昵称
+}
+
+//音频条目模型
+struct audiodirectoryListModel: HandyJSON {
+    var list:[audiodirectoryModel]?
+    
+}
+struct audiodirectoryModel: HandyJSON {
+    var albumId: Int = 0
+    var title: String?
+    var asc: Bool = false
+    // 专辑音乐总数
+    var rowNumber: Int = 0
+    
+    var id: Int = 0//音频条目id
+    var audioId: Int = 0//专辑id
+    
+    var orders: String?
+    var poster: String?
+    var isFree: Bool = false
+    var timeCost: String?
+    var isPublish: Bool = false
+    var publishAt: String?
+    var isValid: Bool = false
+    var playcount: String?
+    var addr: String?
+    var createAt: String?
+    var finished: Int = 0//是否播放完成
+    var playThis: Int = 0//当前播放的音频条目
+    var timeGone: String?//上次播放的时间戳
+}
+
+//音频精品课程模型
+struct audioSelectListModel: HandyJSON {
+    var list: [audioSelectModel]?
+    
+}
+struct audioSelectModel: HandyJSON {
+    //身份ID
+    var selectaudio_id: Int = 0
+    //身份对应的音频课
+    var items: [homeAudioModel]?
+    //身份名称
+    var name: String?
+    
+    var number: String?
+    //身份封面
+    var poster: String?
+    //标题
+    var title: String?
+}
+//直播列表模型
+struct liveListModel: HandyJSON {
+    /** 正在直播的 */
+    var startedLive: [Any]?
+    /** 即将开始的 */
+    var willStartLive: [Any]?
+    /** 即将开始的 */
+    var hotReviewLive: [Any]?
+    
+    var latestLive: latestLiveModel?
+}
+struct latestLiveModel: HandyJSON {
+    var list: [liveModel]?
+    
+}
+struct liveModel: HandyJSON {
+    var live_id: Int = 0
+    var title: String?
+    var poster: String?
+    var speaker: String?
+    var introduction: String?
+    var is_list: Bool = false
+    var avatar: String?
+    var content: String?
+    var business_id: Int = 0
+    var start_time: String?
+    var end_time: String?
+    var pay_deadline_time: String?
+    var channel_number: String?
+    var hx_roomid: String?
+    var msg_notify_time: String?
+    var rats_images: [Any]?
+    var is_free: Bool = false
+    var playback_url: String?
+    var playback_permission: Bool = false
+    var status: Int = 0
+    var is_private:Bool = false
+    var price: String?
+    var applepay_price_id: String?
+    var living_status: Int = 0
 }
 
 struct ReturnData<T: HandyJSON>: HandyJSON {

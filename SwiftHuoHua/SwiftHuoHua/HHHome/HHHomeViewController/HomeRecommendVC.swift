@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class HomeRecommendVC: HHBaseViewController {
     let cellid = "cellid"
@@ -36,8 +37,8 @@ class HomeRecommendVC: HHBaseViewController {
             self?.sumModelArray.removeAll()
             self?.requestData()
         })
-        table.HHFoot = HHRefreshDiscoverFooter(refreshingBlock: {
-            
+        table.HHFoot = HHRefreshFooter(refreshingBlock: {
+            table.HHFoot.endRefreshing()
         })
         return table
         }()
@@ -51,7 +52,8 @@ class HomeRecommendVC: HHBaseViewController {
         // 添加列表
         self.view.addSubview(self.tableview)
         tableview.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.left.top.right.equalToSuperview()
+            $0.bottom.equalTo(-TAB_BAR_HEIGHT)
         }
         requestData()
     }
@@ -64,9 +66,10 @@ extension HomeRecommendVC{
         //线程组
         let group = DispatchGroup()
         //线程队列，全局的
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         group.enter()
         //加载轮播图数据
-        ApiLoadingProvider.request(.loadHomeBanner, model: HomeBannerModel.self) {[weak self] (returnData,errnocode) in
+        ApiProvider.request(.loadHomeBanner, model: HomeBannerModel.self) {[weak self] (returnData,errnocode) in
             if errnocode == 0{
                 //服务器返回成功
             }
@@ -98,6 +101,8 @@ extension HomeRecommendVC{
         group.notify(queue: DispatchQueue.main) {
             //统一处理请求数据
             self.tableview.HHHead.endRefreshing()
+            self.tableview.HHFoot.endRefreshing()
+            MBProgressHUD.hide(for: self.view, animated: true)
             self.sumModelArray.append("http://omxx7cyms.bkt.clouddn.com/o_1detrosj41bo2p58jmkb33m707.jpeg")
             if self.homeaudioModel.count>0
             {
@@ -118,7 +123,7 @@ extension HomeRecommendVC : UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        return self.homecircleModel.count
+        return self.sumModelArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -139,11 +144,11 @@ extension HomeRecommendVC : UITableViewDelegate,UITableViewDataSource{
             return cell
         }
         else{
-            let model = self.homecircleModel[indexPath.row]
+            let model = anymodel as? homeCircleModel
             let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! HHHomeTableViewCell
-            cell.titlelabel.text=model.title ?? ""
-            cell.corverImage.kf.setImage(urlString: model.avatar ?? "")
-            cell.dsclabel.text=model.nickname ?? ""
+            cell.titlelabel.text=model?.title ?? ""
+            cell.corverImage.kf.setImage(urlString: model?.avatar ?? "")
+            cell.dsclabel.text=model?.nickname ?? ""
             cell.selectionStyle = .none
             return cell
         }

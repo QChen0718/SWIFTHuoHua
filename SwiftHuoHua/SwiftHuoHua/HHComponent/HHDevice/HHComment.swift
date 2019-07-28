@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Kingfisher
+import SnapKit
 
 
 //MARK:- Kingfisher
@@ -26,4 +27,15 @@ extension Kingfisher where Base: UIButton {
     public func setImage(urlString: String?, for state: UIControl.State, placeholder: UIImage? = UIImage(named: "hh_img_defaultPhoto")) -> RetrieveImageTask {
         return setImage(with: URL(string: urlString ?? ""), for: state, placeholder: placeholder, options: [.transition(.fade(0.5))])
     }
+}
+//MARK:- SnapKit
+extension ConstraintView {
+    var hhsnp: ConstraintBasicAttributesDSL {
+        if #available(iOS 11.0, *) {
+            return self.safeAreaLayoutGuide.snp
+        } else {
+            return self.snp
+        }
+    }
+    
 }

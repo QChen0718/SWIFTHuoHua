@@ -83,16 +83,23 @@ class HHPageViewController: HHBaseViewController {
             segment.backgroundColor = UIColor.clear
             //默认的字体颜色和大小
             segment.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray.withAlphaComponent(0.5),
-                                           NSAttributedString.Key.font:UIFont.systemFont(ofSize: 16)]
+                                           NSAttributedString.Key.font:UIFont.systemFont(ofSize: 22)]
             segment.selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black,
-                                                   NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20)]
+                                                   NSAttributedString.Key.font:UIFont.systemFont(ofSize: 32)]
             segment.selectionIndicatorLocation = .none
+
+            segment.segmentEdgeInset=UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+            segment.enlargeEdgeInset=UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+            segment.segmentWidthStyle=HMSegmentedControlSegmentWidthStyle.dynamic
+            view.addSubview(segment)
+            segment.snp.makeConstraints { (make) in
+                make.top.left.right.equalToSuperview()
+                make.height.equalTo(40)
+            }
             
-            navigationItem.titleView = segment
-            segment.frame = CGRect(x: 0, y: 0, width: HHScreenWidth - 120, height: 40)
-            
-            pageVC.view.snp.makeConstraints {
-                $0.edges.equalToSuperview()
+            pageVC.view.snp.makeConstraints { (make) in
+                make.top.equalTo(segment.snp.bottom)
+                make.left.right.bottom.equalToSuperview()
             }
         case .some(.topTabBar):
             segment.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.hexadecimalColor(hexadecimal: "0x262626"),

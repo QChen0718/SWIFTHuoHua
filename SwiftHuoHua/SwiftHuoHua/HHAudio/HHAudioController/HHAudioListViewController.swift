@@ -11,13 +11,16 @@ import UIKit
 let cellid = "cellid"
 class HHAudioListViewController: HHBaseViewController {
 
+    var audiodetailid: Int?
+    
+    fileprivate var audiolistmodelArray = [audiodirectoryModel]()
     lazy var tableview: UITableView = {
         let table = UITableView(frame: CGRect.zero, style: .grouped)
         table.dataSource=self
         table.delegate=self
         table.rowHeight=UITableView.automaticDimension
         table.estimatedRowHeight=44
-        table.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
+        table.register(UINib(nibName: "AudiolistCell", bundle: nil), forCellReuseIdentifier: cellid)
         return table
     }()
     
@@ -25,11 +28,27 @@ class HHAudioListViewController: HHBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        requestData()
     }
     override func configUI() {
         self.view.addSubview(self.tableview)
         self.tableview.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+    }
+}
+
+extension HHAudioListViewController
+{
+    func requestData()  {
+        ApiLoadingProvider.request(.loadAudiodirectory(id:self.audiodetailid ?? 0), model: audiodirectoryListModel.self) { (returnDta, errnocode) in
+            if errnocode == 0{
+                self.audiolistmodelArray = returnDta?.list ?? []
+                self.tableview.reloadData()
+            }
+            else {
+                
+            }
         }
     }
 }
@@ -41,11 +60,12 @@ extension HHAudioListViewController: UITableViewDataSource,UITableViewDelegate
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.audiolistmodelArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! AudiolistCell
+        cell.setdataModel(model: self.audiolistmodelArray[indexPath.row])
         return cell
     }
     

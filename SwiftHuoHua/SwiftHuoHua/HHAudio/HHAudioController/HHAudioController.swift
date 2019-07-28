@@ -10,6 +10,8 @@ import UIKit
 
 class HHAudioController: HHBaseViewController {
 
+    var  audioDetailid : Int?
+    
     private lazy var scrollview: UIScrollView = {
        let scro = UIScrollView()
         
@@ -18,11 +20,13 @@ class HHAudioController: HHBaseViewController {
     //音频节目列表
     fileprivate lazy var audioListvc: HHAudioListViewController = {
        let vc = HHAudioListViewController()
+        vc.audiodetailid=self.audioDetailid
         return vc
     }()
     //音频介绍
     fileprivate lazy var audiointroducevc: HHAudioIntroduceViewController = {
         let vc = HHAudioIntroduceViewController()
+        vc.audiodetail_id=self.audioDetailid
         return vc
     }()
     

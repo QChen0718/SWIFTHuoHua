@@ -87,6 +87,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="audioview" destination="Qym-ub-XZA" id="JAp-2P-fzD"/>
+                <outlet property="idtypetitle" destination="bkm-re-ia7" id="YBi-71-UMk"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
         </tableViewCell>

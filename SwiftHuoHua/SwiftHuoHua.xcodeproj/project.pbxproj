@@ -14,18 +14,27 @@
 		A1455CFB22E82933005F7CB3 /* HomeProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CFA22E82933005F7CB3 /* HomeProjectVC.swift */; };
 		A1455CFD22E82969005F7CB3 /* HomeSocietyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CFC22E82969005F7CB3 /* HomeSocietyVC.swift */; };
 		A1455CFF22E82988005F7CB3 /* HomeVideoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CFE22E82988005F7CB3 /* HomeVideoListVC.swift */; };
-		A154090D22E44CC200664422 /* HHHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154090B22E44CC200664422 /* HHHomeTableViewCell.swift */; };
-		A154090E22E44CC200664422 /* HHHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154090C22E44CC200664422 /* HHHomeTableViewCell.xib */; };
-		A154091122E45C2600664422 /* HomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154090F22E45C2600664422 /* HomeBannerCell.swift */; };
-		A154091222E45C2600664422 /* HomeBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154091022E45C2600664422 /* HomeBannerCell.xib */; };
-		A154091522E4B3D100664422 /* HomeAudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154091322E4B3D100664422 /* HomeAudioCell.swift */; };
-		A154091622E4B3D100664422 /* HomeAudioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154091422E4B3D100664422 /* HomeAudioCell.xib */; };
-		A154091922E4B8EC00664422 /* HomeAudioCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154091722E4B8EC00664422 /* HomeAudioCollectionCell.swift */; };
-		A154091A22E4B8EC00664422 /* HomeAudioCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A154091822E4B8EC00664422 /* HomeAudioCollectionCell.xib */; };
+		A1455D0622E86986005F7CB3 /* AudiolistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455D0422E86986005F7CB3 /* AudiolistCell.swift */; };
+		A1455D0722E86986005F7CB3 /* AudiolistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1455D0522E86986005F7CB3 /* AudiolistCell.xib */; };
+		A1455D0C22E9AC1C005F7CB3 /* HHAudioPlayManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455D0B22E9AC1C005F7CB3 /* HHAudioPlayManger.swift */; };
 		A154092222E594F200664422 /* HHAudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154092122E594F200664422 /* HHAudioController.swift */; };
 		A154092422E5ABF800664422 /* HHPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154092322E5ABF800664422 /* HHPageViewController.swift */; };
 		A154092622E6ABD800664422 /* HHAudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154092522E6ABD800664422 /* HHAudioListViewController.swift */; };
 		A154092822E6AC2300664422 /* HHAudioIntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154092722E6AC2300664422 /* HHAudioIntroduceViewController.swift */; };
+		A195E36E22EB2678008A817E /* HHWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195E36D22EB2678008A817E /* HHWebViewController.swift */; };
+		A195E37022EC2BD1008A817E /* HHAudioAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195E36F22EC2BD1008A817E /* HHAudioAlbumViewController.swift */; };
+		A195E38022EC4F33008A817E /* HomeAudioListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A195E37222EC4F32008A817E /* HomeAudioListCell.xib */; };
+		A195E38122EC4F33008A817E /* HomeAudioListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195E37322EC4F32008A817E /* HomeAudioListCell.swift */; };
+		A195E38222EC4F33008A817E /* HomeAudioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A195E37522EC4F32008A817E /* HomeAudioCell.xib */; };
+		A195E38322EC4F33008A817E /* HomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195E37622EC4F32008A817E /* HomeBannerCell.swift */; };
+		A195E38422EC4F33008A817E /* HHHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A195E37722EC4F32008A817E /* HHHomeTableViewCell.xib */; };
+		A195E38522EC4F33008A817E /* HHHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195E37822EC4F32008A817E /* HHHomeTableViewCell.swift */; };
+		A195E38622EC4F33008A817E /* HomeAudioCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195E37922EC4F32008A817E /* HomeAudioCollectionCell.swift */; };
+		A195E38722EC4F33008A817E /* HomeAudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195E37A22EC4F32008A817E /* HomeAudioCell.swift */; };
+		A195E38822EC4F33008A817E /* HomeAudioCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A195E37B22EC4F32008A817E /* HomeAudioCollectionCell.xib */; };
+		A195E38922EC4F33008A817E /* HomeBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A195E37C22EC4F32008A817E /* HomeBannerCell.xib */; };
+		A195E38A22EC4F33008A817E /* HomeLiveCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A195E37E22EC4F32008A817E /* HomeLiveCollectionCell.xib */; };
+		A195E38B22EC4F33008A817E /* HomeLiveCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195E37F22EC4F32008A817E /* HomeLiveCollectionCell.swift */; };
 		A1A14CB322DCB5AC006C3680 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */; };
 		A1A14CBA22DCB5AF006C3680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CB922DCB5AF006C3680 /* Assets.xcassets */; };
 		A1A14CBD22DCB5AF006C3680 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CBB22DCB5AF006C3680 /* LaunchScreen.storyboard */; };
@@ -75,18 +84,27 @@
 		A1455CFA22E82933005F7CB3 /* HomeProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProjectVC.swift; sourceTree = "<group>"; };
 		A1455CFC22E82969005F7CB3 /* HomeSocietyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSocietyVC.swift; sourceTree = "<group>"; };
 		A1455CFE22E82988005F7CB3 /* HomeVideoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoListVC.swift; sourceTree = "<group>"; };
-		A154090B22E44CC200664422 /* HHHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHHomeTableViewCell.swift; sourceTree = "<group>"; };
-		A154090C22E44CC200664422 /* HHHomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HHHomeTableViewCell.xib; sourceTree = "<group>"; };
-		A154090F22E45C2600664422 /* HomeBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerCell.swift; sourceTree = "<group>"; };
-		A154091022E45C2600664422 /* HomeBannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBannerCell.xib; sourceTree = "<group>"; };
-		A154091322E4B3D100664422 /* HomeAudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAudioCell.swift; sourceTree = "<group>"; };
-		A154091422E4B3D100664422 /* HomeAudioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAudioCell.xib; sourceTree = "<group>"; };
-		A154091722E4B8EC00664422 /* HomeAudioCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAudioCollectionCell.swift; sourceTree = "<group>"; };
-		A154091822E4B8EC00664422 /* HomeAudioCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAudioCollectionCell.xib; sourceTree = "<group>"; };
+		A1455D0422E86986005F7CB3 /* AudiolistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiolistCell.swift; sourceTree = "<group>"; };
+		A1455D0522E86986005F7CB3 /* AudiolistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudiolistCell.xib; sourceTree = "<group>"; };
+		A1455D0B22E9AC1C005F7CB3 /* HHAudioPlayManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAudioPlayManger.swift; sourceTree = "<group>"; };
 		A154092122E594F200664422 /* HHAudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAudioController.swift; sourceTree = "<group>"; };
 		A154092322E5ABF800664422 /* HHPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHPageViewController.swift; sourceTree = "<group>"; };
 		A154092522E6ABD800664422 /* HHAudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAudioListViewController.swift; sourceTree = "<group>"; };
 		A154092722E6AC2300664422 /* HHAudioIntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAudioIntroduceViewController.swift; sourceTree = "<group>"; };
+		A195E36D22EB2678008A817E /* HHWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHWebViewController.swift; sourceTree = "<group>"; };
+		A195E36F22EC2BD1008A817E /* HHAudioAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAudioAlbumViewController.swift; sourceTree = "<group>"; };
+		A195E37222EC4F32008A817E /* HomeAudioListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeAudioListCell.xib; sourceTree = "<group>"; };
+		A195E37322EC4F32008A817E /* HomeAudioListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAudioListCell.swift; sourceTree = "<group>"; };
+		A195E37522EC4F32008A817E /* HomeAudioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeAudioCell.xib; sourceTree = "<group>"; };
+		A195E37622EC4F32008A817E /* HomeBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBannerCell.swift; sourceTree = "<group>"; };
+		A195E37722EC4F32008A817E /* HHHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HHHomeTableViewCell.xib; sourceTree = "<group>"; };
+		A195E37822EC4F32008A817E /* HHHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHHomeTableViewCell.swift; sourceTree = "<group>"; };
+		A195E37922EC4F32008A817E /* HomeAudioCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAudioCollectionCell.swift; sourceTree = "<group>"; };
+		A195E37A22EC4F32008A817E /* HomeAudioCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAudioCell.swift; sourceTree = "<group>"; };
+		A195E37B22EC4F32008A817E /* HomeAudioCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeAudioCollectionCell.xib; sourceTree = "<group>"; };
+		A195E37C22EC4F32008A817E /* HomeBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeBannerCell.xib; sourceTree = "<group>"; };
+		A195E37E22EC4F32008A817E /* HomeLiveCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeLiveCollectionCell.xib; sourceTree = "<group>"; };
+		A195E37F22EC4F32008A817E /* HomeLiveCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeLiveCollectionCell.swift; sourceTree = "<group>"; };
 		A1A14CAF22DCB5AC006C3680 /* SwiftHuoHua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftHuoHua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A14CB922DCB5AF006C3680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,9 +170,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A1455D0A22E9AAFF005F7CB3 /* HHAudioManger */ = {
+			isa = PBXGroup;
+			children = (
+				A1455D0B22E9AC1C005F7CB3 /* HHAudioPlayManger.swift */,
+			);
+			path = HHAudioManger;
+			sourceTree = "<group>";
+		};
 		A154091C22E5946000664422 /* HHAudio */ = {
 			isa = PBXGroup;
 			children = (
+				A1455D0A22E9AAFF005F7CB3 /* HHAudioManger */,
 				A154092022E594CD00664422 /* HHAudioController */,
 				A154091F22E594CD00664422 /* HHAudioModel */,
 				A154091E22E594CD00664422 /* HHAudioView */,
@@ -165,6 +192,8 @@
 		A154091E22E594CD00664422 /* HHAudioView */ = {
 			isa = PBXGroup;
 			children = (
+				A1455D0422E86986005F7CB3 /* AudiolistCell.swift */,
+				A1455D0522E86986005F7CB3 /* AudiolistCell.xib */,
 			);
 			path = HHAudioView;
 			sourceTree = "<group>";
@@ -179,11 +208,45 @@
 		A154092022E594CD00664422 /* HHAudioController */ = {
 			isa = PBXGroup;
 			children = (
+				A195E36F22EC2BD1008A817E /* HHAudioAlbumViewController.swift */,
 				A154092122E594F200664422 /* HHAudioController.swift */,
 				A154092522E6ABD800664422 /* HHAudioListViewController.swift */,
 				A154092722E6AC2300664422 /* HHAudioIntroduceViewController.swift */,
 			);
 			path = HHAudioController;
+			sourceTree = "<group>";
+		};
+		A195E37122EC4F32008A817E /* HomeAudio */ = {
+			isa = PBXGroup;
+			children = (
+				A195E37322EC4F32008A817E /* HomeAudioListCell.swift */,
+				A195E37222EC4F32008A817E /* HomeAudioListCell.xib */,
+			);
+			path = HomeAudio;
+			sourceTree = "<group>";
+		};
+		A195E37422EC4F32008A817E /* HomeRecommended */ = {
+			isa = PBXGroup;
+			children = (
+				A195E37A22EC4F32008A817E /* HomeAudioCell.swift */,
+				A195E37522EC4F32008A817E /* HomeAudioCell.xib */,
+				A195E37622EC4F32008A817E /* HomeBannerCell.swift */,
+				A195E37C22EC4F32008A817E /* HomeBannerCell.xib */,
+				A195E37822EC4F32008A817E /* HHHomeTableViewCell.swift */,
+				A195E37722EC4F32008A817E /* HHHomeTableViewCell.xib */,
+				A195E37922EC4F32008A817E /* HomeAudioCollectionCell.swift */,
+				A195E37B22EC4F32008A817E /* HomeAudioCollectionCell.xib */,
+			);
+			path = HomeRecommended;
+			sourceTree = "<group>";
+		};
+		A195E37D22EC4F32008A817E /* HomeLive */ = {
+			isa = PBXGroup;
+			children = (
+				A195E37F22EC4F32008A817E /* HomeLiveCollectionCell.swift */,
+				A195E37E22EC4F32008A817E /* HomeLiveCollectionCell.xib */,
+			);
+			path = HomeLive;
 			sourceTree = "<group>";
 		};
 		A1A14CA622DCB5AC006C3680 = {
@@ -271,14 +334,9 @@
 		A1A14CE422DD7D80006C3680 /* HHHomeView */ = {
 			isa = PBXGroup;
 			children = (
-				A154090B22E44CC200664422 /* HHHomeTableViewCell.swift */,
-				A154090C22E44CC200664422 /* HHHomeTableViewCell.xib */,
-				A154090F22E45C2600664422 /* HomeBannerCell.swift */,
-				A154091022E45C2600664422 /* HomeBannerCell.xib */,
-				A154091322E4B3D100664422 /* HomeAudioCell.swift */,
-				A154091422E4B3D100664422 /* HomeAudioCell.xib */,
-				A154091722E4B8EC00664422 /* HomeAudioCollectionCell.swift */,
-				A154091822E4B8EC00664422 /* HomeAudioCollectionCell.xib */,
+				A195E37122EC4F32008A817E /* HomeAudio */,
+				A195E37D22EC4F32008A817E /* HomeLive */,
+				A195E37422EC4F32008A817E /* HomeRecommended */,
 			);
 			path = HHHomeView;
 			sourceTree = "<group>";
@@ -298,6 +356,7 @@
 			children = (
 				A1A14CEB22DDA569006C3680 /* HHBaseViewController.swift */,
 				A154092322E5ABF800664422 /* HHPageViewController.swift */,
+				A195E36D22EB2678008A817E /* HHWebViewController.swift */,
 			);
 			path = HHBaseViewController;
 			sourceTree = "<group>";
@@ -503,12 +562,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A154090E22E44CC200664422 /* HHHomeTableViewCell.xib in Resources */,
-				A154091A22E4B8EC00664422 /* HomeAudioCollectionCell.xib in Resources */,
+				A195E38422EC4F33008A817E /* HHHomeTableViewCell.xib in Resources */,
+				A195E38A22EC4F33008A817E /* HomeLiveCollectionCell.xib in Resources */,
+				A1455D0722E86986005F7CB3 /* AudiolistCell.xib in Resources */,
+				A195E38822EC4F33008A817E /* HomeAudioCollectionCell.xib in Resources */,
+				A195E38022EC4F33008A817E /* HomeAudioListCell.xib in Resources */,
 				A1A14CBD22DCB5AF006C3680 /* LaunchScreen.storyboard in Resources */,
-				A154091222E45C2600664422 /* HomeBannerCell.xib in Resources */,
 				A1A14CBA22DCB5AF006C3680 /* Assets.xcassets in Resources */,
-				A154091622E4B3D100664422 /* HomeAudioCell.xib in Resources */,
+				A195E38922EC4F33008A817E /* HomeBannerCell.xib in Resources */,
+				A195E38222EC4F33008A817E /* HomeAudioCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,35 +659,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1E0811622E1C43300C6E4E5 /* HHUser.swift in Sources */,
+				A195E36E22EB2678008A817E /* HHWebViewController.swift in Sources */,
 				A1E0810E22DF4CE600C6E4E5 /* LoginViewController.swift in Sources */,
 				A1A14CF122DDAA52006C3680 /* HHDevice.swift in Sources */,
-				A154090D22E44CC200664422 /* HHHomeTableViewCell.swift in Sources */,
+				A195E38322EC4F33008A817E /* HomeBannerCell.swift in Sources */,
 				A1455CF722E82878005F7CB3 /* HomeRecommendVC.swift in Sources */,
 				A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */,
 				A154092422E5ABF800664422 /* HHPageViewController.swift in Sources */,
 				A1A14CFD22DF17F2006C3680 /* HHModel.swift in Sources */,
 				A1A14CFA22DECB2E006C3680 /* UIViewControllerExtension.swift in Sources */,
+				A195E38122EC4F33008A817E /* HomeAudioListCell.swift in Sources */,
 				A1E0811822E42F1000C6E4E5 /* HHComment.swift in Sources */,
 				A1A14CB322DCB5AC006C3680 /* AppDelegate.swift in Sources */,
 				A1A14CF822DEBDD8006C3680 /* HHHTTPService.swift in Sources */,
 				A1E0811C22E433AF00C6E4E5 /* HHRefresh.swift in Sources */,
+				A195E37022EC2BD1008A817E /* HHAudioAlbumViewController.swift in Sources */,
 				A1A14CF522DDED74006C3680 /* UIColorExtension.swift in Sources */,
 				A1455CF522E82818005F7CB3 /* HomeLiveViewController.swift in Sources */,
 				A1A14CE122DD7530006C3680 /* HHTabBarController.swift in Sources */,
-				A154091522E4B3D100664422 /* HomeAudioCell.swift in Sources */,
 				A154092222E594F200664422 /* HHAudioController.swift in Sources */,
 				A1E0811322E161E800C6E4E5 /* NSStringEncryption.swift in Sources */,
-				A154091922E4B8EC00664422 /* HomeAudioCollectionCell.swift in Sources */,
 				A1455CFB22E82933005F7CB3 /* HomeProjectVC.swift in Sources */,
+				A195E38B22EC4F33008A817E /* HomeLiveCollectionCell.swift in Sources */,
 				A154092622E6ABD800664422 /* HHAudioListViewController.swift in Sources */,
 				A1455CFF22E82988005F7CB3 /* HomeVideoListVC.swift in Sources */,
-				A154091122E45C2600664422 /* HomeBannerCell.swift in Sources */,
 				A1A14CE622DD7E55006C3680 /* HomeViewController.swift in Sources */,
 				A154092822E6AC2300664422 /* HHAudioIntroduceViewController.swift in Sources */,
+				A195E38522EC4F33008A817E /* HHHomeTableViewCell.swift in Sources */,
+				A195E38722EC4F33008A817E /* HomeAudioCell.swift in Sources */,
 				A1A14CE822DDA25D006C3680 /* HHNavigationController.swift in Sources */,
+				A1455D0C22E9AC1C005F7CB3 /* HHAudioPlayManger.swift in Sources */,
 				A1455CFD22E82969005F7CB3 /* HomeSocietyVC.swift in Sources */,
 				A1A14CEC22DDA569006C3680 /* HHBaseViewController.swift in Sources */,
 				A1455CF922E8291C005F7CB3 /* HomeSolutionListVC.swift in Sources */,
+				A1455D0622E86986005F7CB3 /* AudiolistCell.swift in Sources */,
+				A195E38622EC4F33008A817E /* HomeAudioCollectionCell.swift in Sources */,
 				A1455CF322E82801005F7CB3 /* HomeAudioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

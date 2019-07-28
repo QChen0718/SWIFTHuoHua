@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 extension UIColor {
     func image() -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
@@ -51,5 +52,31 @@ extension UIColor {
         Scanner.init(string: gStr).scanHexInt32(&g);
         Scanner.init(string: bStr).scanHexInt32(&b);
         return UIColor.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1);
+    }
+}
+extension Int {
+    //前 自增
+
+    static prefix func ++ (num: inout Int) -> Int {
+        num += 1
+        return num
+    }
+    //后 自增
+    static postfix func ++(num: inout Int) -> Int {
+        let temp = num
+        num += 1
+        return temp
+    }
+    //前 自减
+    static prefix func --(num: inout Int) -> Int {
+        num -= 1
+        return num
+    }
+    //后 自减
+    
+    static postfix func --(num: inout Int) -> Int {
+        let temp = num
+        num -= 1
+        return temp
     }
 }
