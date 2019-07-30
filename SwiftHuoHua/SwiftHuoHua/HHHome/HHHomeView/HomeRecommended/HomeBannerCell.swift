@@ -22,7 +22,7 @@ class HomeBannerCell: UITableViewCell {
         banner.pageControlPosition = .right
         banner.pageControlBottom = 20
         banner.titleBackgroundColor = UIColor.clear
-        //        banner.lldidSelectItemAtIndex = didsele
+        banner.lldidSelectItemAtIndex = didselectIndex(index:)
         return banner
     }()
     
@@ -40,6 +40,13 @@ class HomeBannerCell: UITableViewCell {
     public func setDataClick(urlstr:String)
     {
         bannerView.imagePaths=[urlstr,"http://omxx7cyms.bkt.clouddn.com/o_1detrosj41bo2p58jmkb33m707.jpeg"]
+        
+    }
+    fileprivate func didselectIndex(index: NSInteger)
+    {
+        let vc = HHAudioController()
+//        vc.audioDetailid=
+        topVC?.navigationController?.pushViewController(vc, animated: true)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

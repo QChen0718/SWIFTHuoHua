@@ -17,6 +17,7 @@ enum AudioSectionType: Int {
 }
 
 class HomeAudioViewController: HHBaseViewController {
+    fileprivate var selectrow: Int = -1
     fileprivate let audiobannerid = "audiobannerid" //banner
     fileprivate let audiojxid = "audiojxid" //每日精选
     fileprivate let audioselectid = "audioselectid" //钬花精品课
@@ -27,6 +28,7 @@ class HomeAudioViewController: HHBaseViewController {
     fileprivate var audiowwecModelArray = [homeAudioModel]()
     fileprivate var audiosectionTypeArray = [AudioSectionType]()
     fileprivate var audiosectionModelArray = [Any]()
+    fileprivate var audioplayManger = HHAudioPlayManger.sharedInstance
     fileprivate lazy var tableview:UITableView = {
        let table=UITableView(frame: CGRect.zero, style: .grouped)
         table.delegate=self
@@ -34,6 +36,10 @@ class HomeAudioViewController: HHBaseViewController {
         table.rowHeight = UITableView.automaticDimension
         table.estimatedRowHeight = 44
         table.separatorStyle=UITableViewCell.SeparatorStyle.none
+        table.HHHead=HHRefreshHeader(refreshingBlock: {[weak self] in
+            self?.requestData()
+        })
+
         table.register(UINib(nibName: "HomeBannerCell", bundle: nil), forCellReuseIdentifier: audiobannerid)
         table.register(UINib(nibName: "AudiolistCell", bundle: nil), forCellReuseIdentifier: audiojxid)
         table.register(UINib(nibName: "HomeAudioCell", bundle: nil), forCellReuseIdentifier: audioselectid)
@@ -124,6 +130,9 @@ extension HomeAudioViewController
         group.notify(queue: DispatchQueue.main) {[weak self] in
             //处理请求后，数据的处理
             MBProgressHUD.hide(for: self!.view, animated: true)
+            self?.tableview.HHHead.endRefreshing()
+            self?.audiosectionTypeArray.removeAll()
+            self?.audiosectionModelArray.removeAll()
             guard let bannercount = self?.audiobannerModelArray.count  else { return }
             guard let excerptcount = self?.audioExcerptModelArray.count else { return }
             guard let entrancecount = self?.audioselectModelArray.count else { return }
@@ -195,6 +204,8 @@ extension HomeAudioViewController : UITableViewDataSource,UITableViewDelegate
         else if type == .AudioListSectionTypeExcerpt
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: audiojxid, for: indexPath) as! AudiolistCell
+            cell.indexpath=indexPath
+            cell.selectrow=self.selectrow
             cell.setdataModel(model: self.audioExcerptModelArray[indexPath.row])
             cell.selectionStyle=UITableViewCell.SelectionStyle.none
             return cell
@@ -216,18 +227,61 @@ extension HomeAudioViewController : UITableViewDataSource,UITableViewDelegate
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.01
-    }
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.01
+        let type = self.audiosectionTypeArray[indexPath.section]
+        if type == .AudioListSectionTypeExcerpt {
+            self.selectrow = indexPath.row
+            self.audioplayManger.playWithModel(tracks: self.audioExcerptModelArray[indexPath.row], indexPathRow: indexPath.row)
+            self.tableview.reloadData()
+        }
+        else if type == .AudioListSectionTypeWWEC {
+            let model = self.audiowwecModelArray[indexPath.row]
+            let vc = HHAudioController()
+            vc.audioDetailid = model.id
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView()
+        let type = self.audiosectionTypeArray[section]
+        let btn = UIButton(type: .custom)
+        btn.backgroundColor=UIColor.white
+        btn.setTitleColor(UIColor.black, for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        btn.contentHorizontalAlignment=UIControl.ContentHorizontalAlignment.left
+        btn.titleEdgeInsets=UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
+        btn.frame=CGRect(x: 0, y: 0, width: HHScreenWidth, height: 50)
+        if type == .AudioListSectionTypeExcerpt {
+            btn.setTitle("每日精选", for: .normal)
+            return btn
+        }
+        else if type == .AudioListSectionTypeEntrance {
+            btn.setTitle("钬花精品课", for: .normal)
+            return btn
+        }
+        else if type == .AudioListSectionTypeWWEC
+        {
+            btn.setTitle("WWEC", for: .normal)
+            return btn
+        }
+        else{
+            return UIView()
+        }
+        
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let type = self.audiosectionTypeArray[section]
+        if type == .AudioListSectionTypeBanner {
+            return 0.01
+        }
+        else
+        {
+            return 50
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
 }

@@ -35,6 +35,9 @@
 		A195E38922EC4F33008A817E /* HomeBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A195E37C22EC4F32008A817E /* HomeBannerCell.xib */; };
 		A195E38A22EC4F33008A817E /* HomeLiveCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A195E37E22EC4F32008A817E /* HomeLiveCollectionCell.xib */; };
 		A195E38B22EC4F33008A817E /* HomeLiveCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195E37F22EC4F32008A817E /* HomeLiveCollectionCell.swift */; };
+		A195E38D22EDE779008A817E /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195E38C22EDE779008A817E /* NSDateExtension.swift */; };
+		A195E38F22EEE4BA008A817E /* NSUrlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195E38E22EEE4BA008A817E /* NSUrlExtension.swift */; };
+		A195E39122EEF8C8008A817E /* NSStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195E39022EEF8C8008A817E /* NSStringExtension.swift */; };
 		A1A14CB322DCB5AC006C3680 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */; };
 		A1A14CBA22DCB5AF006C3680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CB922DCB5AF006C3680 /* Assets.xcassets */; };
 		A1A14CBD22DCB5AF006C3680 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A14CBB22DCB5AF006C3680 /* LaunchScreen.storyboard */; };
@@ -105,6 +108,9 @@
 		A195E37C22EC4F32008A817E /* HomeBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeBannerCell.xib; sourceTree = "<group>"; };
 		A195E37E22EC4F32008A817E /* HomeLiveCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeLiveCollectionCell.xib; sourceTree = "<group>"; };
 		A195E37F22EC4F32008A817E /* HomeLiveCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeLiveCollectionCell.swift; sourceTree = "<group>"; };
+		A195E38C22EDE779008A817E /* NSDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		A195E38E22EEE4BA008A817E /* NSUrlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUrlExtension.swift; sourceTree = "<group>"; };
+		A195E39022EEF8C8008A817E /* NSStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStringExtension.swift; sourceTree = "<group>"; };
 		A1A14CAF22DCB5AC006C3680 /* SwiftHuoHua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftHuoHua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A14CB222DCB5AC006C3680 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A14CB922DCB5AF006C3680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -375,6 +381,9 @@
 			children = (
 				A1A14CF422DDED74006C3680 /* UIColorExtension.swift */,
 				A1A14CF922DECB2E006C3680 /* UIViewControllerExtension.swift */,
+				A195E38C22EDE779008A817E /* NSDateExtension.swift */,
+				A195E38E22EEE4BA008A817E /* NSUrlExtension.swift */,
+				A195E39022EEF8C8008A817E /* NSStringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -678,8 +687,10 @@
 				A1455CF522E82818005F7CB3 /* HomeLiveViewController.swift in Sources */,
 				A1A14CE122DD7530006C3680 /* HHTabBarController.swift in Sources */,
 				A154092222E594F200664422 /* HHAudioController.swift in Sources */,
+				A195E38D22EDE779008A817E /* NSDateExtension.swift in Sources */,
 				A1E0811322E161E800C6E4E5 /* NSStringEncryption.swift in Sources */,
 				A1455CFB22E82933005F7CB3 /* HomeProjectVC.swift in Sources */,
+				A195E39122EEF8C8008A817E /* NSStringExtension.swift in Sources */,
 				A195E38B22EC4F33008A817E /* HomeLiveCollectionCell.swift in Sources */,
 				A154092622E6ABD800664422 /* HHAudioListViewController.swift in Sources */,
 				A1455CFF22E82988005F7CB3 /* HomeVideoListVC.swift in Sources */,
@@ -689,6 +700,7 @@
 				A195E38722EC4F33008A817E /* HomeAudioCell.swift in Sources */,
 				A1A14CE822DDA25D006C3680 /* HHNavigationController.swift in Sources */,
 				A1455D0C22E9AC1C005F7CB3 /* HHAudioPlayManger.swift in Sources */,
+				A195E38F22EEE4BA008A817E /* NSUrlExtension.swift in Sources */,
 				A1455CFD22E82969005F7CB3 /* HomeSocietyVC.swift in Sources */,
 				A1A14CEC22DDA569006C3680 /* HHBaseViewController.swift in Sources */,
 				A1455CF922E8291C005F7CB3 /* HomeSolutionListVC.swift in Sources */,
