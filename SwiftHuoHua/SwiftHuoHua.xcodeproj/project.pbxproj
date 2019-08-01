@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A124730522F1A3A2006CB708 /* HomeLiveDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124730422F1A3A2006CB708 /* HomeLiveDetailVC.swift */; };
+		A124730822F1E4A8006CB708 /* HHSaveTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124730722F1E4A8006CB708 /* HHSaveTool.swift */; };
 		A1455CF322E82801005F7CB3 /* HomeAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CF222E82801005F7CB3 /* HomeAudioViewController.swift */; };
 		A1455CF522E82818005F7CB3 /* HomeLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CF422E82818005F7CB3 /* HomeLiveViewController.swift */; };
 		A1455CF722E82878005F7CB3 /* HomeRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CF622E82878005F7CB3 /* HomeRecommendVC.swift */; };
@@ -80,6 +82,8 @@
 
 /* Begin PBXFileReference section */
 		82C78198A9BEFDFF5721A3A5 /* Pods-SwiftHuoHua.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHuoHua.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua.debug.xcconfig"; sourceTree = "<group>"; };
+		A124730422F1A3A2006CB708 /* HomeLiveDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLiveDetailVC.swift; sourceTree = "<group>"; };
+		A124730722F1E4A8006CB708 /* HHSaveTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHSaveTool.swift; sourceTree = "<group>"; };
 		A1455CF222E82801005F7CB3 /* HomeAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAudioViewController.swift; sourceTree = "<group>"; };
 		A1455CF422E82818005F7CB3 /* HomeLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLiveViewController.swift; sourceTree = "<group>"; };
 		A1455CF622E82878005F7CB3 /* HomeRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendVC.swift; sourceTree = "<group>"; };
@@ -174,6 +178,14 @@
 				A28C697FE1C075CEB8231B76 /* Pods-SwiftHuoHua.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A124730622F1E3D8006CB708 /* HHTool */ = {
+			isa = PBXGroup;
+			children = (
+				A124730722F1E4A8006CB708 /* HHSaveTool.swift */,
+			);
+			path = HHTool;
 			sourceTree = "<group>";
 		};
 		A1455D0A22E9AAFF005F7CB3 /* HHAudioManger */ = {
@@ -333,6 +345,7 @@
 				A1455CFC22E82969005F7CB3 /* HomeSocietyVC.swift */,
 				A1455CFE22E82988005F7CB3 /* HomeVideoListVC.swift */,
 				A1A14CED22DDA5A4006C3680 /* HomeDetailViewController.swift */,
+				A124730422F1A3A2006CB708 /* HomeLiveDetailVC.swift */,
 			);
 			path = HHHomeViewController;
 			sourceTree = "<group>";
@@ -439,6 +452,7 @@
 		A1E0811922E4331700C6E4E5 /* HHComponent */ = {
 			isa = PBXGroup;
 			children = (
+				A124730622F1E3D8006CB708 /* HHTool */,
 				A1E0811A22E4339400C6E4E5 /* Refresh */,
 				A1A14CF322DDED31006C3680 /* Extension */,
 				A1E0811422E1C42000C6E4E5 /* HHUser */,
@@ -672,6 +686,7 @@
 				A1E0810E22DF4CE600C6E4E5 /* LoginViewController.swift in Sources */,
 				A1A14CF122DDAA52006C3680 /* HHDevice.swift in Sources */,
 				A195E38322EC4F33008A817E /* HomeBannerCell.swift in Sources */,
+				A124730522F1A3A2006CB708 /* HomeLiveDetailVC.swift in Sources */,
 				A1455CF722E82878005F7CB3 /* HomeRecommendVC.swift in Sources */,
 				A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */,
 				A154092422E5ABF800664422 /* HHPageViewController.swift in Sources */,
@@ -692,6 +707,7 @@
 				A1455CFB22E82933005F7CB3 /* HomeProjectVC.swift in Sources */,
 				A195E39122EEF8C8008A817E /* NSStringExtension.swift in Sources */,
 				A195E38B22EC4F33008A817E /* HomeLiveCollectionCell.swift in Sources */,
+				A124730822F1E4A8006CB708 /* HHSaveTool.swift in Sources */,
 				A154092622E6ABD800664422 /* HHAudioListViewController.swift in Sources */,
 				A1455CFF22E82988005F7CB3 /* HomeVideoListVC.swift in Sources */,
 				A1A14CE622DD7E55006C3680 /* HomeViewController.swift in Sources */,

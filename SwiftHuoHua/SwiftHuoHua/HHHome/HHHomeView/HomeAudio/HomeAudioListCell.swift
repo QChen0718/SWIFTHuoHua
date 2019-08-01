@@ -31,7 +31,23 @@ class HomeAudioListCell: UITableViewCell {
         audiotitle.text=model.title
         audiodsc.text=model.description
         audiosubtitle.text=model.talkerDesc
-        audiobuystatus.text="免费"
+//        audiobuystatus.text="免费"
+        if (model.tipTypeCode==0) {
+            //免费
+            self.audiobuystatus.textColor = UIColor.hexadecimalColor(hexadecimal: "0xFFC84A");
+            self.audiobuystatus.text = "免费";
+        }
+        else if (model.tipTypeCode==1){
+            //已购买
+            self.audiobuystatus.textColor = UIColor.hexadecimalColor(hexadecimal: "0x51B9BC");
+            self.audiobuystatus.text = "已购买";
+        }
+        else
+        {
+            //未购买
+            self.audiobuystatus.textColor = UIColor.hexadecimalColor(hexadecimal: "0xFFC84A");
+            self.audiobuystatus.text = "\(model.coinAmount ?? "")钬柴";
+        }
         playnumber.text = "\(model.count ?? "0")人已收听"
     }
 }

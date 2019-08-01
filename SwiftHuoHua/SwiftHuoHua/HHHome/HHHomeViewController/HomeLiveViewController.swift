@@ -81,4 +81,11 @@ extension HomeLiveViewController: UICollectionViewDataSource,UICollectionViewDel
         cell.setDataModel(model: self.latestliveArray[indexPath.row])
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         let model = self.latestliveArray[indexPath.row]
+//        [NSString stringWithFormat:@"%@/app/live_details/%@/%@", kH5CommentUrl,[SZUser userFromFile].user_id, liveModel.live_id];
+//        guard let url =   else { return }
+        let vc = HHWebViewController(url: "\(kH5CommentUrl)/app/live_details/\(HHUser.user()?.user_id ?? "")/\(model.live_id)")
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

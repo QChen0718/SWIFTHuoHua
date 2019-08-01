@@ -41,6 +41,7 @@ class HHAudioPlayManger: NSObject {
     fileprivate var currentRate: Float?//当前速率
     fileprivate var timeNumber: Float?//记录的时间戳
     fileprivate var is_recoreSucce: Bool = false//专辑播放是否记录成功
+    fileprivate var cycle: HHAudioPlayCycle = .AudioPlayTheSong
 //    @property (nonatomic,strong)CQProcessView *playbtn;//悬浮框播放按钮
 //    @property (nonatomic,strong)SZAudioplyView *playView;//音频悬浮框
 //    fileprivate (set) var managedObjectContext:
@@ -106,12 +107,6 @@ extension HHAudioPlayManger
     /** 播放装载专辑 */
     //这个方法带入指定播放的时间戳
     public func playWithModel(tracks:audiodirectoryModel , indexPathRow:Int, albumModel:homeAudioModel? = nil, albumAudios:[homeAudioModel]? = []) {
-        let session = AVAudioSession.sharedInstance()
-        do {
-            try session.setActive(true)
-        }catch let err {
-            print("设置类型失败：\(err.localizedDescription)")
-        }
         
         guard let url = tracks.addr?.fromBase64() else {
             return
@@ -120,20 +115,41 @@ extension HHAudioPlayManger
         self.currentPlayerItem = AVPlayerItem(url: musicURL)
         self.player = AVPlayer(playerItem: self.currentPlayerItem)
         
+        play()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(playbackFinished(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: currentPlayerItem)
+    }
+    
+    
+    @objc fileprivate func playbackFinished(notification: Notification){
+        if cycle == .AudioPlayTheSong  {
+            //首页循环
+        }
+    }
+    
+    public func playInAlbumAudioWithModel(audioModel:audiodirectoryModel , indexPathRow: Int) {
+        self.playWithModel(tracks: audioModel, indexPathRow: indexPathRow)
+    }
+    
+    //MARK:- 播放方法
+    
+    fileprivate func play()
+    {
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setActive(true)
+        }catch let err {
+            print("设置类型失败：\(err.localizedDescription)")
+        }
+        
         if #available(iOS 10.0, *) {
             self.player.playImmediately(atRate: 1.0)
         } else {
             // Fallback on earlier versions
             self.player.play()
         }
-        
-        
-        
     }
     
-    public func playInAlbumAudioWithModel(audioModel:audiodirectoryModel , indexPathRow: Int) {
-        self.playWithModel(tracks: audioModel, indexPathRow: indexPathRow)
-    }
     //MARK:- 时间变化监听
     public func addMusicTimeMake(){
         let timeObserve = self.player.addPeriodicTimeObserver(forInterval: CMTime(value: CMTimeValue(1.0), timescale: CMTimeScale(1.0)), queue: DispatchQueue.main) {[weak self] (time) in
@@ -180,16 +196,22 @@ extension HHAudioPlayManger
     }
     //播放状态
     public func playerStatus() -> Int {
-        return 0
+        if currentPlayerItem?.status == AVPlayerItem.Status.readyToPlay {
+            return 1
+        }
+        else {
+            return 0
+        }
+        
     }
     public func currentPlayIndex() -> Int {
-        return 0
+        return indexPathRow ?? 0
     }
     public func getCurrentAlbumModel() -> homeAudioModel {
         return homeAudioModel()
     }
     public func havePlay() -> Bool{
-        return false
+        return isPlay
     }
     //调整速率方法
     public func setRateClick(selectrate:Float , row: Int) {

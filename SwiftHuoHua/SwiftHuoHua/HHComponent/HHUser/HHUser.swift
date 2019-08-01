@@ -9,14 +9,13 @@
 import UIKit
 import HandyJSON
 
-let path=(NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String).appendingFormat("user.data")
 class HHUser: NSObject,NSCoding,HandyJSON {
     
     /** 用户ID */
     var user_id: String?
-    /** 用户ID */
-    var userName: String?
     /** 用户名 */
+    var userName: String?
+    /** 用户昵称 */
     var nickName: String?
     /** 密码 */
     var password: String?
@@ -112,11 +111,20 @@ class HHUser: NSObject,NSCoding,HandyJSON {
         aCoder.encode(self.is_tourist, forKey: "is_tourist")
         aCoder.encode(self.isVerification, forKey: "isVerification")
     }
-    class func save(user:HHUser)->Bool{
-        return NSKeyedArchiver.archiveRootObject(user, toFile: path)
+    class func save(user:HHUser){
+        let userDefault = UserDefaults.standard
+        //实例对象转化成Data
+        let moData:Data = NSKeyedArchiver.archivedData(withRootObject: user)
+        //存储NSData对象
+        userDefault.set(moData, forKey: "userinfo")
+
     }
     
     class func user()->HHUser?{
-        return  NSKeyedUnarchiver.unarchiveObject(withFile: path) as? HHUser
+        let userDefault = UserDefaults.standard
+        //读取用户对象
+        let myuserData = userDefault.object(forKey: "userinfo") as? Data
+        //解档
+        return NSKeyedUnarchiver.unarchiveObject(with: myuserData ?? Data()) as? HHUser
     }
 }

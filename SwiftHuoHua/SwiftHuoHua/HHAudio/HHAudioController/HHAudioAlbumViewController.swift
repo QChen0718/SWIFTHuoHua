@@ -12,6 +12,7 @@ class HHAudioAlbumViewController: HHBaseViewController {
     private let cellid = "cellid"
     fileprivate var pageNum: Int = 0
     fileprivate var pageSize: Int?
+    fileprivate var selectrow: Int?
     fileprivate var audiolistModelArray = [homeAudioModel]()
     fileprivate lazy var tableview: UITableView = {
         let table = UITableView(frame: CGRect.zero, style: .grouped)
@@ -29,6 +30,7 @@ class HHAudioAlbumViewController: HHBaseViewController {
             self.pageNum += 1
             self.requestData()
         })
+        table.separatorStyle=UITableViewCell.SeparatorStyle.none
         return table
     }()
     override func viewDidLoad() {
@@ -37,13 +39,13 @@ class HHAudioAlbumViewController: HHBaseViewController {
         // Do any additional setup after loading the view.
     }
     override func configUI() {
-        
+        super.configUI()
         self.pageNum = 0
         self.pageSize = 10
+        self.title = "音频列表"
         self.view.addSubview(tableview)
         tableview.snp.makeConstraints {
-            $0.left.top.right.equalToSuperview()
-            $0.bottom.equalTo(-TAB_BAR_HEIGHT)
+            $0.left.top.right.bottom.equalToSuperview()
         }
         
         requestData()
@@ -54,6 +56,8 @@ extension HHAudioAlbumViewController
 {
     func requestData() {
         ApiLoadingProvider.request(.loadHomeAudioList(pageNum: self.pageNum ?? 0, pageSize: self.pageSize ?? 0), model: homeAudioListModel.self) { (returndata, errcode) in
+            self.tableview.HHHead.endRefreshing()
+            self.tableview.HHFoot.endRefreshing()
             if errcode == 0
             {
                 //成功
@@ -67,8 +71,7 @@ extension HHAudioAlbumViewController
                 
             }
             self.tableview.reloadData()
-            self.tableview.HHHead.endRefreshing()
-            self.tableview.HHFoot.endRefreshing()
+            
         }
     }
 }
@@ -85,11 +88,19 @@ extension HHAudioAlbumViewController:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! HomeAudioListCell
         cell.setDataModel(model: self.audiolistModelArray[indexPath.row])
+        cell.selectionStyle=UITableViewCell.SelectionStyle.none
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = self.audiolistModelArray[indexPath.row]
+        self.selectrow = indexPath.row
+        var model = self.audiolistModelArray[indexPath.row]
         let vc = HHAudioController()
+        vc.backClosure = { (str) in
+            print(str)
+            model.tipTypeCode=1
+            self.audiolistModelArray[self.selectrow ?? 0] = model
+            self.tableview.reloadData()
+        }
         vc.audioDetailid = model.id
         self.navigationController?.pushViewController(vc, animated: true)
     }

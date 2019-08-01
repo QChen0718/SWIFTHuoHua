@@ -18,6 +18,7 @@ enum AudioSectionType: Int {
 
 class HomeAudioViewController: HHBaseViewController {
     fileprivate var selectrow: Int = -1
+    fileprivate var oldselectrow: Int = -1
     fileprivate let audiobannerid = "audiobannerid" //banner
     fileprivate let audiojxid = "audiojxid" //每日精选
     fileprivate let audioselectid = "audioselectid" //钬花精品课
@@ -249,6 +250,7 @@ extension HomeAudioViewController : UITableViewDataSource,UITableViewDelegate
         btn.contentHorizontalAlignment=UIControl.ContentHorizontalAlignment.left
         btn.titleEdgeInsets=UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
         btn.frame=CGRect(x: 0, y: 0, width: HHScreenWidth, height: 50)
+        btn.addTarget(self, action: #selector(btnClick(btn:)), for: .touchUpInside)
         if type == .AudioListSectionTypeExcerpt {
             btn.setTitle("每日精选", for: .normal)
             return btn
@@ -284,4 +286,12 @@ extension HomeAudioViewController : UITableViewDataSource,UITableViewDelegate
         return 0.01
     }
     
+}
+
+extension HomeAudioViewController{
+    @objc func btnClick(btn:UIButton){
+        if btn.titleLabel?.text == "钬花精品课" {
+            self.navigationController?.pushViewController(HHAudioAlbumViewController(), animated: true)
+        }
+    }
 }

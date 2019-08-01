@@ -34,6 +34,7 @@ class AudiolistCell: UITableViewCell {
         if indexpath?.row == self.selectrow {
             self.playaudio.isHidden=true
             self.pauseaudio.isHidden = false
+            
             self.pauseaudio.startAnimating()
         }
         else

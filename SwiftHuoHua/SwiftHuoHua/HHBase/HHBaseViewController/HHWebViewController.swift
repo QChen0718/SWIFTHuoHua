@@ -42,6 +42,7 @@ class HHWebViewController: HHBaseViewController {
     }
     
     override func configUI() {
+        super.configUI()
         view.addSubview(webView)
         webView.snp.makeConstraints {
             $0.edges.equalTo(self.view.hhsnp.edges)

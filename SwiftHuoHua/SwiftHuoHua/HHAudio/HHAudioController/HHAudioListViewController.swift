@@ -33,7 +33,8 @@ class HHAudioListViewController: HHBaseViewController {
     override func configUI() {
         self.view.addSubview(self.tableview)
         self.tableview.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.left.top.right.equalToSuperview()
+            $0.bottom.equalTo(self.view.snp_bottom).offset(-40)
         }
     }
 }
