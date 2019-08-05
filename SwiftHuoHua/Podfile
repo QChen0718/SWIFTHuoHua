@@ -23,5 +23,8 @@ target 'SwiftHuoHua' do
   pod 'HMSegmentedControl'
   # swift初始化库 Then
   pod 'Then'
+  # swift三方数据库
+  pod 'RealmSwift'
+  pod 'Realm'
   
 end

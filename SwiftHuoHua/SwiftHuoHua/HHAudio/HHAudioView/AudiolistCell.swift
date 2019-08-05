@@ -23,6 +23,7 @@ class AudiolistCell: UITableViewCell {
         }
 //        self.pauseaudio.
         self.pauseaudio.animationImages = nameArray
+        self.pauseaudio.animationDuration = 1
     }
 
     public var indexpath: IndexPath?
@@ -31,11 +32,15 @@ class AudiolistCell: UITableViewCell {
     public func setdataModel(model:audiodirectoryModel)
     {
         audiotitle.text=model.title ?? ""
-        if indexpath?.row == self.selectrow {
+        if indexpath?.row == self.selectrow  {
             self.playaudio.isHidden=true
             self.pauseaudio.isHidden = false
-            
-            self.pauseaudio.startAnimating()
+            if HHAudioPlayManger.sharedInstance.havePlay()
+            {
+                self.pauseaudio.startAnimating()
+            }else {
+                self.pauseaudio.stopAnimating()
+            }
         }
         else
         {

@@ -10,21 +10,40 @@ import UIKit
 
 class HomeSolutionListVC: HHBaseViewController {
 
+    let cellid = "cellid"
+    
+    fileprivate lazy var tableview:UITableView = {
+       let table = UITableView(frame: CGRect.zero, style: .plain)
+        table.dataSource=self
+        table.delegate=self
+        table.rowHeight=80
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "cellid")
+        return table
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func configUI() {
+        view.addSubview(tableview)
+        tableview.snp.makeConstraints {
+            $0.left.top.right.equalToSuperview()
+            $0.bottom.equalTo(-TAB_BAR_HEIGHT)
+        }
     }
-    */
+}
 
+extension HomeSolutionListVC:UITableViewDelegate,UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath)
+        cell.textLabel?.text="第\(indexPath.row)个cell"
+        return cell
+        
+    }
 }

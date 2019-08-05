@@ -19,7 +19,7 @@ class HHAudioAlbumViewController: HHBaseViewController {
         table.dataSource=self
         table.delegate=self
         table.rowHeight=UITableView.automaticDimension
-        table.estimatedRowHeight=44
+        table.estimatedRowHeight=0
         table.separatorStyle=UITableViewCell.SeparatorStyle.none
         table.register(UINib(nibName: "HomeAudioListCell", bundle: nil), forCellReuseIdentifier: cellid)
         table.HHHead=HHRefreshHeader(refreshingBlock: {[weak self] in
@@ -103,6 +103,9 @@ extension HHAudioAlbumViewController:UITableViewDataSource,UITableViewDelegate{
         }
         vc.audioDetailid = model.id
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return KSuitFloat(float: 165)
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01

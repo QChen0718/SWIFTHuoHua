@@ -231,8 +231,15 @@ extension HomeAudioViewController : UITableViewDataSource,UITableViewDelegate
         let type = self.audiosectionTypeArray[indexPath.section]
         if type == .AudioListSectionTypeExcerpt {
             self.selectrow = indexPath.row
-            self.audioplayManger.playWithModel(tracks: self.audioExcerptModelArray[indexPath.row], indexPathRow: indexPath.row)
+            if selectrow != oldselectrow
+            {
+                self.audioplayManger.playWithModel(tracks: self.audioExcerptModelArray[indexPath.row], indexPathRow: indexPath.row)
+            }
+            else {
+                self.audioplayManger.pauseMusic()
+            }
             self.tableview.reloadData()
+            self.oldselectrow=self.selectrow
         }
         else if type == .AudioListSectionTypeWWEC {
             let model = self.audiowwecModelArray[indexPath.row]

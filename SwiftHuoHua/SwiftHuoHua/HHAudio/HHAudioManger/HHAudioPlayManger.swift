@@ -42,6 +42,7 @@ class HHAudioPlayManger: NSObject {
     fileprivate var timeNumber: Float?//记录的时间戳
     fileprivate var is_recoreSucce: Bool = false//专辑播放是否记录成功
     fileprivate var cycle: HHAudioPlayCycle = .AudioPlayTheSong
+    fileprivate var timeObserve: AnyObject?
 //    @property (nonatomic,strong)CQProcessView *playbtn;//悬浮框播放按钮
 //    @property (nonatomic,strong)SZAudioplyView *playView;//音频悬浮框
 //    fileprivate (set) var managedObjectContext:
@@ -111,6 +112,8 @@ extension HHAudioPlayManger
         guard let url = tracks.addr?.fromBase64() else {
             return
         }
+        //移除当前player的TimeObserver
+        
         let musicURL = URL.changeUrlwithChinese(urlstr: url)
         self.currentPlayerItem = AVPlayerItem(url: musicURL)
         self.player = AVPlayer(playerItem: self.currentPlayerItem)
@@ -129,6 +132,13 @@ extension HHAudioPlayManger
     
     public func playInAlbumAudioWithModel(audioModel:audiodirectoryModel , indexPathRow: Int) {
         self.playWithModel(tracks: audioModel, indexPathRow: indexPathRow)
+    }
+    
+    // 移除player 的TimeObserver
+    fileprivate func removeMusicTimeMake(){
+        if timeObserve != nil {
+            player.removeTimeObserver(timeObserve as Any)
+        }
     }
     
     //MARK:- 播放方法
@@ -152,16 +162,16 @@ extension HHAudioPlayManger
     
     //MARK:- 时间变化监听
     public func addMusicTimeMake(){
-        let timeObserve = self.player.addPeriodicTimeObserver(forInterval: CMTime(value: CMTimeValue(1.0), timescale: CMTimeScale(1.0)), queue: DispatchQueue.main) {[weak self] (time) in
+         timeObserve = self.player.addPeriodicTimeObserver(forInterval: CMTime(value: CMTimeValue(1.0), timescale: CMTimeScale(1.0)), queue: DispatchQueue.main) {[weak self] (time) in
             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "musicTimeInterval")))
             let current = CMTimeGetSeconds(self?.player.currentItem?.currentTime() ?? CMTime())
             let endtime = CMTimeGetSeconds(self?.player.currentItem?.duration ?? CMTime())
             
-//            if isnan(endtime) && current > 0 {
-//                
-//            }
+            if current > 0 {
+                
+            }
             
-        }
+            } as AnyObject
         
     }
     //接收动作
