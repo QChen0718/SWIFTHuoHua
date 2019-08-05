@@ -26,6 +26,22 @@ class HHCircleVC: HHBaseViewController {
         btn.addTarget(self, action: #selector(btnClick(btn:)), for: .touchUpInside)
         return btn
     }()
+    fileprivate lazy var updatebutton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setTitle("修改", for: .normal)
+        btn.setTitleColor(UIColor.black, for: .normal)
+        btn.backgroundColor = UIColor.red
+        btn.addTarget(self, action: #selector(btnClick(btn:)), for: .touchUpInside)
+        return btn
+    }()
+    fileprivate lazy var deletebutton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setTitle("删除", for: .normal)
+        btn.setTitleColor(UIColor.black, for: .normal)
+        btn.backgroundColor = UIColor.red
+        btn.addTarget(self, action: #selector(btnClick(btn:)), for: .touchUpInside)
+        return btn
+    }()
     fileprivate lazy var corverimageview: UIImageView = {
        let imageview = UIImageView()
         return imageview
@@ -54,6 +70,11 @@ class HHCircleVC: HHBaseViewController {
             make.size.equalTo(CGSize(width: 100, height: 100))
             make.top.equalTo(self.searchbutton.snp_bottom).offset(20)
         }
+        self.view.addSubview(updatebutton)
+        updatebutton.snp.makeConstraints { (make) in
+            make.centerX.size.equalTo(self.searchbutton)
+            make.top.equalTo(self.searchbutton.snp_bottom).offset(20)
+        }
     }
 }
 
@@ -64,8 +85,12 @@ extension HHCircleVC {
         case "添加":
             insertStudentsData()
         case "查询":
-            searchStudentData()
-            break
+//            searchStudentData()
+            searchStudentByID()
+        case "修改":
+            updateStudentsAge()
+        case "删除":
+            deleteOneStudent()
         default:
             break
         }
@@ -131,7 +156,7 @@ extension HHCircleVC {
         HHSQLRealmTool.insertStudents(by: stus)
     }
     
-    
+//    2.1 普通查询： 查询数据库中所有学生模型并输出姓名，图片，所拥有的书信息
     public func searchStudentData() {
         let stus = HHSQLRealmTool.getStudents()
         for stu in stus {
@@ -147,6 +172,55 @@ extension HHCircleVC {
                 }
             }
         }
+    }
+//    2.2 主键查询： 查询数据库中id 为 110 的学生模型并输出姓名
+    // 通过主键查询
+    public func searchStudentByID() {
+        let stu = HHSQLRealmTool.getStudent(from: 10030)
+        if let student = stu {
+            print(student.name)
+        }
+    }
+    
+//    2.3 主键查询： 查询数据库中name 为 钬花-White 的学生模型并输出姓名
+    
+    public func searchNameStudent() {
+        let students = HHSQLRealmTool.getStudentByTerm("钬花-White")
+        if students.count == 0 {
+            print("未查询到任何数据")
+            return
+        }
+        for student in students {
+            print(student.name,student.height)
+        }
+    }
+    //批量更改
+    public func updateStudents() {
+        var stus = [Student]()
+        for i in 1...44 {
+            let stu = Student()
+            stu.name = "钬花改名-White-\(i)"
+            stu.id = 10031+i
+            stu.age = 30
+            stus.append(stu)
+        }
+        HHSQLRealmTool.updateStudent(students: stus)
+    }
+    //批量更改年龄
+    public func updateStudentsAge() {
+        HHSQLRealmTool.updateStudentAge(age: 18)
+    }
+    /// 删除id 为 10033 的学生
+    public func deleteOneStudent() {
+        let stu = HHSQLRealmTool.getStudent(from: 10033)
+        if stu != nil {
+            HHSQLRealmTool.deleteStudent(student: stu!)
+        }
+    }
+    /// 删除所有
+    public func deleteAllStudent() {
+        let stus = HHSQLRealmTool.getStudents()
+        HHSQLRealmTool.deleteStudents(students: stus)
         
     }
 }

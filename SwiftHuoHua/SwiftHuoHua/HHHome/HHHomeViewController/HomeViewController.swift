@@ -48,7 +48,20 @@ class HomeViewController: HHBaseViewController {
        let pagevc = HHPageViewController(titles: ["推荐","音频课","直播课","方案包","专题","问答","视频"], vcs: [recommendvc,audiovc,livevc,solutionvc,projectvc,societyvc,videovc], pageStyle: .navigationBarSegment)
         return pagevc
     }()
-    
+    //搜索按钮
+    fileprivate lazy var searchButon:UIButton = {
+        let sn = UIButton(type: .custom)
+        sn.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 20, height: 30)
+        sn.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        sn.layer.cornerRadius=15
+        sn.setTitleColor(.white, for: .normal)
+        sn.setImage(UIImage(named: "nav_search")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        sn.setTitle("搜索", for: .normal)
+        sn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+        sn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
+        sn.addTarget(self, action: #selector(searchClick(btn:)), for: .touchUpInside)
+        return sn
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.navigationItem.title="首页"
@@ -70,6 +83,7 @@ class HomeViewController: HHBaseViewController {
         //  AlwaysOriginal 始终绘制图片原始状态，不使用Tint Color
         //  AlwaysTemplate 始终根据Tint Color绘制图片，忽略图片的颜色信息。
         super.configNavigationBar()
+        navigationItem.titleView = searchButon
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_nav_signin")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(rightClick))
     }
     @objc func rightClick(){
@@ -77,4 +91,10 @@ class HomeViewController: HHBaseViewController {
     }
 }
 
+extension HomeViewController{
+    
+    @objc func searchClick(btn:UIButton) {
+        self.navigationController?.pushViewController(HHSearchViewController(), animated: true)
+    }
+}
 

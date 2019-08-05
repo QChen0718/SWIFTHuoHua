@@ -117,7 +117,7 @@ extension HHAudioPlayManger
         let musicURL = URL.changeUrlwithChinese(urlstr: url)
         self.currentPlayerItem = AVPlayerItem(url: musicURL)
         self.player = AVPlayer(playerItem: self.currentPlayerItem)
-        
+        isPlay=true
         play()
         
         NotificationCenter.default.addObserver(self, selector: #selector(playbackFinished(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: currentPlayerItem)

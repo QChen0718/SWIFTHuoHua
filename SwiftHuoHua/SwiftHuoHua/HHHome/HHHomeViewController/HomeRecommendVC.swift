@@ -49,6 +49,7 @@ class HomeRecommendVC: HHBaseViewController {
     }
     
     override func configUI() {
+        super.configUI()
         // 添加列表
         self.view.addSubview(self.tableview)
         tableview.snp.makeConstraints {
@@ -57,7 +58,11 @@ class HomeRecommendVC: HHBaseViewController {
         }
         requestData()
     }
-    
+    override func configNavigationBar() {
+        super.configNavigationBar()
+        
+
+    }
 }
 
 extension HomeRecommendVC{

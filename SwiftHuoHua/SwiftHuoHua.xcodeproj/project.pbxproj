@@ -22,6 +22,7 @@
 		A148C68822F6AE300009A76A /* HHSQLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A148C68722F6AE300009A76A /* HHSQLModel.swift */; };
 		A148C68A22F6B8C20009A76A /* HHSQLRealmTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A148C68922F6B8C20009A76A /* HHSQLRealmTool.swift */; };
 		A148C68E22F6BC360009A76A /* HHCircleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A148C68D22F6BC360009A76A /* HHCircleVC.swift */; };
+		A148C6CC22F83C8A0009A76A /* HHSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A148C6CB22F83C8A0009A76A /* HHSearchViewController.swift */; };
 		A154092222E594F200664422 /* HHAudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154092122E594F200664422 /* HHAudioController.swift */; };
 		A154092422E5ABF800664422 /* HHPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154092322E5ABF800664422 /* HHPageViewController.swift */; };
 		A154092622E6ABD800664422 /* HHAudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154092522E6ABD800664422 /* HHAudioListViewController.swift */; };
@@ -100,6 +101,7 @@
 		A148C68722F6AE300009A76A /* HHSQLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHSQLModel.swift; sourceTree = "<group>"; };
 		A148C68922F6B8C20009A76A /* HHSQLRealmTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHSQLRealmTool.swift; sourceTree = "<group>"; };
 		A148C68D22F6BC360009A76A /* HHCircleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHCircleVC.swift; sourceTree = "<group>"; };
+		A148C6CB22F83C8A0009A76A /* HHSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHSearchViewController.swift; sourceTree = "<group>"; };
 		A154092122E594F200664422 /* HHAudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAudioController.swift; sourceTree = "<group>"; };
 		A154092322E5ABF800664422 /* HHPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHPageViewController.swift; sourceTree = "<group>"; };
 		A154092522E6ABD800664422 /* HHAudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAudioListViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,22 @@
 			path = HHCircleController;
 			sourceTree = "<group>";
 		};
+		A148C6C922F83C610009A76A /* HHSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A148C6CA22F83C710009A76A /* HHSearchController */,
+			);
+			path = HHSearch;
+			sourceTree = "<group>";
+		};
+		A148C6CA22F83C710009A76A /* HHSearchController */ = {
+			isa = PBXGroup;
+			children = (
+				A148C6CB22F83C8A0009A76A /* HHSearchViewController.swift */,
+			);
+			path = HHSearchController;
+			sourceTree = "<group>";
+		};
 		A154091C22E5946000664422 /* HHAudio */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +341,7 @@
 		A1A14CB122DCB5AC006C3680 /* SwiftHuoHua */ = {
 			isa = PBXGroup;
 			children = (
+				A148C6C922F83C610009A76A /* HHSearch */,
 				A154091C22E5946000664422 /* HHAudio */,
 				A1E0811922E4331700C6E4E5 /* HHComponent */,
 				A1E0810B22DF4C9F00C6E4E5 /* HHLogin */,
@@ -725,6 +744,7 @@
 				A154092822E6AC2300664422 /* HHAudioIntroduceViewController.swift in Sources */,
 				A195E38522EC4F33008A817E /* HHHomeTableViewCell.swift in Sources */,
 				A195E38722EC4F33008A817E /* HomeAudioCell.swift in Sources */,
+				A148C6CC22F83C8A0009A76A /* HHSearchViewController.swift in Sources */,
 				A1A14CE822DDA25D006C3680 /* HHNavigationController.swift in Sources */,
 				A1455D0C22E9AC1C005F7CB3 /* HHAudioPlayManger.swift in Sources */,
 				A195E38F22EEE4BA008A817E /* NSUrlExtension.swift in Sources */,
