@@ -2,7 +2,7 @@ PODS:
   - Alamofire (4.8.2)
   - HandyJSON (5.0.0)
   - HMSegmentedControl (1.5.5)
-  - IQKeyboardManagerSwift (6.4.0)
+  - IQKeyboardManagerSwift (6.4.1)
   - Kingfisher (4.10.1)
   - LLCycleScrollView (1.5.4):
     - Kingfisher (<= 4.10.1)
@@ -13,17 +13,23 @@ PODS:
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
-  - Realm (3.16.2):
-    - Realm/Headers (= 3.16.2)
-  - Realm/Headers (3.16.2)
-  - RealmSwift (3.16.2):
-    - Realm (= 3.16.2)
+  - Realm (3.17.3):
+    - Realm/Headers (= 3.17.3)
+  - Realm/Headers (3.17.3)
+  - RealmSwift (3.17.3):
+    - Realm (= 3.17.3)
   - Result (4.1.0)
   - Reusable (4.1.0):
     - Reusable/Storyboard (= 4.1.0)
     - Reusable/View (= 4.1.0)
   - Reusable/Storyboard (4.1.0)
   - Reusable/View (4.1.0)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
   - SnapKit (4.2.0)
   - SnapKitExtend (1.0.7):
     - SnapKit
@@ -42,6 +48,8 @@ DEPENDENCIES:
   - Realm
   - RealmSwift
   - Reusable
+  - RxCocoa
+  - RxSwift
   - SnapKitExtend
   - SwiftyJSON
   - Then
@@ -61,6 +69,9 @@ SPEC REPOS:
     - RealmSwift
     - Result
     - Reusable
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SnapKit
     - SnapKitExtend
     - SwiftyJSON
@@ -70,21 +81,24 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
-  IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
+  IQKeyboardManagerSwift: d2df660d0b8d64a15cb2537c9ff303213fa515b2
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LLCycleScrollView: 77f6e11980d1cd010ee9ee87e94da4e8026ccd21
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  Realm: 0e73b4edeb5b6a90da3d83206883b2e34e00eb38
-  RealmSwift: a81e650171ef0a5f999df1ed8d39ba8d6fce88a4
+  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
+  RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   Reusable: 82be188f29d96dc5eff0db7b2393bcc08d2cdd5b
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SnapKitExtend: 00ee4db6d1f80bee01a1e75745f2a6ae695ba662
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Then: 0157115e883545c77967b452fe74a1d25fb796e1
 
-PODFILE CHECKSUM: 7ce3afa51a66fcebdf33a82a8d2ef36b3dea6c37
+PODFILE CHECKSUM: 7d98394f50f7185020252da8c20e7df55b2e634c
 
 COCOAPODS: 1.7.5

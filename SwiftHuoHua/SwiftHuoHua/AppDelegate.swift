@@ -17,14 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        window?.rootViewController=LoginViewController()
         window?.backgroundColor=UIColor.white;
         window?.makeKeyAndVisible()
         AppDelegate.configRealm()
+        setRootViewController()
         return true
     }
-
+    
+    func setRootViewController()  {
+        let nvc = HHNavigationController(rootViewController: CodeLoginViewController())
+        nvc.navigationbarStyle(.white)
+        window?.rootViewController=nvc
+    }
     ///配置数据库
     public class func configRealm() {
         /// 如果要存储的数据模型属性发生变化，需要配置当前版本号比之前大
