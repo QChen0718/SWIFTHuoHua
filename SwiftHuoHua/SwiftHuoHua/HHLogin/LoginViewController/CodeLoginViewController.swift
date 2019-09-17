@@ -74,6 +74,7 @@ class CodeLoginViewController: HHBaseViewController {
     }()
     let disposeBag = DisposeBag()
     var checkname:String?
+    var codevm:CodeLoginViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,19 +96,20 @@ class CodeLoginViewController: HHBaseViewController {
         setcontrolSize()
         //按钮点击事件处理方法
         btnAllClick()
-        let codevm = CodeLoginViewModel(input: (phone: phonetextfield.rx.text.orEmpty.asDriver(), code: checkCodetextfield.rx.text.orEmpty.asDriver() , login: loginBtn.rx.tap.asSignal()))
+        //初始化viewmodel
+        codevm = CodeLoginViewModel(input: (phone: phonetextfield.rx.text.orEmpty.asDriver(), code: checkCodetextfield.rx.text.orEmpty.asDriver() , login: loginBtn.rx.tap.asSignal()), phoneStr: phonetextfield.text ?? "")
         //获得手机号验证返回的内容
-        codevm.phonename.drive(onNext: {[weak self] (content) in
+        codevm?.phonename.drive(onNext: {[weak self] (content) in
             self?.checkname = content
             print("--->",content)
         }).disposed(by: disposeBag)
         //获得验证码验证返回的内容
-        codevm.codename.drive(onNext: { (content) in
+        codevm?.codename.drive(onNext: { (content) in
             self.checkname = content
         }).disposed(by: disposeBag)
         //获得登录按钮是否能点击
         
-        codevm.loginTap.drive(onNext: {[weak self] (is_tap) in
+        codevm?.loginTap.drive(onNext: {[weak self] (is_tap) in
             if is_tap {
                 //可以点击
                 self?.loginBtn.backgroundColor = UIColor.hexadecimalColor(hexadecimal: "FFD000")
@@ -134,6 +136,9 @@ class CodeLoginViewController: HHBaseViewController {
         //获取验证码事件
         getCodeBtn.rx.tap.subscribe(onNext: { () in
             print("获取验证码")
+            self.codevm?.getCodeClick(repose: { (user) in
+                //获取验证码接口返回的数据
+            })
         }).disposed(by: disposeBag)
     }
     //设置控件大小

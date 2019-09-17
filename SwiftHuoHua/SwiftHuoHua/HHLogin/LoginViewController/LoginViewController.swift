@@ -25,7 +25,6 @@ class LoginViewController: HHBaseViewController {
         textfield.font=UIFont.systemFont(ofSize: 15)
         textfield.textColor=UIColor.black
         textfield.placeholder="请输入手机号"
-        textfield.text="18311055781"
         return textfield
     }()
     fileprivate lazy var lineview:UIView = {
@@ -38,7 +37,6 @@ class LoginViewController: HHBaseViewController {
         textfield.font = UIFont.systemFont(ofSize: 15)
         textfield.textColor = UIColor.black
         textfield.placeholder="请输入密码"
-        textfield.text="cq0718"
         return textfield
     }()
     fileprivate lazy var lineview2:UIView = {
@@ -62,6 +60,8 @@ class LoginViewController: HHBaseViewController {
         return btn
     }()
     let disposeBag = DisposeBag()
+    var passwordvm:LoginViewModel?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,26 +78,36 @@ class LoginViewController: HHBaseViewController {
         self.view.addSubview(self.lineview2)
         self.view.addSubview(self.loginBtn)
         self.view.addSubview(self.checkCodeLoginBtn)
+        passwordvm = LoginViewModel(input: (phone: self.phoneTextfield.rx.text.orEmpty.asDriver(), password: self.passwordTextfield.rx.text.orEmpty.asDriver(),login:loginBtn.rx.tap.asSignal()))
+        passwordvm?.loginTap.drive(onNext: { (is_tap) in
+            if is_tap {
+                //可以点击
+                self.loginBtn.backgroundColor = UIColor.hexadecimalColor(hexadecimal: "FFD000")
+            }else {
+                //不可以点击
+                self.loginBtn.backgroundColor = UIColor.hexadecimalColor(hexadecimal: "E0E0E0")
+            }
+            self.loginBtn.isUserInteractionEnabled=is_tap
+        }).disposed(by: disposeBag)
+        
         setupUI()
         //按钮点击事件处理方法
         btnAllClick()
     }
     func btnAllClick()  {
         loginBtn.rx.tap.subscribe(onNext: {[weak self] () in
-            ApiLoadingProvider.request(.passwordLogin(phone: self?.phoneTextfield.text, password: self?.passwordTextfield.text?.sha256String), model: HHUser.self) {[weak self] (returnData,errnocode) in
-                if errnocode==0
-                {
-                    //服务器返回成功
-                    //归档保存
-                    HHUser.save(user: returnData ?? HHUser())
-                    self?.view.window?.rootViewController=HHTabBarController()
-                }
-                else
-                {
-                    
-                }
-                
-            }
+            self?.passwordvm?.phoneStr.value = self?.phoneTextfield.text ?? ""
+            self?.passwordvm?.passwordStr.value = self?.passwordTextfield.text ?? ""
+            self?.passwordvm?.loginClick(succeckData: { (user) in
+                //服务器返回成功
+                //归档保存
+                HHUser.save(user: user)
+                self?.view.window?.rootViewController=HHTabBarController()
+            })
+        }).disposed(by: disposeBag)
+        //验证码登录
+        checkCodeLoginBtn.rx.tap.subscribe(onNext: {[weak self] () in
+            self?.navigationController?.popViewController(animated: true)
         }).disposed(by: disposeBag)
     }
     func setupUI() {

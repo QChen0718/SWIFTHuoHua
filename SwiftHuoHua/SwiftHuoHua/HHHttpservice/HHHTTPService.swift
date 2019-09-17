@@ -53,6 +53,7 @@ enum HHApi {
     case loadHomeCircleList(page:Int) //首页帖子列表
     case loadHomeAudio// 首页推荐音频
     case passwordLogin(phone:String?,password:String?) //密码登录
+    case getcodeLogin(phone:String?)//获取验证码
     case loadHomeAudioList(pageNum:Int, pageSize:Int) //音频列表
     case loadAudiodirectory(id: Int) //音频目录
     case loadHomeLive(pageNum: Int) //首页直播
@@ -82,6 +83,8 @@ extension HHApi: TargetType {
             return "circle/bar/postrecommend"
         case .passwordLogin:
             return "account/baseuser/login"
+        case .getcodeLogin:
+            return "common/sms/sendsmscrypt"
         case .loadHomeAudioList:
             return "audio/list.do"
         case .loadAudiodirectory:
@@ -119,6 +122,10 @@ extension HHApi: TargetType {
         case .passwordLogin(let phone, let password):
             parmeters["phonenumber"] = phone
             parmeters["password"] = password
+        case .getcodeLogin(let phone):
+            parmeters["phonenumber"] = phone
+            parmeters["app"] = "huohua"
+            parmeters["uuid"] = UIDevice.current.identifierForVendor?.uuidString
         case .loadHomeAudioList(let pageNum, let pageSize):
             parmeters["pageNum"] = pageNum
             parmeters["pageSize"] = pageSize
@@ -181,4 +188,20 @@ extension MoyaProvider {
             completion(returnData.msg,returnData.errno)
         })
     }
+    
+    
+    open func newrequest<T:HandyJSON>(_ target:Target, model: T.Type ,completion:@escaping ((_ returnData:T)->Void)) -> Cancellable {
+        return request(target, completion: { (result) in
+            switch result {
+            case .success(let response):
+                let jsonStr = String(data: response.data, encoding: .utf8)
+                let returndata = model.deserialize(from: jsonStr, designatedPath: "msg")
+                
+                completion(returndata!)
+            case .failure(let error):
+                print("error = %@",error)
+            }
+        })
+    }
 }
+

@@ -11,16 +11,23 @@ import UIKit
 import RxCocoa
 import RxSwift
 class CodeLoginViewModel {
+    //闭包
+    typealias reposeData = ((_ userinfo:HHUser) -> ())
+    
     //输出流
     let phonename: Driver<String>
     let codename: Driver<String>
     let loginTap: Driver<Bool>
+    
     let disposeBag = DisposeBag()
+    
+    let phoneNumber:String
     
     init(input:
         (phone:Driver<String>,
         code:Driver<String>,
-        login:Signal<Void>)) {
+        login:Signal<Void>),phoneStr:String) {
+        
         phonename = input.phone.flatMapLatest({ (str) in
             if str.isEmpty {
                 return .just("手机号不能为空")
@@ -54,6 +61,16 @@ class CodeLoginViewModel {
                     return false
                 }
         }.distinctUntilChanged()
+        
+        phoneNumber = phoneStr
     }
-    
+    //获取验证码网络请求方法
+    open func getCodeClick(repose:@escaping reposeData) {
+        ApiLoadingProvider.request(.getcodeLogin(phone: phoneNumber), model: HHUser.self) { (returnData,errnocode) in
+            if errnocode == 0 {
+                //请求成功
+                repose(returnData!)
+            }
+        }
+    }
 }

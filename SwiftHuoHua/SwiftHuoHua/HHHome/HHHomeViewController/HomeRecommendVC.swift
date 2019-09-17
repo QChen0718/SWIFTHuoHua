@@ -134,7 +134,8 @@ extension HomeRecommendVC : UITableViewDelegate,UITableViewDataSource{
         
         let anymodel = self.sumModelArray[indexPath.row]
         //音频
-        if ((anymodel as? [homeAudioModel]) != nil)
+//        if ((anymodel as? [homeAudioModel]) != nil)
+        if anymodel is [homeAudioModel].Type
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: audioid, for: indexPath) as! HomeAudioCell
             cell.setModel(modelArray: anymodel as! [homeAudioModel])
