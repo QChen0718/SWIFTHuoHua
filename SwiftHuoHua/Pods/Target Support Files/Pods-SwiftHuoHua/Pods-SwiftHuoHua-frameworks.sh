@@ -162,6 +162,8 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${PODS_ROOT}/../../flutter_huohua_module/.ios/Flutter/engine/Flutter.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
@@ -181,9 +183,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKitExtend/SnapKitExtend.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/flutter_boost/flutter_boost.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${PODS_ROOT}/../../flutter_huohua_module/.ios/Flutter/engine/Flutter.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
@@ -203,6 +208,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKitExtend/SnapKitExtend.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/flutter_boost/flutter_boost.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

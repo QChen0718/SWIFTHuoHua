@@ -46,4 +46,9 @@ extension HomeSolutionListVC:UITableViewDelegate,UITableViewDataSource
         return cell
         
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        FlutterRouterManager.sharedRouter.open("sample://firstPage", urlParams: ["present":false], exts: [:]) { (finish) in
+            
+        }
+    }
 }

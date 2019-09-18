@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C014896230FE6BD008EDCB1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C014895230FE6BD008EDCB1 /* LoginViewModel.swift */; };
+		4C0D90BA2331333A007D4C29 /* FlutterRouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0D90B92331333A007D4C29 /* FlutterRouterManager.swift */; };
 		4C7EEAEF230BC8FF00B0EAAC /* CodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EEAEE230BC8FF00B0EAAC /* CodeLoginViewController.swift */; };
 		4C7EEAF1230BE40800B0EAAC /* CodeLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */; };
 		A124730522F1A3A2006CB708 /* HomeLiveDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124730422F1A3A2006CB708 /* HomeLiveDetailVC.swift */; };
@@ -89,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		4C014895230FE6BD008EDCB1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4C0D90B92331333A007D4C29 /* FlutterRouterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterRouterManager.swift; sourceTree = "<group>"; };
 		4C7EEAEE230BC8FF00B0EAAC /* CodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginViewController.swift; sourceTree = "<group>"; };
 		4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginViewModel.swift; sourceTree = "<group>"; };
 		82C78198A9BEFDFF5721A3A5 /* Pods-SwiftHuoHua.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHuoHua.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +194,14 @@
 				A28C697FE1C075CEB8231B76 /* Pods-SwiftHuoHua.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4C0D90B82331330D007D4C29 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4C0D90B92331333A007D4C29 /* FlutterRouterManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		4C7EEAF2230BFA4900B0EAAC /* LoginViewModel */ = {
@@ -520,6 +530,7 @@
 		A1E0811922E4331700C6E4E5 /* HHComponent */ = {
 			isa = PBXGroup;
 			children = (
+				4C0D90B82331330D007D4C29 /* Managers */,
 				A148C68622F6ADB10009A76A /* HHSQLTool */,
 				A124730622F1E3D8006CB708 /* HHTool */,
 				A1E0811A22E4339400C6E4E5 /* Refresh */,
@@ -560,6 +571,7 @@
 				A1A14CAC22DCB5AC006C3680 /* Frameworks */,
 				A1A14CAD22DCB5AC006C3680 /* Resources */,
 				47840B5CEAE6A7300FCD4B61 /* [CP] Embed Pods Frameworks */,
+				4C67E4F023312D3B00FC4CBF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -700,6 +712,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4C67E4F023312D3B00FC4CBF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n\"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed\n";
+		};
 		9401EEECA5A747B3BA1442B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -774,6 +803,7 @@
 				A1455D0622E86986005F7CB3 /* AudiolistCell.swift in Sources */,
 				A195E38622EC4F33008A817E /* HomeAudioCollectionCell.swift in Sources */,
 				A1455CF322E82801005F7CB3 /* HomeAudioViewController.swift in Sources */,
+				4C0D90BA2331333A007D4C29 /* FlutterRouterManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

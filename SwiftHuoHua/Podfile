@@ -35,4 +35,7 @@ target 'SwiftHuoHua' do
   # rxswift 相关库
   pod 'RxSwift'
   pod 'RxCocoa'
+  # 新加命令 Flutter 模块
+  flutter_application_path = '/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module'
+  eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
 end

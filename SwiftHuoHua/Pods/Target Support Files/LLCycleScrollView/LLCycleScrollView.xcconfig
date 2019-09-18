@@ -9,3 +9,5 @@ PODS_TARGET_SRCROOT = ${PODS_ROOT}/LLCycleScrollView
 PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
 SKIP_INSTALL = YES
 SWIFT_VERSION = 4.2
+#include "/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/Generated.xcconfig"
+#include "/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/Generated.xcconfig"

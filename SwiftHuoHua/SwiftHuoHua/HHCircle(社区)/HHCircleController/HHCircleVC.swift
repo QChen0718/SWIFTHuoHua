@@ -83,7 +83,7 @@ extension HHCircleVC {
     {
         switch btn.titleLabel?.text {
         case "添加":
-            insertStudentsData()
+            insertStudentWithPhotoData()
         case "查询":
 //            searchStudentData()
             searchStudentByID()
@@ -120,7 +120,7 @@ extension HHCircleVC {
         stu.name = "钬花-White-有头像"
         stu.age = 25
         stu.height = 175
-        stu.id = 10031
+        stu.id = 10032
         let birthdayStr = "1992-08-18"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"

@@ -1,5 +1,11 @@
 PODS:
   - Alamofire (4.8.2)
+  - Flutter (1.0.0)
+  - flutter_boost (0.0.2):
+    - Flutter
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
+    - flutter_boost
   - HandyJSON (5.0.0)
   - HMSegmentedControl (1.5.5)
   - IQKeyboardManagerSwift (6.4.1)
@@ -37,6 +43,9 @@ PODS:
   - Then (2.5.0)
 
 DEPENDENCIES:
+  - Flutter (from `/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/engine`)
+  - flutter_boost (from `/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/.symlinks/flutter_boost/ios`)
+  - FlutterPluginRegistrant (from `/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/FlutterPluginRegistrant`)
   - HandyJSON
   - HMSegmentedControl
   - IQKeyboardManagerSwift
@@ -77,8 +86,19 @@ SPEC REPOS:
     - SwiftyJSON
     - Then
 
+EXTERNAL SOURCES:
+  Flutter:
+    :path: "/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/engine"
+  flutter_boost:
+    :path: "/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/.symlinks/flutter_boost/ios"
+  FlutterPluginRegistrant:
+    :path: "/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/FlutterPluginRegistrant"
+
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  flutter_boost: a7cfa776b75329d5e7d101d0cd33e75042bcde69
+  FlutterPluginRegistrant: 01e0f464d86bf611bf43b90bd216f2d2476e5188
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
   IQKeyboardManagerSwift: d2df660d0b8d64a15cb2537c9ff303213fa515b2
@@ -99,6 +119,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Then: 0157115e883545c77967b452fe74a1d25fb796e1
 
-PODFILE CHECKSUM: 7d98394f50f7185020252da8c20e7df55b2e634c
+PODFILE CHECKSUM: f1004b3c0b1de163fc696f9e9b351f58c5b10544
 
 COCOAPODS: 1.7.5
