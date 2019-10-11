@@ -29,7 +29,7 @@ class FlutterRouterManager: NSObject,FLBPlatform {
     //打开页面
     func open(_ url: String, urlParams: [AnyHashable : Any], exts: [AnyHashable : Any], completion: @escaping (Bool) -> Void) {
         if urlParams["present"] as? Bool == true {
-            let vc = FLBFlutterViewContainer()
+            let vc = MyFLBFlutterVC()
             vc.setName(url, params: urlParams)
             topVC?.present(vc, animated: true, completion: {
                 
@@ -41,7 +41,7 @@ class FlutterRouterManager: NSObject,FLBPlatform {
                 topVC?.navigationController?.pushViewController(vc, animated: true)
             }
             else{
-                let vc = FLBFlutterViewContainer()
+                let vc = MyFLBFlutterVC()
                 vc.hidesBottomBarWhenPushed = true
                 vc.setName(url, params: urlParams)
                 topVC?.navigationController?.pushViewController(vc, animated: true)
@@ -50,8 +50,8 @@ class FlutterRouterManager: NSObject,FLBPlatform {
     }
     
     func close(_ uid: String, result: [AnyHashable : Any], exts: [AnyHashable : Any], completion: @escaping (Bool) -> Void) {
-        let vc = topVC as? FLBFlutterViewContainer
-        if (vc is FLBFlutterViewContainer && vc!.name() == uid) {
+        let vc = topVC as? MyFLBFlutterVC
+        if (vc is MyFLBFlutterVC.Type && vc!.name() == uid) {
             vc?.dismiss(animated: true) {
                 
             }

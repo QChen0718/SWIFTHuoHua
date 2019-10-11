@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 import 'package:flutter_huohua_module/firstpage.dart';
+import 'package:flutter_huohua_module/test.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,7 +32,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(),
+      home: TestClick(),
     );
   }
 }

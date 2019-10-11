@@ -67,7 +67,6 @@ class LoginViewController: HHBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        configUI()
     }
     override func configUI() {
         super.configUI()

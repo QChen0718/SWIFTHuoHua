@@ -57,6 +57,7 @@ class HomeAudioViewController: HHBaseViewController {
     }
     
     override func configUI() {
+        super.configUI()
         self.view.addSubview(tableview)
         tableview.snp.makeConstraints {
             $0.edges.equalTo(self.view.hhsnp.edges)

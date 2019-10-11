@@ -6,30 +6,39 @@ class FirstRouteWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: new AppBar(
-        title: new Text("第一个Flutter页面"),
-      ),
-      body: new ListView(
-        children: <Widget>[
-          SizedBox(
-            height: 0.2,
-            child: Container(
-              color: Colors.black,
+      body: new Center(
+        child: new Column(
+          children: <Widget>[
+            TextField(
+
             ),
-          ),
-          ListTile(
-            leading: Icon(Icons.add_a_photo),
-            trailing: Icon(Icons.arrow_forward_ios),
-            title: Text("长列表"),
-            onTap: (){
-              //点击返回到原生页面
-//              FlutterBoost.singleton.open("sample://listDetail");
+            SizedBox(
+              height: 0.2,
+              child: Container(
+                color: Colors.black,
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.add_a_photo),
+              trailing: Icon(Icons.arrow_forward_ios),
+              title: Text(
+                "长列表",
+                style: TextStyle(fontSize: 20,color: Colors.red,fontStyle: FontStyle.italic),
+                textAlign: TextAlign.center,
+
+              ),
+              onTap: (){
+                //点击返回到原生页面
+                FlutterBoost.singleton.open("sample://listDetail");
 //                FlutterBoost.singleton.close("sample://firstPage");
 //                Navigator.push(context, new MaterialPageRoute(builder: (context) => new SecondRouteWidget()));
-            },
-          )
-        ],
+              },
+            )
+          ],
+        ),
+
       ),
+
     );
   }
 }

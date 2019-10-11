@@ -11,6 +11,7 @@
 		4C0D90BA2331333A007D4C29 /* FlutterRouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0D90B92331333A007D4C29 /* FlutterRouterManager.swift */; };
 		4C7EEAEF230BC8FF00B0EAAC /* CodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EEAEE230BC8FF00B0EAAC /* CodeLoginViewController.swift */; };
 		4C7EEAF1230BE40800B0EAAC /* CodeLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */; };
+		4C9488C22333D55000785511 /* MyFLBFlutterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9488C12333D55000785511 /* MyFLBFlutterVC.swift */; };
 		A124730522F1A3A2006CB708 /* HomeLiveDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124730422F1A3A2006CB708 /* HomeLiveDetailVC.swift */; };
 		A124730822F1E4A8006CB708 /* HHSaveTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124730722F1E4A8006CB708 /* HHSaveTool.swift */; };
 		A1455CF322E82801005F7CB3 /* HomeAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CF222E82801005F7CB3 /* HomeAudioViewController.swift */; };
@@ -93,6 +94,7 @@
 		4C0D90B92331333A007D4C29 /* FlutterRouterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterRouterManager.swift; sourceTree = "<group>"; };
 		4C7EEAEE230BC8FF00B0EAAC /* CodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginViewController.swift; sourceTree = "<group>"; };
 		4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginViewModel.swift; sourceTree = "<group>"; };
+		4C9488C12333D55000785511 /* MyFLBFlutterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFLBFlutterVC.swift; sourceTree = "<group>"; };
 		82C78198A9BEFDFF5721A3A5 /* Pods-SwiftHuoHua.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHuoHua.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua.debug.xcconfig"; sourceTree = "<group>"; };
 		A124730422F1A3A2006CB708 /* HomeLiveDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLiveDetailVC.swift; sourceTree = "<group>"; };
 		A124730722F1E4A8006CB708 /* HHSaveTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHSaveTool.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				4C0D90B92331333A007D4C29 /* FlutterRouterManager.swift */,
+				4C9488C12333D55000785511 /* MyFLBFlutterVC.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				TargetAttributes = {
 					A1A14CAE22DCB5AC006C3680 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1100;
 					};
 					A1A14CC222DCB5AF006C3680 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -705,7 +709,6 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -740,7 +743,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftHuoHua-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Runner-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -786,6 +789,7 @@
 				A148C68A22F6B8C20009A76A /* HHSQLRealmTool.swift in Sources */,
 				A195E38B22EC4F33008A817E /* HomeLiveCollectionCell.swift in Sources */,
 				A124730822F1E4A8006CB708 /* HHSaveTool.swift in Sources */,
+				4C9488C22333D55000785511 /* MyFLBFlutterVC.swift in Sources */,
 				A154092622E6ABD800664422 /* HHAudioListViewController.swift in Sources */,
 				A1455CFF22E82988005F7CB3 /* HomeVideoListVC.swift in Sources */,
 				4C014896230FE6BD008EDCB1 /* LoginViewModel.swift in Sources */,
@@ -971,8 +975,10 @@
 			baseConfigurationReference = 82C78198A9BEFDFF5721A3A5 /* Pods-SwiftHuoHua.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D2ESPK67ZT;
+				DEVELOPMENT_TEAM = 8N4A75FTPE;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SwiftHuoHua/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -981,6 +987,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mxz.SwiftHuoHua;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -991,8 +999,10 @@
 			baseConfigurationReference = A28C697FE1C075CEB8231B76 /* Pods-SwiftHuoHua.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D2ESPK67ZT;
+				DEVELOPMENT_TEAM = 8N4A75FTPE;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SwiftHuoHua/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1001,6 +1011,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mxz.SwiftHuoHua;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
