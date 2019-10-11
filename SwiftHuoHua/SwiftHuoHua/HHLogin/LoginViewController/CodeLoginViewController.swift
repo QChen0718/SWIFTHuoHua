@@ -13,6 +13,13 @@ import RxSwift
 class CodeLoginViewController: HHBaseViewController {
 
     //懒加载创建
+    //返回按钮
+    fileprivate lazy var backBtn:UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.frame=CGRect(x: 20, y: 44, width: 44, height: 44)
+        btn.setImage(UIImage(named: "chose-close"), for: .normal)
+        return btn
+    }()
     //验证码登录
     fileprivate lazy var titlelabel:UILabel = {
        let label = UILabel()
@@ -75,16 +82,24 @@ class CodeLoginViewController: HHBaseViewController {
     let disposeBag = DisposeBag()
     var checkname:String?
     var codevm:CodeLoginViewModel?
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if UIApplication.shared.keyWindow?.rootViewController as? HHTabBarController != nil {
+            //是否隐藏返回按钮
+            backBtn.isHidden=false
+        }else {
+            backBtn.isHidden = true
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        let leftbuttonItme = UIBarButtonItem(customView: backBtn)
+        navigationItem.leftBarButtonItem = leftbuttonItme
     }
     
     //继承父类的设置UI的方法
     override func configUI() {
-        
         self.view.addSubview(titlelabel)
         self.view.addSubview(phonetextfield)
         self.view.addSubview(lineview)
@@ -124,6 +139,10 @@ class CodeLoginViewController: HHBaseViewController {
 
     //按钮事件处理统一方法
     func btnAllClick() {
+        //返回事件
+        backBtn.rx.tap.subscribe(onNext: { [weak self] () in
+            self?.dismiss(animated: true, completion: nil)
+            }).disposed(by: disposeBag)
         //登录事件
         loginBtn.rx.tap.subscribe(onNext: {[weak self] () in
             print(self?.checkname ?? "")

@@ -12,6 +12,7 @@
 		4C7EEAEF230BC8FF00B0EAAC /* CodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EEAEE230BC8FF00B0EAAC /* CodeLoginViewController.swift */; };
 		4C7EEAF1230BE40800B0EAAC /* CodeLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */; };
 		4C9488C22333D55000785511 /* MyFLBFlutterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9488C12333D55000785511 /* MyFLBFlutterVC.swift */; };
+		4CC214B52350671B0086D40A /* HHPersionCenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC214B42350671B0086D40A /* HHPersionCenterVC.swift */; };
 		A124730522F1A3A2006CB708 /* HomeLiveDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124730422F1A3A2006CB708 /* HomeLiveDetailVC.swift */; };
 		A124730822F1E4A8006CB708 /* HHSaveTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124730722F1E4A8006CB708 /* HHSaveTool.swift */; };
 		A1455CF322E82801005F7CB3 /* HomeAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CF222E82801005F7CB3 /* HomeAudioViewController.swift */; };
@@ -95,6 +96,7 @@
 		4C7EEAEE230BC8FF00B0EAAC /* CodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginViewController.swift; sourceTree = "<group>"; };
 		4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginViewModel.swift; sourceTree = "<group>"; };
 		4C9488C12333D55000785511 /* MyFLBFlutterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFLBFlutterVC.swift; sourceTree = "<group>"; };
+		4CC214B42350671B0086D40A /* HHPersionCenterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHPersionCenterVC.swift; sourceTree = "<group>"; };
 		82C78198A9BEFDFF5721A3A5 /* Pods-SwiftHuoHua.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHuoHua.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua.debug.xcconfig"; sourceTree = "<group>"; };
 		A124730422F1A3A2006CB708 /* HomeLiveDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLiveDetailVC.swift; sourceTree = "<group>"; };
 		A124730722F1E4A8006CB708 /* HHSaveTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHSaveTool.swift; sourceTree = "<group>"; };
@@ -214,6 +216,22 @@
 				4C014895230FE6BD008EDCB1 /* LoginViewModel.swift */,
 			);
 			path = LoginViewModel;
+			sourceTree = "<group>";
+		};
+		4CC214B2235066AA0086D40A /* HHPersionCenter */ = {
+			isa = PBXGroup;
+			children = (
+				4CC214B3235066CD0086D40A /* HHPersionCenterController */,
+			);
+			path = HHPersionCenter;
+			sourceTree = "<group>";
+		};
+		4CC214B3235066CD0086D40A /* HHPersionCenterController */ = {
+			isa = PBXGroup;
+			children = (
+				4CC214B42350671B0086D40A /* HHPersionCenterVC.swift */,
+			);
+			path = HHPersionCenterController;
 			sourceTree = "<group>";
 		};
 		A124730622F1E3D8006CB708 /* HHTool */ = {
@@ -369,6 +387,7 @@
 		A1A14CB122DCB5AC006C3680 /* SwiftHuoHua */ = {
 			isa = PBXGroup;
 			children = (
+				4CC214B2235066AA0086D40A /* HHPersionCenter */,
 				A148C6C922F83C610009A76A /* HHSearch */,
 				A154091C22E5946000664422 /* HHAudio */,
 				A1E0811922E4331700C6E4E5 /* HHComponent */,
@@ -757,6 +776,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC214B52350671B0086D40A /* HHPersionCenterVC.swift in Sources */,
 				A1E0811622E1C43300C6E4E5 /* HHUser.swift in Sources */,
 				A195E36E22EB2678008A817E /* HHWebViewController.swift in Sources */,
 				4C7EEAEF230BC8FF00B0EAAC /* CodeLoginViewController.swift in Sources */,
