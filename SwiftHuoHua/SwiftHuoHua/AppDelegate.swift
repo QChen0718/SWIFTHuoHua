@@ -24,9 +24,16 @@ class AppDelegate: FLBFlutterAppDelegate {
     }
     
     func setRootViewController()  {
-        let nvc = HHNavigationController(rootViewController: CodeLoginViewController())
-        nvc.navigationbarStyle(.white)
-        window?.rootViewController=nvc
+        if (HHUser.user()?.token) != nil  {
+            //直接进入首页
+           let nvc = HHTabBarController()
+            window?.rootViewController=nvc
+        }else {
+            //进入登录页面
+           let nvc = HHNavigationController(rootViewController: CodeLoginViewController())
+            nvc.navigationbarStyle(.white)
+            window?.rootViewController=nvc
+        }
     }
     ///配置数据库
     public class func configRealm() {
