@@ -101,7 +101,12 @@ class LoginViewController: HHBaseViewController {
                 //服务器返回成功
                 //归档保存
                 HHUser.save(user: user)
-                self?.view.window?.rootViewController=HHTabBarController()
+                if UIApplication.shared.keyWindow?.rootViewController as? HHTabBarController != nil {
+                    //是否隐藏返回按钮
+                    self?.dismiss(animated: true, completion: nil)
+                }else {
+                    self?.view.window?.rootViewController=HHTabBarController()
+                }
             })
         }).disposed(by: disposeBag)
         //验证码登录

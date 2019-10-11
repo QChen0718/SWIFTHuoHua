@@ -45,6 +45,7 @@ extension HHPersionCenterVC:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if array[indexPath.section][indexPath.row] == "退出登录" {
+            HHUser.deleteUser()
             let nvc = HHNavigationController(rootViewController: CodeLoginViewController())
             nvc.navigationbarStyle(.white)
             nvc.modalPresentationStyle = .fullScreen

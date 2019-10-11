@@ -127,4 +127,12 @@ class HHUser: NSObject,NSCoding,HandyJSON {
         //解档
         return NSKeyedUnarchiver.unarchiveObject(with: myuserData ?? Data()) as? HHUser
     }
+    //移除基本用户信息
+    class func deleteUser() {
+        let userDefaults=UserDefaults.standard;
+        userDefaults.removeObject(forKey: "user")
+        userDefaults.synchronize()
+        
+        //删除身份信息
+    }
 }
