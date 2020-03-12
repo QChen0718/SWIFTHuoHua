@@ -2,6 +2,10 @@
  platform :ios, '9.0'
 #消除所有警告
 inhibit_all_warnings!
+# 新加命令 Flutter 模块
+
+flutter_application_path = '../flutter_huohua_module'
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 target 'SwiftHuoHua' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -35,7 +39,6 @@ target 'SwiftHuoHua' do
   # rxswift 相关库
   pod 'RxSwift'
   pod 'RxCocoa'
-  # 新加命令 Flutter 模块
-  flutter_application_path = '/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module'
-  eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
+  
+  install_all_flutter_pods(flutter_application_path)
 end

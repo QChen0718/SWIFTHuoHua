@@ -3,6 +3,8 @@ PODS:
   - Flutter (1.0.0)
   - flutter_boost (0.0.2):
     - Flutter
+  - flutter_huohua_module (0.0.1):
+    - Flutter
   - FlutterPluginRegistrant (0.0.1):
     - Flutter
     - flutter_boost
@@ -43,9 +45,10 @@ PODS:
   - Then (2.5.0)
 
 DEPENDENCIES:
-  - Flutter (from `/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/engine`)
-  - flutter_boost (from `/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/.symlinks/flutter_boost/ios`)
-  - FlutterPluginRegistrant (from `/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/FlutterPluginRegistrant`)
+  - Flutter (from `../flutter_huohua_module/.ios/Flutter/engine`)
+  - flutter_boost (from `../flutter_huohua_module/.ios/Flutter/.symlinks/flutter_boost/ios`)
+  - flutter_huohua_module (from `../flutter_huohua_module/.ios/Flutter`)
+  - FlutterPluginRegistrant (from `../flutter_huohua_module/.ios/Flutter/FlutterPluginRegistrant`)
   - HandyJSON
   - HMSegmentedControl
   - IQKeyboardManagerSwift
@@ -64,7 +67,7 @@ DEPENDENCIES:
   - Then
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - HandyJSON
     - HMSegmentedControl
@@ -88,17 +91,20 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: "/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/engine"
+    :path: "../flutter_huohua_module/.ios/Flutter/engine"
   flutter_boost:
-    :path: "/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/.symlinks/flutter_boost/ios"
+    :path: "../flutter_huohua_module/.ios/Flutter/.symlinks/flutter_boost/ios"
+  flutter_huohua_module:
+    :path: "../flutter_huohua_module/.ios/Flutter"
   FlutterPluginRegistrant:
-    :path: "/Users/ycf/Swift/SWIFTHuoHua/flutter_huohua_module/.ios/Flutter/FlutterPluginRegistrant"
+    :path: "../flutter_huohua_module/.ios/Flutter/FlutterPluginRegistrant"
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_boost: a7cfa776b75329d5e7d101d0cd33e75042bcde69
-  FlutterPluginRegistrant: 01e0f464d86bf611bf43b90bd216f2d2476e5188
+  flutter_huohua_module: 4b30722093b73ea7aeab554868e613d25ff5a4fa
+  FlutterPluginRegistrant: 717df6b322c7d500c17eeff54284c74ed5410c7b
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
   IQKeyboardManagerSwift: d2df660d0b8d64a15cb2537c9ff303213fa515b2
@@ -119,6 +125,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Then: 0157115e883545c77967b452fe74a1d25fb796e1
 
-PODFILE CHECKSUM: f1004b3c0b1de163fc696f9e9b351f58c5b10544
+PODFILE CHECKSUM: b41c4d856d7780237daf42b132e4d456af837dec
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4
