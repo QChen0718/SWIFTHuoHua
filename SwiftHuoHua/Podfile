@@ -1,4 +1,5 @@
 # Uncomment the next line to define a global platform for your project
+source 'https://github.com/CocoaPods/Specs.git'
  platform :ios, '9.0'
 #消除所有警告
 inhibit_all_warnings!
@@ -35,4 +36,5 @@ target 'SwiftHuoHua' do
   # rxswift 相关库
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Moya/RxSwift'
 end

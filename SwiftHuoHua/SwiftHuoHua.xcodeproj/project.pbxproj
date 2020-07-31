@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C7EEAEF230BC8FF00B0EAAC /* CodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EEAEE230BC8FF00B0EAAC /* CodeLoginViewController.swift */; };
 		4C7EEAF1230BE40800B0EAAC /* CodeLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */; };
+		4CFC9693241B1FCD001C2D5E /* HHVCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9692241B1FCD001C2D5E /* HHVCManager.swift */; };
 		A124730522F1A3A2006CB708 /* HomeLiveDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124730422F1A3A2006CB708 /* HomeLiveDetailVC.swift */; };
 		A124730822F1E4A8006CB708 /* HHSaveTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A124730722F1E4A8006CB708 /* HHSaveTool.swift */; };
 		A1455CF322E82801005F7CB3 /* HomeAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1455CF222E82801005F7CB3 /* HomeAudioViewController.swift */; };
@@ -89,6 +90,7 @@
 /* Begin PBXFileReference section */
 		4C7EEAEE230BC8FF00B0EAAC /* CodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginViewController.swift; sourceTree = "<group>"; };
 		4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginViewModel.swift; sourceTree = "<group>"; };
+		4CFC9692241B1FCD001C2D5E /* HHVCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHVCManager.swift; sourceTree = "<group>"; };
 		82C78198A9BEFDFF5721A3A5 /* Pods-SwiftHuoHua.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHuoHua.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftHuoHua/Pods-SwiftHuoHua.debug.xcconfig"; sourceTree = "<group>"; };
 		A124730422F1A3A2006CB708 /* HomeLiveDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLiveDetailVC.swift; sourceTree = "<group>"; };
 		A124730722F1E4A8006CB708 /* HHSaveTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHSaveTool.swift; sourceTree = "<group>"; };
@@ -198,6 +200,14 @@
 				4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */,
 			);
 			path = LoginViewModel;
+			sourceTree = "<group>";
+		};
+		4CFC9691241B1F9D001C2D5E /* HHVCManager */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC9692241B1FCD001C2D5E /* HHVCManager.swift */,
+			);
+			path = HHVCManager;
 			sourceTree = "<group>";
 		};
 		A124730622F1E3D8006CB708 /* HHTool */ = {
@@ -517,6 +527,7 @@
 		A1E0811922E4331700C6E4E5 /* HHComponent */ = {
 			isa = PBXGroup;
 			children = (
+				4CFC9691241B1F9D001C2D5E /* HHVCManager */,
 				A148C68622F6ADB10009A76A /* HHSQLTool */,
 				A124730622F1E3D8006CB708 /* HHTool */,
 				A1E0811A22E4339400C6E4E5 /* Refresh */,
@@ -749,6 +760,7 @@
 				A154092222E594F200664422 /* HHAudioController.swift in Sources */,
 				A195E38D22EDE779008A817E /* NSDateExtension.swift in Sources */,
 				A1E0811322E161E800C6E4E5 /* NSStringEncryption.swift in Sources */,
+				4CFC9693241B1FCD001C2D5E /* HHVCManager.swift in Sources */,
 				A1455CFB22E82933005F7CB3 /* HomeProjectVC.swift in Sources */,
 				A195E39122EEF8C8008A817E /* NSStringExtension.swift in Sources */,
 				A148C68A22F6B8C20009A76A /* HHSQLRealmTool.swift in Sources */,
@@ -938,7 +950,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D2ESPK67ZT;
+				DEVELOPMENT_TEAM = 8N4A75FTPE;
 				INFOPLIST_FILE = SwiftHuoHua/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -958,7 +970,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D2ESPK67ZT;
+				DEVELOPMENT_TEAM = 8N4A75FTPE;
 				INFOPLIST_FILE = SwiftHuoHua/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
