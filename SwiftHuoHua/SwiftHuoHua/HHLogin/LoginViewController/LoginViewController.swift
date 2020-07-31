@@ -67,7 +67,6 @@ class LoginViewController: HHBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        configUI()
     }
     override func configUI() {
         super.configUI()
@@ -98,7 +97,8 @@ class LoginViewController: HHBaseViewController {
                 }
                 
             }
-        }).disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
     }
     func setupUI() {
         titlelabel.snp.makeConstraints { (make) in
