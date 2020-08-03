@@ -83,14 +83,16 @@ class HHPageViewController: HHBaseViewController {
             segment.backgroundColor = UIColor.clear
             //默认的字体颜色和大小
             segment.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray.withAlphaComponent(0.5),
-                                           NSAttributedString.Key.font:UIFont.systemFont(ofSize: 22)]
+                                           NSAttributedString.Key.font:UIFont.systemFont(ofSize: KSuitFloat(float: 14))]
             segment.selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black,
-                                                   NSAttributedString.Key.font:UIFont.systemFont(ofSize: 32)]
-            segment.selectionIndicatorLocation = .none
-
-            segment.segmentEdgeInset=UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-            segment.enlargeEdgeInset=UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-            segment.segmentWidthStyle=HMSegmentedControlSegmentWidthStyle.dynamic
+                                                   NSAttributedString.Key.font:UIFont.systemFont(ofSize: KSuitFloat(float: 18))]
+            segment.selectionIndicatorLocation = .down
+            segment.selectionIndicatorColor = UIColor.hexadecimalColor(hexadecimal: "0xFFD000")
+            segment.selectionIndicatorHeight = 2
+            segment.selectionIndicatorEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: -3, right: 20)
+            segment.segmentEdgeInset=UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+            segment.enlargeEdgeInset=UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+            segment.segmentWidthStyle=HMSegmentedControlSegmentWidthStyle.fixed
             view.addSubview(segment)
             segment.snp.makeConstraints { (make) in
                 make.top.left.right.equalToSuperview()

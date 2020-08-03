@@ -53,16 +53,16 @@ class HomeAudioViewController: HHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-    }
-    
-    override func configUI() {
         self.view.addSubview(tableview)
         tableview.snp.makeConstraints {
             $0.edges.equalTo(self.view.hhsnp.edges)
         }
         //加载网络数据
         requestData()
+    }
+    
+    override func configUI() {
+        
     }
 }
 

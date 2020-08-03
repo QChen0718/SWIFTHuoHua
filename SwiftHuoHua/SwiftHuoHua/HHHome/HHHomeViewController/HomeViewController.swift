@@ -45,7 +45,7 @@ class HomeViewController: HHBaseViewController {
         return vc
     }()
     fileprivate lazy var homepagevc: HHPageViewController = {
-       let pagevc = HHPageViewController(titles: ["推荐","音频课","直播课","方案包","专题","问答","视频"], vcs: [recommendvc,audiovc,livevc,solutionvc,projectvc,societyvc,videovc], pageStyle: .topTabBar)
+        let pagevc = HHPageViewController(titles: ["推荐","音频课","直播课","方案包","专题","问答","视频"], vcs: [recommendvc,audiovc,livevc,solutionvc,projectvc,societyvc,videovc], pageStyle: .navigationBarSegment)
         return pagevc
     }()
     //搜索按钮

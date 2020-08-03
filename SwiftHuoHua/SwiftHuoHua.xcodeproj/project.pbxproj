@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0BAC8224D418F6009C35D6 /* CircleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BAC8124D418F6009C35D6 /* CircleListView.swift */; };
+		4C0BAC9824D7ABB8009C35D6 /* HHCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BAC9724D7ABB8009C35D6 /* HHCircleCell.swift */; };
+		4C0BAC9B24D7DF97009C35D6 /* CircleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BAC9A24D7DF97009C35D6 /* CircleContentView.swift */; };
+		4C0BAC9D24D7E5B0009C35D6 /* CircleBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BAC9C24D7E5B0009C35D6 /* CircleBottomView.swift */; };
+		4C0BACA424D7F797009C35D6 /* HHDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BACA324D7F797009C35D6 /* HHDynamicController.swift */; };
+		4C0BACA624D7F942009C35D6 /* FlowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BACA524D7F942009C35D6 /* FlowerViewController.swift */; };
+		4C0BACA824D7F94F009C35D6 /* MyMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BACA724D7F94F009C35D6 /* MyMessageViewController.swift */; };
 		4C7EEAEF230BC8FF00B0EAAC /* CodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EEAEE230BC8FF00B0EAAC /* CodeLoginViewController.swift */; };
 		4C7EEAF1230BE40800B0EAAC /* CodeLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */; };
 		4CFC9693241B1FCD001C2D5E /* HHVCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9692241B1FCD001C2D5E /* HHVCManager.swift */; };
@@ -88,6 +95,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0BAC8124D418F6009C35D6 /* CircleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleListView.swift; sourceTree = "<group>"; };
+		4C0BAC9724D7ABB8009C35D6 /* HHCircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHCircleCell.swift; sourceTree = "<group>"; };
+		4C0BAC9A24D7DF97009C35D6 /* CircleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleContentView.swift; sourceTree = "<group>"; };
+		4C0BAC9C24D7E5B0009C35D6 /* CircleBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBottomView.swift; sourceTree = "<group>"; };
+		4C0BACA324D7F797009C35D6 /* HHDynamicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHDynamicController.swift; sourceTree = "<group>"; };
+		4C0BACA524D7F942009C35D6 /* FlowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerViewController.swift; sourceTree = "<group>"; };
+		4C0BACA724D7F94F009C35D6 /* MyMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessageViewController.swift; sourceTree = "<group>"; };
 		4C7EEAEE230BC8FF00B0EAAC /* CodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginViewController.swift; sourceTree = "<group>"; };
 		4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginViewModel.swift; sourceTree = "<group>"; };
 		4CFC9692241B1FCD001C2D5E /* HHVCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHVCManager.swift; sourceTree = "<group>"; };
@@ -194,6 +208,65 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4C0BAC9624D7AB83009C35D6 /* HHCircleView */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BAC9724D7ABB8009C35D6 /* HHCircleCell.swift */,
+				4C0BAC9A24D7DF97009C35D6 /* CircleContentView.swift */,
+				4C0BAC9C24D7E5B0009C35D6 /* CircleBottomView.swift */,
+			);
+			path = HHCircleView;
+			sourceTree = "<group>";
+		};
+		4C0BAC9924D7ABC3009C35D6 /* HHCircleModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HHCircleModel;
+			sourceTree = "<group>";
+		};
+		4C0BAC9E24D7F702009C35D6 /* HHDynamic(动态) */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BACA224D7F75A009C35D6 /* ViewModel */,
+				4C0BACA124D7F751009C35D6 /* Model */,
+				4C0BACA024D7F747009C35D6 /* View */,
+				4C0BAC9F24D7F739009C35D6 /* Controller */,
+			);
+			path = "HHDynamic(动态)";
+			sourceTree = "<group>";
+		};
+		4C0BAC9F24D7F739009C35D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BACA324D7F797009C35D6 /* HHDynamicController.swift */,
+				4C0BACA524D7F942009C35D6 /* FlowerViewController.swift */,
+				4C0BACA724D7F94F009C35D6 /* MyMessageViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4C0BACA024D7F747009C35D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C0BACA124D7F751009C35D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C0BACA224D7F75A009C35D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4C7EEAF2230BFA4900B0EAAC /* LoginViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +311,8 @@
 		A148C68B22F6BBDB0009A76A /* HHCircle(社区) */ = {
 			isa = PBXGroup;
 			children = (
+				4C0BAC9924D7ABC3009C35D6 /* HHCircleModel */,
+				4C0BAC9624D7AB83009C35D6 /* HHCircleView */,
 				A148C68C22F6BBF70009A76A /* HHCircleController */,
 			);
 			path = "HHCircle(社区)";
@@ -247,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				A148C68D22F6BC360009A76A /* HHCircleVC.swift */,
+				4C0BAC8124D418F6009C35D6 /* CircleListView.swift */,
 			);
 			path = HHCircleController;
 			sourceTree = "<group>";
@@ -363,6 +439,7 @@
 		A1A14CB122DCB5AC006C3680 /* SwiftHuoHua */ = {
 			isa = PBXGroup;
 			children = (
+				4C0BAC9E24D7F702009C35D6 /* HHDynamic(动态) */,
 				A148C6C922F83C610009A76A /* HHSearch */,
 				A154091C22E5946000664422 /* HHAudio */,
 				A1E0811922E4331700C6E4E5 /* HHComponent */,
@@ -733,10 +810,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0BAC9824D7ABB8009C35D6 /* HHCircleCell.swift in Sources */,
 				A1E0811622E1C43300C6E4E5 /* HHUser.swift in Sources */,
+				4C0BAC9B24D7DF97009C35D6 /* CircleContentView.swift in Sources */,
 				A195E36E22EB2678008A817E /* HHWebViewController.swift in Sources */,
 				4C7EEAEF230BC8FF00B0EAAC /* CodeLoginViewController.swift in Sources */,
 				A148C68E22F6BC360009A76A /* HHCircleVC.swift in Sources */,
+				4C0BAC8224D418F6009C35D6 /* CircleListView.swift in Sources */,
 				A1E0810E22DF4CE600C6E4E5 /* LoginViewController.swift in Sources */,
 				A1A14CF122DDAA52006C3680 /* HHDevice.swift in Sources */,
 				A195E38322EC4F33008A817E /* HomeBannerCell.swift in Sources */,
@@ -759,10 +839,12 @@
 				A1A14CE122DD7530006C3680 /* HHTabBarController.swift in Sources */,
 				A154092222E594F200664422 /* HHAudioController.swift in Sources */,
 				A195E38D22EDE779008A817E /* NSDateExtension.swift in Sources */,
+				4C0BACA424D7F797009C35D6 /* HHDynamicController.swift in Sources */,
 				A1E0811322E161E800C6E4E5 /* NSStringEncryption.swift in Sources */,
 				4CFC9693241B1FCD001C2D5E /* HHVCManager.swift in Sources */,
 				A1455CFB22E82933005F7CB3 /* HomeProjectVC.swift in Sources */,
 				A195E39122EEF8C8008A817E /* NSStringExtension.swift in Sources */,
+				4C0BACA824D7F94F009C35D6 /* MyMessageViewController.swift in Sources */,
 				A148C68A22F6B8C20009A76A /* HHSQLRealmTool.swift in Sources */,
 				A195E38B22EC4F33008A817E /* HomeLiveCollectionCell.swift in Sources */,
 				A124730822F1E4A8006CB708 /* HHSaveTool.swift in Sources */,
@@ -775,6 +857,7 @@
 				A148C6CC22F83C8A0009A76A /* HHSearchViewController.swift in Sources */,
 				A1A14CE822DDA25D006C3680 /* HHNavigationController.swift in Sources */,
 				A1455D0C22E9AC1C005F7CB3 /* HHAudioPlayManger.swift in Sources */,
+				4C0BACA624D7F942009C35D6 /* FlowerViewController.swift in Sources */,
 				A195E38F22EEE4BA008A817E /* NSUrlExtension.swift in Sources */,
 				A1455CFD22E82969005F7CB3 /* HomeSocietyVC.swift in Sources */,
 				A1A14CEC22DDA569006C3680 /* HHBaseViewController.swift in Sources */,
@@ -782,6 +865,7 @@
 				A1455D0622E86986005F7CB3 /* AudiolistCell.swift in Sources */,
 				A195E38622EC4F33008A817E /* HomeAudioCollectionCell.swift in Sources */,
 				A1455CF322E82801005F7CB3 /* HomeAudioViewController.swift in Sources */,
+				4C0BAC9D24D7E5B0009C35D6 /* CircleBottomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

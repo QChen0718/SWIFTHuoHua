@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor=UIColor.white;
         window?.makeKeyAndVisible()
-        AppDelegate.configRealm()
+//        AppDelegate.configRealm()
         setRootViewController()
         return true
     }

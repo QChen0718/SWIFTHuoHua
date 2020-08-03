@@ -45,7 +45,6 @@ class HomeLiveCollectionCell: UICollectionViewCell {
             }
         }
 //        livestatus.text =
-        print("--->",NSDate.tiemnumberConversion(time: (model.start_time ?? "") as NSString, fromat: "yy-MM-dd"))
         livedate.text = NSDate.tiemnumberConversion(time: (model.start_time ?? "") as NSString, fromat: "yy-MM-dd")
     }
 }
