@@ -14,6 +14,10 @@
 		4C0BACA424D7F797009C35D6 /* HHDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BACA324D7F797009C35D6 /* HHDynamicController.swift */; };
 		4C0BACA624D7F942009C35D6 /* FlowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BACA524D7F942009C35D6 /* FlowerViewController.swift */; };
 		4C0BACA824D7F94F009C35D6 /* MyMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BACA724D7F94F009C35D6 /* MyMessageViewController.swift */; };
+		4C0BACCE24D80903009C35D6 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BACCD24D80903009C35D6 /* PostViewController.swift */; };
+		4C0BACD024D8091E009C35D6 /* ContributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BACCF24D8091E009C35D6 /* ContributeViewController.swift */; };
+		4C0BACD224D80975009C35D6 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BACD124D80975009C35D6 /* AnswerViewController.swift */; };
+		4C0BACD424D814E3009C35D6 /* ContributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BACD324D814E3009C35D6 /* ContributeCell.swift */; };
 		4C7EEAEF230BC8FF00B0EAAC /* CodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EEAEE230BC8FF00B0EAAC /* CodeLoginViewController.swift */; };
 		4C7EEAF1230BE40800B0EAAC /* CodeLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */; };
 		4CFC9693241B1FCD001C2D5E /* HHVCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9692241B1FCD001C2D5E /* HHVCManager.swift */; };
@@ -102,6 +106,10 @@
 		4C0BACA324D7F797009C35D6 /* HHDynamicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHDynamicController.swift; sourceTree = "<group>"; };
 		4C0BACA524D7F942009C35D6 /* FlowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerViewController.swift; sourceTree = "<group>"; };
 		4C0BACA724D7F94F009C35D6 /* MyMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessageViewController.swift; sourceTree = "<group>"; };
+		4C0BACCD24D80903009C35D6 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		4C0BACCF24D8091E009C35D6 /* ContributeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeViewController.swift; sourceTree = "<group>"; };
+		4C0BACD124D80975009C35D6 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		4C0BACD324D814E3009C35D6 /* ContributeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeCell.swift; sourceTree = "<group>"; };
 		4C7EEAEE230BC8FF00B0EAAC /* CodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginViewController.swift; sourceTree = "<group>"; };
 		4C7EEAF0230BE40800B0EAAC /* CodeLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginViewModel.swift; sourceTree = "<group>"; };
 		4CFC9692241B1FCD001C2D5E /* HHVCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHVCManager.swift; sourceTree = "<group>"; };
@@ -242,6 +250,9 @@
 				4C0BACA324D7F797009C35D6 /* HHDynamicController.swift */,
 				4C0BACA524D7F942009C35D6 /* FlowerViewController.swift */,
 				4C0BACA724D7F94F009C35D6 /* MyMessageViewController.swift */,
+				4C0BACCD24D80903009C35D6 /* PostViewController.swift */,
+				4C0BACCF24D8091E009C35D6 /* ContributeViewController.swift */,
+				4C0BACD124D80975009C35D6 /* AnswerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,6 +260,7 @@
 		4C0BACA024D7F747009C35D6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4C0BACD324D814E3009C35D6 /* ContributeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -822,6 +834,7 @@
 				A195E38322EC4F33008A817E /* HomeBannerCell.swift in Sources */,
 				A124730522F1A3A2006CB708 /* HomeLiveDetailVC.swift in Sources */,
 				A1455CF722E82878005F7CB3 /* HomeRecommendVC.swift in Sources */,
+				4C0BACCE24D80903009C35D6 /* PostViewController.swift in Sources */,
 				A1A14CEE22DDA5A4006C3680 /* HomeDetailViewController.swift in Sources */,
 				A154092422E5ABF800664422 /* HHPageViewController.swift in Sources */,
 				A1A14CFD22DF17F2006C3680 /* HHModel.swift in Sources */,
@@ -848,6 +861,7 @@
 				A148C68A22F6B8C20009A76A /* HHSQLRealmTool.swift in Sources */,
 				A195E38B22EC4F33008A817E /* HomeLiveCollectionCell.swift in Sources */,
 				A124730822F1E4A8006CB708 /* HHSaveTool.swift in Sources */,
+				4C0BACD224D80975009C35D6 /* AnswerViewController.swift in Sources */,
 				A154092622E6ABD800664422 /* HHAudioListViewController.swift in Sources */,
 				A1455CFF22E82988005F7CB3 /* HomeVideoListVC.swift in Sources */,
 				A1A14CE622DD7E55006C3680 /* HomeViewController.swift in Sources */,
@@ -856,6 +870,7 @@
 				A195E38722EC4F33008A817E /* HomeAudioCell.swift in Sources */,
 				A148C6CC22F83C8A0009A76A /* HHSearchViewController.swift in Sources */,
 				A1A14CE822DDA25D006C3680 /* HHNavigationController.swift in Sources */,
+				4C0BACD024D8091E009C35D6 /* ContributeViewController.swift in Sources */,
 				A1455D0C22E9AC1C005F7CB3 /* HHAudioPlayManger.swift in Sources */,
 				4C0BACA624D7F942009C35D6 /* FlowerViewController.swift in Sources */,
 				A195E38F22EEE4BA008A817E /* NSUrlExtension.swift in Sources */,
@@ -865,6 +880,7 @@
 				A1455D0622E86986005F7CB3 /* AudiolistCell.swift in Sources */,
 				A195E38622EC4F33008A817E /* HomeAudioCollectionCell.swift in Sources */,
 				A1455CF322E82801005F7CB3 /* HomeAudioViewController.swift in Sources */,
+				4C0BACD424D814E3009C35D6 /* ContributeCell.swift in Sources */,
 				4C0BAC9D24D7E5B0009C35D6 /* CircleBottomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

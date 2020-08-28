@@ -9,22 +9,29 @@
 import UIKit
 
 class FlowerViewController: HHBaseViewController {
-
+    fileprivate lazy var postvc:PostViewController={
+        let vc = PostViewController()
+        return vc
+    }()
+    fileprivate lazy var contributevc:ContributeViewController={
+        let vc = ContributeViewController()
+        return vc
+    }()
+    fileprivate lazy var answervc:AnswerViewController={
+        let vc = AnswerViewController()
+        return vc
+    }()
+    fileprivate lazy var flowerpagevc: HHPageViewController = {
+        let pagevc = HHPageViewController(titles: ["帖子","投稿","问答"], vcs: [postvc,contributevc,answervc], pageStyle: .navigationBarSegment)
+        return pagevc
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        addChild(flowerpagevc)
+        view.addSubview(flowerpagevc.view)
+        flowerpagevc.view.snp.makeConstraints { (make) in
+            make.left.top.right.bottom.equalToSuperview()
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

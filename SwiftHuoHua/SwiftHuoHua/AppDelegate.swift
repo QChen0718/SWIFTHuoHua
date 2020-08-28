@@ -27,9 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setRootViewController()  {
-        let nvc = HHNavigationController(rootViewController: CodeLoginViewController())
-        nvc.navigationbarStyle(.white)
-        window?.rootViewController=nvc
+//        if ((HHUser.user()?.user_id) != nil) {
+//            window?.rootViewController=HHTabBarController()
+//        }else{
+            let nvc = HHNavigationController(rootViewController: LoginViewController())
+            nvc.navigationbarStyle(.white)
+            window?.rootViewController=nvc
+//        }
     }
     ///配置数据库
     public class func configRealm() {

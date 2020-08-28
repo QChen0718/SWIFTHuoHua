@@ -16,7 +16,7 @@ class HHTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         let vc1 = HomeViewController();
         let vc2 = HHCircleVC();
-        let vc3 = UIViewController();
+        let vc3 = HHDynamicController();
         let vc4 = UIViewController();
         self.addChildViewController(vc1, title: "", image: "buttn_shi_normal",selectImage: "buttn_shi_hover")
         self.addChildViewController(vc2, title: "", image: "buttn_she_normal",selectImage: "buttn_she_hover")

@@ -17,22 +17,22 @@ class HHDynamicController: HHBaseViewController {
        let vc = MyMessageViewController()
         return vc
     }()
-    fileprivate lazy var homepagevc: HHPageViewController = {
-        let pagevc = HHPageViewController(titles: ["关注","我的消息"], vcs: [flowervc,mymessagevc], pageStyle: .navigationBarSegment)
+    fileprivate lazy var dynamicpagevc: HHPageViewController = {
+        let pagevc = HHPageViewController(titles: ["关注","我的消息"], vcs: [flowervc,mymessagevc], pageStyle: .topTabBar)
         return pagevc
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.isHidden = true
     }
     override func configUI() {
         super.configUI()
-        addChild(homepagevc)
-        view.addSubview(homepagevc.view)
-        homepagevc.view.snp.makeConstraints {
+        self.addChild(dynamicpagevc)
+        view.addSubview(dynamicpagevc.view)
+        dynamicpagevc.view.snp.makeConstraints {
             $0.left.right.bottom.equalToSuperview()
-            $0.top.equalTo(0)
+            $0.top.equalTo(STATUS_BAR_HEIGHT)
         }
     }
 }
